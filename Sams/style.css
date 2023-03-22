@@ -1,0 +1,205 @@
+@import url('https://fonts.googleapis.com/css2?family=Calistoga&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap');
+
+/* Sam.B Global Variables for standardised styling */
+:root {
+    /* --main-color: #4c00b0; */
+    /* --main-color: #7600bc */
+    /* --main-color: #8a00c2 */
+    --main-color: #a0a252;
+}
+
+/* Sam.B Overide default behaviours to produce more predictible behaviours */
+html {
+    height: 100vh;
+    overflow-x: hidden;
+}
+
+/* Sam.B Overide default behaviours to produce more predictible behaviours */
+* {
+    font-family: 'Roboto', sans-serif;
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+header {
+    position: sticky;
+    top: 0;
+    padding: 6vh 10vw;
+    font-size: 1.1rem;
+    font-weight: bold;
+    background-color: white;
+    box-shadow: 0 0 .8rem 0 #ccc;
+    border-radius: .5rem;
+}
+
+/* Sam.B Hover effects for seleting another page in header. change color and scale up with animations */
+header ul li :hover {
+    color: var(--main-color);
+    cursor: pointer;
+    text-align: center;
+    font-size: 1.65rem;
+    transition: ease 100ms;
+}
+
+/* Sam.B Basic headerbar stylings */
+header ul {
+    display: flex;
+    list-style: none;
+    align-items: center;
+}
+
+header ul li {
+    list-style-type: none;
+    text-align: center;
+    width: 13vw;
+}
+
+header ul a {
+    text-decoration: none;
+    color: black;
+    width: 16vw;
+}
+
+header ul li a {
+    color: rgb(101, 101, 101);
+    text-decoration: none;
+}
+
+
+/* Sam.B All elements tagged with main-color will be assigned the main color allowing us to change our minds later */
+.main-color {
+    color: var(--main-color);
+}
+
+main {
+    height: 200vh;
+    width: 100vw;
+    padding: 8vh 10vw;
+    display: flex;
+    justify-content: center;
+}
+
+form {
+    width: 50%;
+}
+
+form>* {
+    padding: 1rem 0;
+}
+
+fieldset {
+    border: none;
+    display: grid;
+    grid-template-columns: 1fr 2fr;
+}
+
+
+fieldset.full-width {
+    grid-template-columns: 1fr;
+}
+
+/* Hamburger menu */
+/* @media only screen and (max-width: 800px) {
+    header ul li {
+        display: none;
+    }
+} */
+
+footer>* {
+    color: white;
+    margin: auto;
+}
+
+/* • The footer should cover the full width of the page the footer text should be in a 
+small font and centred in the footer..  */
+footer {
+    background-color: var(--main-color);
+    width: 100%;
+    padding: 0 10vw 0 10vw;
+    font-size: small;
+    justify-content: center;
+    text-align: center;
+}
+
+.footer-links {
+    text-decoration: none;
+    color: #ccc;
+    display: inline-block;
+}
+
+
+
+/* ------------------------------------------------------------------------------------------------------------------------------ */
+
+/* 5. CSS Requirements 
+No style markup should be included in your HTML file. 
+The pages in your website must be styled with CSS and have a consistent ‘look and feel’, particularly 
+common elements such as menus, headers and footers. While the emphasis is this assignment is on 
+the appropriate application of techniques rather than graphic design, your pages should follow 
+basic usability / accessibility principles, e.g. distinguishable foreground and background colours, and 
+font readability, etc.   
+ 
+Create your own design and implement it using one single external stylesheet that applies to all 
+your Web pages. This file should be named style.css and placed in a styles folder on the server.  
+The stylesheet should style the common elements on all your web pages, and address the following 
+specific style requirements. 
+ 
+
+2. Selectors: All the following CSS Selectors should be used appropriately at some point in this 
+assignment: 
+• element, #id, .class, grouping, contextual 
+• pseudo class, pseudo element  
+3. Menu: The menu should have its own set of styles applied. Use a background colour. 
+4. Index Page: Demonstrated the following specific CSS rules on the index.html page: 
+• display a background graphic. 
+  
+
+
+7. All pages:  should have a fluid layout (the page should “Reflow” on page resize). 
+ 
+Other CSS selectors and properties can be used  as  necessary  and appropriate  for the 
+presentation 
+Do not include any proprietary CSS mark-up, such as –moz- or –webkit  etc. */
+
+
+/* 1. Comments: The CSS should include comments at the beginning of the CSS file to identify 
+author and purpose. Individual line comments should be used as necessary to explain 
+particular styles and explain where they are applied.  */
+
+
+/* • <h1> elements should have their font variant, size and family etc. set using the 
+short-hand font property. */
+h1 {
+    font: normal bold 80px 'Calistoga', cursive;
+}
+
+
+/* 5. Position Descriptions Page: Demonstrated the following specific CSS rules on the jobs.html 
+page: 
+• The <aside> should be 25% of the width of page and float to the right. 
+• The <aside> should have a coloured border with an appropriate margin and 
+padding. */
+aside {
+    width: 25%;
+    float: right;
+    /* border: ; */
+}
+
+/* 6. About Page: Demonstrated the following specific CSS rules on the about.html page: 
+• Style the definition list so that each <dt> is on the left and the <dd> on the right in a 
+single line. Set the dt to have a common width. 
+• The photo should be styled with a single border using the short-hand border-
+property, and the figure should be floated to the right of the definition list 
+• <table> should be centred within the section, headings in bold, table cells with a 
+background colour specified in hexadecimal format 
+• The email should be style similarly to the definition list.  */
+dl {}
+
+/* Refrence */
+/* <dl>
+    <dt>Coffee</dt>
+    <dd>Black hot drink</dd>
+    <dt>Milk</dt>
+    <dd>White cold drink</dd>
+</dl> */

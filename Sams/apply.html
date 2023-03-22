@@ -1,0 +1,170 @@
+<!-- 3. Job application page (apply.html) 
+This page has a form that allows a potential candidate to register their interest in the advertised 
+position. 
+
+All inputs should have labels. All form values, except the comment textarea are ‘required’ or have 
+a default value (e.g. select and checkbox inputs). The user should not be able to submit the form 
+if any of these required fields are blank.   
+ 
+Data Submission to Server 
+The form should have a submit button labelled “Apply”.  When  this  button  is  clicked the  name-
+values  from  the  associated  form  should  be  sent  to  the  server  using  the  post  http  method.  The 
+server action address is https://mercury.swin.edu.au/it000000/formtest.php. The server will then 
+just  echo  back  the  name  value  pairs  to  the  client.  While  nothing  will  be  stored  on  the  server  in 
+this  part  of  the  assignment  (we  will  do  this  in  Part  2)  this  will  allow  the  form  submission  to  be 
+tested. -->
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Apply</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+
+<body>
+    <header>
+
+        <ul>
+            <a href="index.html">
+                <img src="byte-logo.svg" class="icon">Byte&#8482;
+            </a>
+            <li>
+                <a href="index.html">Home</a>
+            </li>
+            <li>
+                <a href="about.html">About</a>
+            </li>
+            <li>
+                <a href="job.html">Jobs</a>
+            </li>
+            <li class="main-color">Apply</li>
+            <li>
+                <a href="enhancements.html">Enhancements</a>
+            </li>
+        </ul>
+    </header>
+    <main>
+        <form action="https://mercury.swin.edu.au/it000000/formtest.php" method="post">
+
+            <fieldset>
+                <!-- Job reference number, exactly 5 alphanumeric characters  -->
+                <label for="job_refrence">Job reference number:</label>
+                <input type="text" name="job_refrence" id="job_refrence" pattern="^([a-zA-Z]|[0-9]){5,5}$" maxlength="5"
+                    required>
+            </fieldset>
+
+            <!-- First name, max 20 alpha characters -->
+            <fieldset>
+
+                <label for="first_name">First name:</label>
+                <input type="text" name="first_name" id="first_name" placeholder="First name"
+                    pattern="^([a-zA-Z]|[0-9]){1,20}" maxlength="20" required>
+            </fieldset>
+
+
+            <!-- Last name, max 20 alpha characters -->
+            <fieldset>
+                <label for="last_name">Last name:</label>
+                <input type="text" name="first_name" id="last_name" placeholder="Last name"
+                    pattern="^([a-zA-Z]|[0-9]){1,20}" maxlength="20" required>
+            </fieldset>
+
+
+            <!-- Date of birth, dd/mm/yyyy  -->
+            <fieldset>
+                <label for="dob">Date of birth:</label>
+                <input type="date" name="dob" id="dob" required>
+            </fieldset>
+
+            <!-- Gender,  radio inputs grouped  using a fieldset and legend  -->
+            <fieldset>
+                <label for="gender">Gender:</label>
+                <input type="radio" name="gender" id="male" value="male" required>
+                <label for="male">Male</label>
+                <input type="radio" name="gender" id="female" value="female" required>
+                <label for="female">Female</label>
+                <input type="radio" name="gender" id="other" value="other" required>
+                <label for="other">Other</label>
+            </fieldset>
+
+            <!-- Street Address,  max 40 characters -->
+            <fieldset>
+                <label for="street_address">Street address:</label>
+                <input type="text" name="street_address" id="street_address" placeholder="Street address" maxlength="40"
+                    required>
+            </fieldset>
+
+            <!-- State,  drop down selection from 
+        VIC,NSW,QLD,NT,WA,SA,TAS,ACT -->
+            <fieldset>
+                <label for="state">State:</label>
+                <select name="state" id="state" required>
+                    <option value="" selected disabled>Select</option>
+                    <option value="VIC">VIC</option>
+                    <option value="NSW">NSW</option>
+                    <option value="QLD">QLD</option>
+                    <option value="NT">NT</option>
+                    <option value="WA">WA</option>
+                    <option value="SA">SA</option>
+                    <option value="TAS">TAS</option>
+                    <option value="ACT">ACT</option>
+                </select>
+            </fieldset>
+
+            <!-- Postcode, exactly 4 digits  -->
+            <fieldset>
+                <label for="post_code">Postcode:</label>
+                <input type="number" name="post_code" id="post_code" maxlength="4" pattern="\d{4,4}" required>
+            </fieldset>
+
+            <!-- Email address, validate format  -->
+            <fieldset>
+                <label for="email">Email address:</label>
+                <input type="email" name="email" id="email" required>
+            </fieldset>
+
+            <!-- Phone number,  8 to 12 digits, or spaces  -->
+            <fieldset>
+                <label for="phone">Phone number:</label>
+                <input type="tel" name="phone" id="phone" pattern="^[0-9\h]{8,12}$" minlength="8" maxlength="12"
+                    required>
+            </fieldset>
+
+            <!-- Skill list (The last item in list should read “Other skills...”), checkbox inputs 
+        Other skills,  textarea  -->
+            <fieldset>
+                <p>Skills List:</p>
+                <label><input type="checkbox" name="skill[]" id="skill_1">Skill1</label>
+                <label><input type="checkbox" name="skill[]" id="skill_2">Skill2</label>
+                <label><input type="checkbox" name="skill[]" id="skill_3">Skill3</label>
+
+                <input type="checkbox" name="skill[]" id="other">
+                <label for="other">Other Skills</label>
+                <!-- Cols will need to be adjusted for width constraints -->
+                <textarea name="skills_description" id="skills_description" cols="20"></textarea>
+            </fieldset>
+
+            <fieldset class="full-width">
+                <input type="submit" value="Apply">
+            </fieldset>
+        </form>
+    </main>
+    <footer>
+        <!-- MUST INCLUDE ALL OUR EMAILS -->
+        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Blanditiis, cum.</p>
+        <hr>
+        <a href="" class="footer-links">
+            <p>Privacy Policy</p>
+        </a>
+        <a href="" class="footer-links">
+            <p>Terms and Conditions</p>
+        </a>
+    </footer>
+</body>
+
+</html>
