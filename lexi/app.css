@@ -1,0 +1,172 @@
+* {
+    /* font-family: 'Roboto',sans-serif; */
+    font-family: "Little One", cursive;
+}
+
+/* .profile {
+    font-family: "Little One", cursive;
+} */
+
+body {
+    margin-top: 0;
+    height: 100h;
+    padding: 30px;
+    background-size: cover;
+    font-family: sans-serif;
+}
+
+header {
+    background-color: lightskyblue;
+    position: fixed;
+    left: 0;
+    right: 0;
+    top: 0;
+    height: 40px;
+    display: flex;
+    align-items: center;
+    margin-top: 0;
+}
+
+header * {
+    display: inline;
+    font-size: 1.2rem;
+}
+
+header li {
+    margin: 10px;
+}
+
+header li a {
+
+    color: rgb(255, 255, 255);
+    text-decoration: none;
+}
+
+
+
+button {
+    background: none;
+    transition: all 0.2s;
+    font-weight: 700;
+    border: none;
+}
+
+#about {
+    /* border-bottom: 1px solid rgb(109, 181, 230);   */
+
+    /* border-radius: 10%; */
+    padding: 0;
+
+}
+
+#about a {
+    color: rgb(0, 133, 182);
+}
+
+button:hover {
+    color: #caf0f8;
+    box-shadow: 0 8px 8px -6px;
+    transform: translateY(-0.2em);
+    cursor: pointer;
+}
+
+/* #about:hover {
+ border: 2px solid #caf0f8;    
+} */
+
+#about a:hover {
+    color: white;
+}
+
+.info {
+    margin-top: 40px;
+    display: flex;
+    align-items: center;
+    /* justify-content: center; */
+}
+
+#logo {
+    display: inline-block;
+}
+
+dt, dd {
+    display: inline-block;
+    font-size: 30px;
+    margin-left: 5px;
+    font-weight: 700;
+    
+}
+
+dl {
+    text-align: center;
+}
+
+h1 {
+    text-align: center;
+}
+
+.profile {
+    display: flex;
+    align-items: center;
+}
+
+.profile figure {
+    display: inline-block;
+    width: 30%;
+    margin: 0;
+}
+
+.grey {
+    background-color: rgb(241, 244, 254);
+}
+
+figure img {
+    width: 100%;
+}
+
+.profile p {
+    display: inline-block;
+    width: 70%;
+    padding: 10%;
+}
+
+
+table,
+th,
+td {
+    border: 1px solid black;
+    border-collapse: collapse;
+}
+
+.timetable {
+    max-width: 100%;
+}
+
+td,
+th {
+    /* min-width: 4rem; */
+}
+
+.one {
+    background-color: #caf0f8;
+}
+
+.two {
+    background-color: #90e0ef;
+}
+
+.three {
+    background-color: #0096c7;
+}
+
+.four {
+    background-color: #0077b6;
+}
+
+.five {
+    background-color: #023e8a;
+}
+
+.six {
+    background-color: #e76f51;
+}
