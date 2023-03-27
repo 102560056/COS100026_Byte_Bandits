@@ -2,10 +2,10 @@
 
 /* Sam.B Global Variables for standardised styling */
 :root {
-    /* --main-color: #4c00b0; */
+    font-size: 16px;
+    --main-color: #4c00b0;
     /* --main-color: #7600bc */
     /* --main-color: #8a00c2 */
-    --main-color: #a0a252;
 }
 
 /* Sam.B Overide default behaviours to produce more predictible behaviours */
@@ -16,6 +16,7 @@ html {
 
 /* Sam.B Overide default behaviours to produce more predictible behaviours */
 * {
+    outline: none;
     font-family: 'Roboto', sans-serif;
     box-sizing: border-box;
     margin: 0;
@@ -26,7 +27,7 @@ header {
     position: sticky;
     top: 0;
     padding: 6vh 10vw;
-    font-size: 1.1rem;
+    font-size: 1rem;
     font-weight: bold;
     background-color: white;
     box-shadow: 0 0 .8rem 0 #ccc;
@@ -38,7 +39,7 @@ header ul li :hover {
     color: var(--main-color);
     cursor: pointer;
     text-align: center;
-    font-size: 1.65rem;
+    font-size: 1.25rem;
     transition: ease 100ms;
 }
 
@@ -73,7 +74,6 @@ header ul li a {
 }
 
 main {
-    height: 200vh;
     width: 100vw;
     padding: 8vh 10vw;
     display: flex;
@@ -91,12 +91,86 @@ form>* {
 fieldset {
     border: none;
     display: grid;
-    grid-template-columns: 1fr 2fr;
+    grid-template-columns: 1fr 1fr;
+    margin: auto;
 }
 
 
-fieldset.full-width {
+fieldset.apply-full-width {
     grid-template-columns: 1fr;
+    width: 40%;
+}
+
+.apply-gender {
+    display: grid;
+    grid-template-columns: auto auto;
+}
+
+.apply-gender p {
+    grid-column: 1 / 3;
+    grid-row: 1 / 1;
+    margin: auto;
+    padding-bottom: 1rem;
+}
+
+.apply-gender input[type=radio] {
+    margin-right: 1rem;
+    justify-self: end;
+}
+
+.other-label {
+    justify-self: start;
+}
+
+.apply-skills p {
+    grid-area: header;
+    margin: auto;
+    padding-bottom: 1rem;
+}
+
+.other-input {
+    grid-area: input;
+    justify-content: stretch;
+    height: 15rem;
+    max-width: 80%;
+}
+
+.other-label {
+    grid-area: label;
+}
+
+.apply-skills {
+    display: grid;
+    grid-template-columns: 1fr 4fr;
+    grid-template-areas:
+        "header header"
+        ". label"
+        ". input"
+        ". input"
+        ". input"
+        ". input"
+        ". input"
+        ". input"
+        ". input";
+}
+
+.apply-skill {
+    display: flex;
+}
+
+fieldset.apply-full-width :hover {
+    cursor: pointer;
+    background-color: var(--main-color);
+}
+
+
+/* Sam.B Styling submit button */
+input[type=submit] {
+    background-color: #944fef;
+    color: white;
+    border: 2px solid rgb(101, 101, 101);
+    border-radius: .3rem;
+    padding: 1rem;
 }
 
 /* Hamburger menu */
@@ -122,11 +196,37 @@ footer {
     text-align: center;
 }
 
-.footer-links {
+footer ul {
+    list-style: none;
+    display: flex;
+    width: 100%;
+    justify-content: center;
+}
+
+footer li {
+    width: fit-content;
+}
+
+footer a {
     text-decoration: none;
     color: #ccc;
-    display: inline-block;
+    display: flex;
+    align-items: center;
 }
+
+footer img {
+    margin: 0 .5rem;
+}
+
+.mission-statement {
+    font-size: 1rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 1rem;
+}
+
+
 
 
 

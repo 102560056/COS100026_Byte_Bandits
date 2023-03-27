@@ -28,10 +28,9 @@ tested. -->
 
 <body>
     <header>
-
         <ul>
             <a href="index.html">
-                <img src="byte-logo.svg" class="icon">Byte&#8482;
+                <img src="media/byte-logo.svg">Byte&#8482;
             </a>
             <li>
                 <a href="index.html">Home</a>
@@ -60,7 +59,6 @@ tested. -->
 
             <!-- First name, max 20 alpha characters -->
             <fieldset>
-
                 <label for="first_name">First name:</label>
                 <input type="text" name="first_name" id="first_name" placeholder="First name"
                     pattern="^([a-zA-Z]|[0-9]){1,20}" maxlength="20" required>
@@ -82,14 +80,15 @@ tested. -->
             </fieldset>
 
             <!-- Gender,  radio inputs grouped  using a fieldset and legend  -->
-            <fieldset>
-                <label for="gender">Gender:</label>
+            <fieldset class="apply-gender">
+                <!-- <label for="gender">Gender:</label> -->
+                <p>Gender</p>
                 <input type="radio" name="gender" id="male" value="male" required>
                 <label for="male">Male</label>
                 <input type="radio" name="gender" id="female" value="female" required>
                 <label for="female">Female</label>
                 <input type="radio" name="gender" id="other" value="other" required>
-                <label for="other">Other</label>
+                <label for="female">Other</label>
             </fieldset>
 
             <!-- Street Address,  max 40 characters -->
@@ -137,33 +136,67 @@ tested. -->
 
             <!-- Skill list (The last item in list should read “Other skills...”), checkbox inputs 
         Other skills,  textarea  -->
-            <fieldset>
-                <p>Skills List:</p>
-                <label><input type="checkbox" name="skill[]" id="skill_1">Skill1</label>
-                <label><input type="checkbox" name="skill[]" id="skill_2">Skill2</label>
-                <label><input type="checkbox" name="skill[]" id="skill_3">Skill3</label>
-
-                <input type="checkbox" name="skill[]" id="other">
-                <label for="other">Other Skills</label>
-                <!-- Cols will need to be adjusted for width constraints -->
-                <textarea name="skills_description" id="skills_description" cols="20"></textarea>
+            <fieldset class="apply-skills">
+                <p>Skills List</p>
+                <label class="apply-skill"><input type="checkbox" name="skill[]" id="CSS">CSS</label>
+                <label class="apply-skill"><input type="checkbox" name="skill[]" id="HTML">HTML</label>
+                <label class="apply-skill"><input type="checkbox" name="skill[]" id="Ruby">Ruby</label>
+                <label class="apply-skill"><input type="checkbox" name="skill[]" id="C#">C#</label>
+                <label class="apply-skill"><input type="checkbox" name="skill[]" id="Python">Python</label>
+                <label class="other-label"><input type="checkbox" name="skill[]" id="other">Other
+                    Skills</label>
+                <textarea name="skills_description" id="skills_description" class="other-input"
+                    style="resize: none;"></textarea>
             </fieldset>
 
-            <fieldset class="full-width">
+            <fieldset class="apply-full-width">
                 <input type="submit" value="Apply">
             </fieldset>
         </form>
     </main>
+
     <footer>
         <!-- MUST INCLUDE ALL OUR EMAILS -->
-        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Blanditiis, cum.</p>
+        <section class="mission-statement">
+            <img src="media/byte-logo-alt.svg" alt="">
+            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Blanditiis, cum.</p>
+        </section>
+        <ul>
+
+        </ul>
         <hr>
-        <a href="" class="footer-links">
-            <p>Privacy Policy</p>
-        </a>
-        <a href="" class="footer-links">
-            <p>Terms and Conditions</p>
-        </a>
+        <ul>
+            <li>
+                <a href="mailto:102560056@student.swin.edu.au">
+                    <img src="media/email.svg">
+                    <p>Sam Banfield</p>
+                </a>
+            </li>
+            <li>
+                <a href="mailto:104119968@student.swin.edu.au">
+                    <img src="media/email.svg">
+                    <p>Saffan Malik</p>
+                </a>
+            </li>
+            <li>
+                <a href="mailto:104453323@student.swin.edu.au">
+                    <img src="media/email.svg">
+                    <p>Preston Hulme</p>
+                </a>
+            </li>
+            <li>
+                <a href="mailto:104147451@student.swin.edu.au">
+                    <img src="media/email.svg">
+                    <p>Lexi Peng</p>
+                </a>
+            </li>
+            <li>
+                <a href="mailto:103163537@student.swin.edu.au">
+                    <img src="media/email.svg">
+                    <p>Randew Kumarasinghe</p>
+                </a>
+            </li>
+        </ul>
     </footer>
 </body>
 
