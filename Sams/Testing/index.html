@@ -1,0 +1,78 @@
+<!-- 3. Job application page (apply.html) 
+This page has a form that allows a potential candidate to register their interest in the advertised 
+position. 
+
+All inputs should have labels. All form values, except the comment textarea are ‘required’ or have 
+a default value (e.g. select and checkbox inputs). The user should not be able to submit the form 
+if any of these required fields are blank.   
+ 
+Data Submission to Server 
+The form should have a submit button labelled “Apply”.  When  this  button  is  clicked the  name-
+values  from  the  associated  form  should  be  sent  to  the  server  using  the  post  http  method.  The 
+server action address is https://mercury.swin.edu.au/it000000/formtest.php. The server will then 
+just  echo  back  the  name  value  pairs  to  the  client.  While  nothing  will  be  stored  on  the  server  in 
+this  part  of  the  assignment  (we  will  do  this  in  Part  2)  this  will  allow  the  form  submission  to  be 
+tested. -->
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Apply</title>
+    <link rel="stylesheet" href="index.css">
+</head>
+
+
+<body>
+    <header>
+        <ul>
+            <a href="index.html" class="icon">
+                <img src="media/byte-logo.svg">Byte&#8482;
+            </a>
+            <li>
+                <a href="index.html" class="original-menu">Home</a>
+            </li>
+            <li>
+                <a href="about.html" class="original-menu">About</a>
+            </li>
+            <li>
+                <a href="job.html" class="original-menu">Jobs</a>
+            </li>
+            <li class="main-color" class="original-menu">Apply</li>
+            <li>
+                <a href="enhancements.html" class="original-menu">Enhancements</a>
+            </li>
+        </ul>
+    </header>
+
+    <!-- posiition absolute? then you can use the ~ selector -->
+    <label class="hamburger-menu">
+        <input type="checkbox">
+        <!-- <img src="media/menu.svg" alt=""> -->
+    </label>
+
+    <section class="drop-down">
+        <ul>
+            <li>
+                <a href="index.html">Home</a>
+            </li>
+            <li>
+                <a href="about.html">About</a>
+            </li>
+            <li>
+                <a href="job.html">Jobs</a>
+            </li>
+            <li>
+                <a href="apply.html">Jobs</a>
+            </li>
+            <li>
+                <a href="enhancements.html">Enhancements</a>
+            </li>
+        </ul>
+    </section>
+</body>
+
+</html>

@@ -1,0 +1,110 @@
+:root {
+    font-size: 16px;
+    --main-color: #4c00b0;
+    /* --main-color: #7600bc */
+    /* --main-color: #8a00c2 */
+}
+
+/* Sam.B Overide default behaviours to produce more predictible behaviours */
+html {
+    height: 100vh;
+    overflow-x: hidden;
+}
+
+/* Sam.B Overide default behaviours to produce more predictible behaviours */
+* {
+    outline: none;
+    font-family: 'Roboto', sans-serif;
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+header {
+    position: sticky;
+    top: 0;
+    padding: 4vh 10vw;
+    font-size: 1rem;
+    font-weight: bold;
+    background-color: white;
+    box-shadow: 0 0 .8rem 0 #ccc;
+    border-radius: .5rem;
+}
+
+/* Sam.B Hover effects for seleting another page in header. change color and scale up with animations */
+header ul li :hover {
+    cursor: pointer;
+    text-align: center;
+
+}
+
+.original-menu :hover {
+    color: var(--main-color);
+    font-size: 1.25rem;
+    transition: ease 100ms;
+}
+
+/* Sam.B Basic headerbar stylings */
+header ul {
+    display: flex;
+    list-style: none;
+    align-items: center;
+}
+
+header ul li {
+    list-style-type: none;
+    text-align: center;
+    width: 13vw;
+}
+
+header ul a {
+    text-decoration: none;
+    color: black;
+    width: 16vw;
+}
+
+header ul li a,
+section ul li a {
+    color: rgb(101, 101, 101);
+    text-decoration: none;
+}
+
+.drop-down {
+    height: fit-content;
+    font-size: 2rem;
+    text-align: end;
+    background-color: #ddd9de;
+    /* display: none; */
+}
+
+.drop-down ul :hover {
+    background-color: #ccc;
+}
+
+.main-color {
+    color: var(--main-color);
+}
+
+.hamburger-menu {
+    display: none;
+    display: flex;
+}
+
+.hamburger-menu input {
+    /* appearance: none; */
+    width: max-content;
+}
+
+header:has(input[type=checkbox]:checked)~.drop-down {
+    background-color: #4c00b0;
+}
+
+@media only screen and (max-width: 900px) {
+    .hamburger-menu {
+        display: block;
+    }
+
+    ul :is(.original-menu, .main-color) {
+        display: none;
+    }
+}
