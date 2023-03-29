@@ -35,7 +35,6 @@ header {
 header ul li :hover {
     cursor: pointer;
     text-align: center;
-
 }
 
 .original-menu :hover {
@@ -74,7 +73,11 @@ section ul li a {
     font-size: 2rem;
     text-align: end;
     background-color: #ddd9de;
-    /* display: none; */
+    display: none;
+}
+
+.drop-down ul li{
+    padding-right: 2rem;
 }
 
 .drop-down ul :hover {
@@ -86,25 +89,48 @@ section ul li a {
 }
 
 .hamburger-menu {
-    display: none;
+    position: absolute;
+    top: 6vh;
+    right: 10vw;
+    cursor: pointer;
     display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
 .hamburger-menu input {
-    /* appearance: none; */
+    appearance: none;
     width: max-content;
 }
 
-header:has(input[type=checkbox]:checked)~.drop-down {
-    background-color: #4c00b0;
+.close{
+    display: none;
+    position: relative;
+}
+
+.menu{
+    position: relative;
 }
 
 @media only screen and (max-width: 900px) {
-    .hamburger-menu {
+    ul :is(.original-menu, .main-color) {
+        display: none;
+    }
+    :has([type=checkbox]:checked) ~ .drop-down {
         display: block;
     }
+    
+    [type=checkbox]:checked ~ .close{
+        display: block;
+    }
+    
+    [type=checkbox]:checked ~ .menu{
+        display: none;
+    }
+}
 
-    ul :is(.original-menu, .main-color) {
+@media only screen and (min-width: 900px) {
+    .hamburger-menu {
         display: none;
     }
 }
