@@ -1,172 +1,272 @@
 * {
-    /* font-family: 'Roboto',sans-serif; */
-    font-family: "Little One", cursive;
+    font-family: 'Roboto', sans-serif;
+    /* font-family: "Little One", cursive; */
 }
 
-/* .profile {
-    font-family: "Little One", cursive;
-} */
-
-body {
-    margin-top: 0;
-    height: 100h;
-    padding: 30px;
-    background-size: cover;
-    font-family: sans-serif;
+/* About Page-section1 profile styling(toggle) */
+.about-body {
+    color: white;
+    background-color: #000000;
 }
 
-header {
-    background-color: lightskyblue;
-    position: fixed;
-    left: 0;
-    right: 0;
-    top: 0;
-    height: 40px;
+/* Set the default styles for the content elements */
+.about-profile .content {
+    display: none;
+  }
+  
+  /* Show the content element for Lexi when its radio button is checked */
+  #lexi_l:checked ~ #lexi {
     display: flex;
+ padding: 2%;
+    border-radius: 0 5px 5px 5px;
+   color: white;
     align-items: center;
+    border: 2px solid white;
+       /* background-color: #fe9d30;
+    box-shadow: 3px 0px 0px 5px #fe9d30;
+    border: 2px solid black; */
+
+  }
+  
+  /* Show the content element for Sam when its radio button is checked */
+  #sam_l:checked ~ #sam {
+    display: flex;
+    padding: 2%;
+    border-radius: 5px 5px 5px 5px;
+  color: white;
+     align-items: center;
+     border: 2px solid white;
+     
+      /* background-color: #fe9d30;
+    box-shadow: 3px 0px 0px 5px #fe9d30;
+    border: 2px solid black; */
+  }
+  
+  /* Show the content element for Preston when its radio button is checked */
+  #preston_l:checked ~ #preston {
+    display: flex;
+    padding: 2%;
+    border-radius: 5px 5px 5px 5px;
+  color: white;
+     align-items: center;
+     border: 2px solid white;
+     
+      /* background-color: #fe9d30;
+    box-shadow: 3px 0px 0px 5px #fe9d30;
+    border: 2px solid black; */
+  }
+  
+  /* Show the content element for Saffan when its radio button is checked */
+  #saffan_l:checked ~ #saffan {
+    display: flex;
+    padding: 2%;
+    border-radius: 5px 5px 5px 5px;
+  color: white;
+     align-items: center;
+     border: 2px solid white;
+     
+      /* background-color: #fe9d30;
+    box-shadow: 3px 0px 0px 5px #fe9d30;
+    border: 2px solid black; */
+  }
+  
+  /* Show the content element for Randew when its radio button is checked */
+  #randew_l:checked ~ #randew {
+    display: flex;
+    padding: 2%;
+    border-radius: 5px 5px 5px 5px;
+  color: white;
+     align-items: center;
+     border: 2px solid white;
+     
+      /* background-color: #fe9d30;
+    box-shadow: 3px 0px 0px 5px #fe9d30;
+    border: 2px solid black; */
+  }
+  
+ .about-profile .content figure {
+    display: inline-block;
+    width: 25%;
+    margin: 5%;
+}
+
+.about-profile .content figure img {
+    width: 90%;
+}
+
+.about-profile .content figcaption a {
+    color: white;
+
+}
+
+.about-profile-content {
+    display: inline-block;
+    width: 70%;
+    padding: 2%;
+}
+
+.about-profile-content h2 {
     margin-top: 0;
 }
 
-header * {
-    display: inline;
-    font-size: 1.2rem;
-}
-
-header li {
-    margin: 10px;
-}
-
-header li a {
-
-    color: rgb(255, 255, 255);
-    text-decoration: none;
-}
-
-
-
-button {
-    background: none;
-    transition: all 0.2s;
-    font-weight: 700;
-    border: none;
-}
-
-#about {
-    /* border-bottom: 1px solid rgb(109, 181, 230);   */
-
-    /* border-radius: 10%; */
-    padding: 0;
-
-}
-
-#about a {
-    color: rgb(0, 133, 182);
-}
-
-button:hover {
-    color: #caf0f8;
-    box-shadow: 0 8px 8px -6px;
-    transform: translateY(-0.2em);
-    cursor: pointer;
-}
-
-/* #about:hover {
- border: 2px solid #caf0f8;    
-} */
-
-#about a:hover {
+.about-profile-content p a {
     color: white;
 }
-
-.info {
-    margin-top: 40px;
-    display: flex;
-    align-items: center;
-    /* justify-content: center; */
-}
-
-#logo {
+  
+.about-profile label {
     display: inline-block;
-}
+    width: 15%;
+    text-align: left;
+    padding: 5px;
+    border-radius: 5px 5px 0 0;
+    /* border: 2px solid black; */
+    box-sizing: border-box;
+    margin-bottom: -2px;
 
-dt, dd {
-    display: inline-block;
-    font-size: 30px;
-    margin-left: 5px;
-    font-weight: 700;
+    /* background-color: #000000; */
+  }
+
+.about-profile label:hover {
+    background-color: #fe9d30;
+    color: white;
+    border:2px solid white;
+    border-bottom: #fe9d30;
+  }
+
+.about-profile input[type="radio"]:checked + label {
+    background-color: #000000;
+    /* box-shadow: 0px -3px 0px 2px #fe9d30; */
+    /* border: 2px solid black; */
+    /* background-color: #fe9d30; */
+    color: white;
+    border:2px solid white;
+    border-bottom: #fe9d30;
+  }
+
+.about-profile input {
+    display: none;
+  }
+
+  .about-profile {
     
-}
+  }
 
-dl {
-    text-align: center;
-}
+  .about-main  {
+    margin: 0 5%;
+  }
 
-h1 {
-    text-align: center;
-}
-
-.profile {
+  /* Profile styling-strip */
+  .profile {
     display: flex;
     align-items: center;
 }
 
-.profile figure {
+.about-strip-profile .profile figure {
     display: inline-block;
     width: 30%;
-    margin: 0;
+    margin: 0 5% 0 5%;
 }
 
-.grey {
-    background-color: rgb(241, 244, 254);
+.about-strip-profile .grey {
+    background-color: #fe9d30;
+    border-radius: 10px;
 }
 
-figure img {
+.about-strip-profile figure img {
     width: 100%;
 }
 
-.profile p {
+.about-strip-profile .profile p {
     display: inline-block;
     width: 70%;
     padding: 10%;
+} 
+
+.about-strip-profile .profile p a {
+    color: white;
 }
 
 
-table,
-th,
-td {
-    border: 1px solid black;
-    border-collapse: collapse;
+  /* About page-section 2 : time table styling */
+  
+  
+  .about-timetable {
+      max-width: 100%;
+  }
+
+ .about-timetable table {
+      border: 2px solid #fe9d30;
+      border-collapse: collapse;
+ color: white;
+ background-color: #000000;
+  }
+
+ .about-timetable td,
+  th {
+    border: 1px solid #ffffff;
+    border-right: none;
+    border-left: none;
+  }
+  
+.about-timetable .color {
+  border: none;
 }
 
-.timetable {
-    max-width: 100%;
+.about-timetable .column-header {
+
+  font-weight: 700;
+  font-size: 20px;
+  padding: 10px;
+  border-right:1px solid #ffffff;;
 }
 
-td,
-th {
-    /* min-width: 4rem; */
+.about-timetable  .one {
+      background-color: #caf0f8;
+  }
+  
+.about-timetable  .two {
+      background-color: #90e0ef;
+  }
+  
+.about-timetable  .three {
+      background-color: #0096c7;
+  }
+  
+.about-timetable  .four {
+      background-color: #0077b6;
+  }
+  
+.about-timetable  .five {
+      background-color: #023e8a;
+  }
+  
+.about-timetable  .six {
+      background-color: #e76f51;
+  }
+  
+/* About Page-section 3: group details */
+.about-group-details dt,
+dd {
+    display: inline-block;
+    font-size: 15px;
+    margin-left: 5px;
+    font-weight: 700;
+
 }
 
-.one {
-    background-color: #caf0f8;
+.about-group-details dl {
+    text-align: center;
 }
 
-.two {
-    background-color: #90e0ef;
+.about-group-details h1 {
+    text-align: center;
 }
 
-.three {
-    background-color: #0096c7;
+.about-group-details {
+    background-color: #fe9d30;
+    padding: 5% 5% 10% 5%;
+    margin: 5% 0;
 }
 
-.four {
-    background-color: #0077b6;
-}
+/* animation */
 
-.five {
-    background-color: #023e8a;
-}
-
-.six {
-    background-color: #e76f51;
-}
