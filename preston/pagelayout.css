@@ -1,32 +1,31 @@
 * {font-family: sans-serif;}
 
-aside {
-    width: 50%;
-    padding-left: 7px;
-    margin-left: 15px;
-    float: right;
-    font-style: italic;
-    background-color: lightpink;
-  }
-
-  .sect_collapse summary {
-    cursor: pointer
+.jobs-aside {
+  width: 50%;
+  padding-left: 7px;
+  margin-left: 15px;
+  float: right;
+  font-style: italic;
+  background-color: lightpink;
 }
 
-.sect_collapse summary > * {
-    display: inline;
-    font-family: system-ui, "Segoe UI", sans-serif;
+.jobs-section-collapse summary {
+  cursor: pointer
+}
+
+.jobs-section-collapse summary > * {
+  display: inline;
+  font-family: system-ui, "Segoe UI", sans-serif;
   margin: 0 auto;
   max-width: 60rem;
   padding: 0 .5rem;
 }
 
-.sect_collapse {
-    background: #eee;
-    margin-bottom: 2rem;
-    padding: .5rem 1rem;
-  }
+.jobs-section-collapse {
+  background: #eee;
+  margin-bottom: 2rem;
+  padding: .5rem 1rem;
+}
 
-
-  h3 {color: purple;}
-  h4 {color: purple;}
+h3 {color: purple;}
+h4 {color: purple;}
