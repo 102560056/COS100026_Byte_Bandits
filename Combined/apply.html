@@ -12,24 +12,52 @@
 
 <body>
     <header>
+        <section class="static-menu">
         <ul>
-            <a href="index.html">
+            <a href="index.html" class="icon">
                 <img src="media/byte-logo.svg">Byte&#8482;
             </a>
             <li>
-                <a href="index.html">Home</a>
+                <a href="index.html" class="original-menu">Home</a>
             </li>
             <li>
-                <a href="about.html">About</a>
+                <a href="about.html" class="original-menu">About</a>
             </li>
             <li>
-                <a href="job.html">Jobs</a>
+                <a href="job.html" class="original-menu">Jobs</a>
             </li>
-            <li class="main-color">Apply</li>
+            <li class="main-color" class="original-menu">Apply</li>
             <li>
-                <a href="enhancements.html">Enhancements</a>
+                <a href="enhancements.html" class="original-menu">Enhancements</a>
+            </li>
+            <li>
+                <label class="hamburger-menu">
+                    <input type="checkbox">
+                    <img src="media/menu.svg" alt="" class="menu">
+                    <img src="media/close.svg" alt="" class="close">
+                </label>
             </li>
         </ul>
+    </section>
+        <section class="drop-down">
+            <ul>
+                <li>
+                    <a href="index.html">Home</a>
+                </li>
+                <li>
+                    <a href="about.html">About</a>
+                </li>
+                <li>
+                    <a href="job.html">Jobs</a>
+                </li>
+                <li>
+                    <a href="apply.html">Apply</a>
+                </li>
+                <li>
+                    <a href="enhancements.html">Enhancements</a>
+                </li>
+            </ul>
+        </section>
     </header>
 
 <!-- -------------------------------- -->
@@ -173,12 +201,9 @@
                 <tr><td><a href="job.html">Job</a></td></tr>
                 <tr><td><a href="apply.html">Apply</a></td></tr>
             </table>
-        </section>
-        <ul>
-
-        </ul>
+        </section>  
         <hr>
-        <ul>
+        <ul class="footer-emails">
             <li>
                 <a href="mailto:102560056@student.swin.edu.au">
                     <img src="media/email.svg">

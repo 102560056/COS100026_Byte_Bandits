@@ -1,8 +1,6 @@
 :root {
     font-size: 16px;
     --main-color: #4c00b0;
-    /* --main-color: #7600bc */
-    /* --main-color: #8a00c2 */
 }
 
 /* Sam.B Overide default behaviours to produce more predictible behaviours */
@@ -23,7 +21,7 @@ html {
 header {
     position: sticky;
     top: 0;
-    padding: 4vh 10vw;
+    padding: 4vh 10vw 0 10vw;
     font-size: 1rem;
     font-weight: bold;
     background-color: white;
@@ -48,6 +46,7 @@ header ul {
     display: flex;
     list-style: none;
     align-items: center;
+    padding-bottom: 4vh;
 }
 
 header ul li {
@@ -78,21 +77,31 @@ section ul li a {
 }
 
 .drop-down {
-    height: fit-content;
+    position: absolute;
+    left: 0;
+    width: 100vw;
     font-size: 2rem;
-    text-align: end;
-    background-color: #ddd9de;
     display: none;
-    box-shadow: 0 0 .8rem 0 #ccc;
-    border-radius: .5rem;
+}
+
+.drop-down ul{
+    display: flex;
+    flex-direction: column;
+    padding-top: 5vh;
+    height: 100%;
 }
 
 .drop-down ul li{
-    padding-right: 2rem;
+    height: 20%;
+    display: flex;
+}
+
+.drop-down a{
+    align-self: center;
 }
 
 .drop-down ul :hover {
-    background-color: #ccc;
+    color: black;
 }
 
 .main-color {
@@ -119,14 +128,25 @@ section ul li a {
     position: relative;
 }
 
+@keyframes drop-down-expand {
+    from {height: 0;}
+    to {height: 80vh;}
+}
+
 @media only screen and (max-width: 900px) {
     ul :is(.original-menu, .main-color) {
         display: none;
     }
     :has([type=checkbox]:checked) ~ .drop-down {
         display: block;
+        animation: drop-down-expand .3s;
+        height: 80vh;
     }
-    
+
+    :has([type=checkbox]:checked){
+        overflow: none;
+    }
+
     [type=checkbox]:checked ~ .close{
         display: block;
     }

@@ -33,10 +33,13 @@ header {
 }
 
 /* Sam.B Hover effects for seleting another page in header. change color and scale up with animations */
-header ul li :hover {
-    color: var(--main-color);
+header a :hover {
     cursor: pointer;
     text-align: center;
+}
+
+.original-menu :hover {
+    color: var(--main-color);
     font-size: 1.25rem;
     transition: ease 100ms;
 }
@@ -45,10 +48,11 @@ header ul li :hover {
 header ul {
     display: flex;
     list-style: none;
+    text-align: center;
     align-items: center;
 }
 
-header ul li {
+.static-menu ul li {
     list-style-type: none;
     text-align: center;
     width: 13vw;
@@ -60,7 +64,101 @@ header ul a {
     width: 16vw;
 }
 
-header ul li a {
+.container{
+    height: auto;
+    width: 100%;
+}
+
+.drop-down {
+    background-color: white;
+    position: absolute;
+    left: 0;
+    width: 100vw;
+    font-size: 2rem;
+    display: none;
+}
+
+.drop-down ul{
+    display: flex;
+    flex-direction: column;
+    padding-top: 5vh;
+    height: 80vh;
+}
+
+.drop-down ul li{
+    height: 20%;
+    display: flex;
+}
+
+.drop-down a{
+    align-self: center;
+    width: fit-content;
+}
+
+.drop-down ul :hover {
+    color: black;
+}
+
+.hamburger-menu {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.hamburger-menu input {
+    appearance: none;
+    width: max-content;
+}
+
+.close{
+    display: none;
+    position: relative;
+}
+
+.menu{
+    position: relative;
+}
+
+@keyframes drop-down-expand {
+    from {height: 0;}
+    to {height: 80vh;}
+}
+
+@media only screen and (max-width: 900px) {
+    ul :is(.original-menu, .main-color) {
+        display: none;
+    }
+    :has([type=checkbox]:checked) ~ .drop-down {
+        display: block;
+        animation: drop-down-expand .3s;
+        height: 80vh;
+    }
+
+    :has([type=checkbox]:checked){
+        overflow: none;
+    }
+
+    [type=checkbox]:checked ~ .close{
+        display: block;
+    }
+    
+    [type=checkbox]:checked ~ .menu{
+        display: none;
+    }
+
+    footer .footer-statment{
+        display: none;
+    } 
+}
+
+@media only screen and (min-width: 900px) {
+    .hamburger-menu {
+        display: none;
+    }
+}
+
+header ul li a,
+section ul li a {
     color: rgb(101, 101, 101);
     text-decoration: none;
 }
@@ -178,6 +276,7 @@ footer ul {
     display: flex;
     width: 100%;
     justify-content: center;
+    padding: 1rem;
 }
 
 footer li {
