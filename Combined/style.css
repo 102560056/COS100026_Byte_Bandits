@@ -1,0 +1,222 @@
+@import url('https://fonts.googleapis.com/css2?family=Calistoga&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap');
+
+/* Sam.B Global Variables for standardised styling */
+:root {
+    font-size: 16px;
+    --main-color: #EC1C2D;
+}
+
+/* Sam.B Overide default behaviours to produce more predictible behaviours */
+html {
+    height: 100vh;
+    overflow-x: hidden;
+}
+
+/* Sam.B Overide default behaviours to produce more predictible behaviours */
+* {
+    outline: none;
+    font-family: 'Roboto', sans-serif;
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+header {
+    position: sticky;
+    top: 0;
+    padding: 6vh 10vw;
+    font-size: 1rem;
+    font-weight: bold;
+    background-color: white;
+    box-shadow: 0 0 .8rem 0 #ccc;
+    border-radius: .5rem;
+}
+
+/* Sam.B Hover effects for seleting another page in header. change color and scale up with animations */
+header ul li :hover {
+    color: var(--main-color);
+    cursor: pointer;
+    text-align: center;
+    font-size: 1.25rem;
+    transition: ease 100ms;
+}
+
+/* Sam.B Basic headerbar stylings */
+header ul {
+    display: flex;
+    list-style: none;
+    align-items: center;
+}
+
+header ul li {
+    list-style-type: none;
+    text-align: center;
+    width: 13vw;
+}
+
+header ul a {
+    text-decoration: none;
+    color: black;
+    width: 16vw;
+}
+
+header ul li a {
+    color: rgb(101, 101, 101);
+    text-decoration: none;
+}
+
+
+/* Sam.B All elements tagged with main-color will be assigned the main color allowing us to change our minds later */
+.main-color {
+    color: var(--main-color);
+}
+
+main {
+    width: 100vw;
+    padding: 8vh 10vw;
+    display: flex;
+    justify-content: center;
+}
+
+form {
+    width: 50%;
+}
+
+form>* {
+    padding: 1rem 0;
+}
+
+fieldset {
+    border: none;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    margin: auto;
+}
+
+
+fieldset.apply-full-width {
+    grid-template-columns: 1fr;
+    width: 40%;
+}
+
+.apply-bold{
+    font-weight: bold;
+}
+
+.other-label {
+    justify-self: start;
+}
+
+.apply-skills :first-child {
+    grid-area: header;
+    padding-bottom: 1rem;
+}
+
+.other-input {
+    grid-area: input;
+    justify-content: stretch;
+    height: 15rem;
+    max-width: 80%;
+}
+
+.other-label {
+    grid-area: label;
+}
+
+.apply-skills {
+    display: grid;
+    grid-template-columns: 1fr 4fr;
+    grid-template-areas:
+        "header header"
+        ". label"
+        ". input"
+        ". input"
+        ". input"
+        ". input"
+        ". input"
+        ". input"
+        ". input";
+}
+
+.apply-skill {
+    display: flex;
+}
+
+fieldset.apply-full-width :hover {
+    cursor: pointer;
+    background-color: var(--main-color);
+}
+
+
+/* Sam.B Styling submit button */
+input[type=submit] {
+    background-color: #ef4856;
+    color: white;
+    border: 2px solid rgb(101, 101, 101);
+    border-radius: .3rem;
+    padding: 1rem;
+}
+
+
+footer>* {
+    color: white;
+    fill: white;
+    margin: auto;
+}
+
+footer {
+    background-color: #000000;
+    width: 100%;
+    padding: 0 10vw 1rem 10vw;
+    font-size: small;
+    justify-content: center;
+    text-align: center;
+}
+
+footer ul {
+    list-style: none;
+    display: flex;
+    width: 100%;
+    justify-content: center;
+}
+
+footer li {
+    width: fit-content;
+    margin: 0 0.5rem 0 0.5rem;
+}
+
+footer a {
+    text-decoration: none;
+    color: #ccc;
+    display: flex;
+    align-items: center;
+}
+
+footer section {
+    font-size: 1rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 1rem;
+}
+
+footer table :hover, footer a :hover{
+    color: white;
+}
+
+footer h2{
+    font-size: 1rem;
+}
+
+.footer-statement{
+    max-width: 30%;
+    display: flex;
+    padding: 1rem;
+}
+
+.footer-statement img{
+    padding-right: 0.5rem;
+}
+
+
+

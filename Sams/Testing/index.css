@@ -62,6 +62,15 @@ header ul a {
     width: 16vw;
 }
 
+body{
+    height: 300vh;
+}
+
+.container{
+    height: auto;
+    width: 100%;
+}
+
 header ul li a,
 section ul li a {
     color: rgb(101, 101, 101);
@@ -74,6 +83,8 @@ section ul li a {
     text-align: end;
     background-color: #ddd9de;
     display: none;
+    box-shadow: 0 0 .8rem 0 #ccc;
+    border-radius: .5rem;
 }
 
 .drop-down ul li{
@@ -89,10 +100,6 @@ section ul li a {
 }
 
 .hamburger-menu {
-    position: absolute;
-    top: 6vh;
-    right: 10vw;
-    cursor: pointer;
     display: flex;
     justify-content: center;
     align-items: center;
