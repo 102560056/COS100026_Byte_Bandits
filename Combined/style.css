@@ -1,5 +1,4 @@
 /* ------------ Global Styles ------------ */
-
 @import url('https://fonts.googleapis.com/css2?family=Calistoga&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap');
 
 /* Sam.B Global Variables for standardised styling */
@@ -23,9 +22,20 @@ html {
     padding: 0;
 }
 
+/* Sam.B All elements tagged with main-color will be assigned the main color allowing us to change our minds later */
+.main-color {
+    color: var(--main-color);
+}
+
+main {
+    width: 100vw;
+    padding: 8vh 10vw;
+}
+
+
+
 
 /* ------------ Header ------------ */
-
 header {
     position: sticky;
     top: 0;
@@ -129,8 +139,6 @@ header ul a {
     to {height: 80vh;}
 }
 
-
-
 header ul li a,
 section ul li a {
     color: rgb(101, 101, 101);
@@ -138,16 +146,10 @@ section ul li a {
 }
 
 
-/* Sam.B All elements tagged with main-color will be assigned the main color allowing us to change our minds later */
-.main-color {
-    color: var(--main-color);
-}
+
 
 /* ------------ Apply ------------ */
-
 .apply-main {
-    width: 100vw;
-    padding: 8vh 10vw;
     display: flex;
     justify-content: center;
 }
@@ -221,7 +223,6 @@ fieldset.apply-full-width :hover {
     background-color: var(--main-color);
 }
 
-
 /* Sam.B Styling submit button */
 input[type=submit] {
     background-color: #ef4856;
@@ -232,8 +233,10 @@ input[type=submit] {
 }
 
 
-/* ------------ About ------------ */
 
+
+
+/* ------------ About ------------ */
 /* Set the default styles for the content elements */
 .about-profile .content {
 display: none;
@@ -247,10 +250,6 @@ border-radius: 0 5px 5px 5px;
 color: white;
 align-items: center;
 border: 2px solid white;
-    /* background-color: #fe9d30;
-box-shadow: 3px 0px 0px 5px #fe9d30;
-border: 2px solid black; */
-
 }
 
 /* Show the content element for Sam when its radio button is checked */
@@ -259,12 +258,9 @@ display: flex;
 padding: 2%;
 border-radius: 5px 5px 5px 5px;
 color: white;
-    align-items: center;
-    border: 2px solid white;
-    
-    /* background-color: #fe9d30;
-box-shadow: 3px 0px 0px 5px #fe9d30;
-border: 2px solid black; */
+align-items: center;
+border: 2px solid white;
+border: 2px solid black; 
 }
 
 /* Show the content element for Preston when its radio button is checked */
@@ -273,12 +269,9 @@ display: flex;
 padding: 2%;
 border-radius: 5px 5px 5px 5px;
 color: white;
-    align-items: center;
-    border: 2px solid white;
-    
-    /* background-color: #fe9d30;
-box-shadow: 3px 0px 0px 5px #fe9d30;
-border: 2px solid black; */
+align-items: center;
+border: 2px solid white;
+border: 2px solid black; 
 }
 
 /* Show the content element for Saffan when its radio button is checked */
@@ -287,12 +280,8 @@ display: flex;
 padding: 2%;
 border-radius: 5px 5px 5px 5px;
 color: white;
-    align-items: center;
-    border: 2px solid white;
-    
-    /* background-color: #fe9d30;
-box-shadow: 3px 0px 0px 5px #fe9d30;
-border: 2px solid black; */
+align-items: center;
+border: 2px solid white;
 }
 
 /* Show the content element for Randew when its radio button is checked */
@@ -380,8 +369,8 @@ display: none;
 margin: 0 5%;
 }
 
-  /* Profile styling-strip */
-  .profile {
+/* Profile styling-strip */
+.profile {
     display: flex;
     align-items: center;
 }
@@ -411,10 +400,7 @@ margin: 0 5%;
     color: white;
 }
 
-
-  /* About page-section 2 : time table styling */
-  
-  
+/* About page-section 2 : time table styling */
 .about-timetable {
       max-width: 100%;
 }
@@ -469,6 +455,10 @@ border-left: none;
       background-color: #e76f51;
 }
   
+
+
+
+
 /* ------------ Footer ------------ */
 footer>* {
     color: white;
@@ -531,8 +521,11 @@ footer h2{
     padding-right: 0.5rem;
 }
 
-/* ------------ Resolution Handling ------------ */
 
+
+
+
+/* ------------ Resolution Handling ------------ */
 @media only screen and (max-width: 900px) {
     ul :is(.original-menu, .main-color) {
         display: none;
