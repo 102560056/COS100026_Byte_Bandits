@@ -55,7 +55,7 @@ header a :hover {
 
 .original-menu :hover {
     color: var(--main-color);
-    font-size: 1.25rem;
+    font-size: 1.1rem;
     transition: ease 100ms;
 }
 
@@ -67,7 +67,7 @@ header ul {
     align-items: center;
 }
 
-.static-menu ul li {
+.original-menu {
     list-style-type: none;
     text-align: center;
     width: 13vw;
@@ -75,7 +75,7 @@ header ul {
 
 header ul a {
     text-decoration: none;
-    color: black;
+    color: black;    
     width: 16vw;
 }
 
