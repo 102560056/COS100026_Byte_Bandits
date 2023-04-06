@@ -258,6 +258,10 @@ h2 {
   text-decoration-color: var(--main-color);
 }
 
+hr {
+  margin-bottom: 2rem;
+}
+
 .about-arrow {
   text-align: center;
   font-size: 30px;
