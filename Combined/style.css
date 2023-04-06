@@ -42,6 +42,8 @@ main {
 
 
 /* ------------ Header ------------ */
+
+/* Sam.B Setting the header to stay on the top of the screen above any elements */
 header {
   z-index: 1;
   position: sticky;
@@ -54,24 +56,26 @@ header {
   border-radius: .5rem;
 }
 
-/* Sam.B Hover effects for seleting another page in header. change color and scale up with animations */
+/* Sam.B General link styles */
 header a :hover {
   cursor: pointer;
   text-align: center;
 }
 
+/* Sam.B Hovering over the defult nav menu items causes them to change to the main colour and enlarge slightly */
 .original-menu :hover {
   color: var(--main-color);
   font-size: 1.1rem;
   transition: ease 100ms;
 }
 
-/* Sam.B Basic headerbar stylings */
+/* Sam.B Header elements are listed horizontally and spaced out evenly a centered */
 header ul {
   display: flex;
   list-style: none;
   text-align: center;
   align-items: center;
+  justify-content: space-between;
 }
 
 .original-menu {
@@ -141,6 +145,7 @@ header ul a {
   position: relative;
 }
 
+/* Sam.B Animation for expanding navbar  */
 @keyframes drop-down-expand {
   from {
     height: 0;
@@ -157,6 +162,39 @@ section ul li a {
   text-decoration: none;
 }
 
+/* ------------ Resolution Handling ------------ */
+@media only screen and (max-width: 900px) {
+  ul :is(.original-menu, .main-color) {
+    display: none;
+  }
+
+  :has(.hamburger-menu [type=checkbox]:checked)~.drop-down {
+    display: block;
+    animation: drop-down-expand .3s;
+    height: 90vh;
+  }
+
+  :has(.hamburger-menu [type=checkbox]:checked) {
+    overflow: none;
+  }
+
+  [type=checkbox]:checked~.close {
+    display: block;
+  }
+
+  [type=checkbox]:checked~.menu {
+    display: none;
+  }
+
+}
+
+@media only screen and (min-width: 900px) {
+
+  /* Sam.B Hide hamburger menu again if the screen is scaled back up */
+  .hamburger-menu {
+    display: none;
+  }
+}
 
 
 
@@ -167,7 +205,7 @@ section ul li a {
 }
 
 form {
-  width: 50%;
+  /* width: 50%; */
 }
 
 form>* {
@@ -230,12 +268,13 @@ fieldset.apply-full-width {
   display: flex;
 }
 
+/* Sam.B Styling submit button on hover effect*/
 fieldset.apply-full-width :hover {
   cursor: pointer;
   background-color: var(--main-color);
 }
 
-/* Sam.B Styling submit button */
+/* Sam.B Styling submit button styling*/
 input[type=submit] {
   background-color: #ef4856;
   color: white;
@@ -258,7 +297,7 @@ h2 {
   text-decoration-color: var(--main-color);
 }
 
-hr {
+.about-main hr {
   margin-bottom: 2rem;
 }
 
@@ -540,7 +579,7 @@ transforming, sets the transform style to preserve-3d */
 }
 
 .about-timetable td,
-th {
+.about-timetable th {
   border: 1px solid var(--main-color);
   border-right: none;
   border-left: none;
@@ -594,7 +633,7 @@ th {
 /* This is the media query section of the CSS code which targets screens with a maximum 
 width of 768px, typically mobile devices. It adjusts the styling of various sections to 
 make them more responsive and mobile-friendly. */
-@media (max-width: 800px) {
+@media (max-width: 900px) {
 
   .about-group-info,
   .about-map {
@@ -774,40 +813,4 @@ footer a :hover {
 
 footer h2 {
   font-size: 1rem;
-}
-
-
-
-
-
-/* ------------ Resolution Handling ------------ */
-@media only screen and (max-width: 900px) {
-  ul :is(.original-menu, .main-color) {
-    display: none;
-  }
-
-  :has([type=checkbox]:checked)~.drop-down {
-    display: block;
-    animation: drop-down-expand .3s;
-    height: 80vh;
-  }
-
-  :has([type=checkbox]:checked) {
-    overflow: none;
-  }
-
-  [type=checkbox]:checked~.close {
-    display: block;
-  }
-
-  [type=checkbox]:checked~.menu {
-    display: none;
-  }
-
-}
-
-@media only screen and (min-width: 900px) {
-  .hamburger-menu {
-    display: none;
-  }
 }
