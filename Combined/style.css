@@ -495,10 +495,72 @@ border-left: none;
   padding: .5rem 1rem;
 }
 
-h3, h4 {color: var(--main-color);}
+/* give these a class before colouring them :)
+/* h3, h4 {color: var(--main-color);}
 
 
+/* -------- Enhancements ---------- */
 
+
+#enh-title {
+    margin: 2em;
+}
+
+#enh-title > h1 {
+    font-size: 2em;
+}
+
+#enh-title > p {
+    padding: 1em;
+}
+
+#enh-title > *{
+    max-width: 900px;
+    text-align: center;
+    margin: auto;
+}
+
+/* Style each enhancement description section*/ 
+.enh-enhance-sect {
+    background-color: lightgrey;
+    border: solid;
+    border-width: .3em;
+    border-radius: .4em;
+    border-color: var(--main-color);
+    margin: 2em;
+}
+
+.enh-enhance-sect > h2 {
+    margin: 1em 2em;
+    
+}
+
+.enh-enhance-sect > hr {
+    margin: 0% 2.5% 0% 2.5%;
+}
+
+.enh-enhance-sect > p {
+    padding: 1em 3em;
+}
+
+/* Style the bottom paragraph (link to enhancement paragraph) to give some room at the bottom of the section*/
+.enh-enhance-sect > p:last-child {
+    margin-bottom:1em;
+}
+
+/* Style the code example boxes, keeping them square, ensuring text-wrapping, and try make writing code in them easy */
+.enh-codebox {
+    font-family: monospace;
+    margin: 0em 4em 1em 4em;
+    background: white;
+    word-wrap: break-word;
+    padding: .1rem .3rem .2rem;
+    border-radius: .2rem;
+    display: block;
+    white-space: pre-line;
+    max-width: 700px;
+    min-width: 40%;
+}
 
 
 
