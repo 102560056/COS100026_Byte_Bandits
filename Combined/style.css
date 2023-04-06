@@ -289,7 +289,8 @@ input[type=submit] {
 
 /* ------------ About-Lexi ------------ */
 
-h2 {
+.about-main h2,
+.enh-main h2 {
   font-weight: bold;
   text-align: center;
   font-size: 1.5rem;
@@ -700,22 +701,8 @@ make them more responsive and mobile-friendly. */
 /* -------- Enhancements ---------- */
 
 
-#enh-title {
-  margin: 2em;
-}
-
-#enh-title>h1 {
-  font-size: 2em;
-}
-
-#enh-title>p {
-  padding: 1em;
-}
-
 #enh-title>* {
-  max-width: 900px;
   text-align: center;
-  margin: auto;
 }
 
 /* Style each enhancement description section*/
@@ -728,9 +715,8 @@ make them more responsive and mobile-friendly. */
   margin: 2em;
 }
 
-.enh-enhance-sect>h2 {
+.enh-enhance-sect>h3 {
   margin: 1em 2em;
-
 }
 
 .enh-enhance-sect>hr {
