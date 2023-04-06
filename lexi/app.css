@@ -1,272 +1,467 @@
+/* Basic Page Style Setups */
+/* This section includes basic styles for the entire page such as font-family, margin for .about-main class,
+ font-style, font-size, underline, and color for the .about-title class, and the main color variable. */
+
 * {
-    font-family: 'Roboto', sans-serif;
-    /* font-family: "Little One", cursive; */
+  font-family: 'Roboto', sans-serif;
 }
 
-/* About Page-section1 profile styling(toggle) */
-.about-body {
-    color: white;
-    background-color: #000000;
+.about-main {
+  margin: 0 5%;
 }
+
+.about-title {
+  text-align: center;
+  font-style: italic;
+  text-decoration: underline;
+  text-decoration-color: var(--main-color);
+  font-size: 1.5rem;
+
+}
+
+:root {
+  --main-color: #fe9d30;
+}
+
+.about-arrow {
+  text-align: center;
+  font-size: 30px;
+  color: var(--main-color);
+}
+
+
+/* About Page-section1 profile styling(toggle) */
+/* This section contains styles for the toggle effect for the profiles. It utilise radio input group and
+ ~ operator to realise the toggle effect. It sets the default display to none for all content elements and
+  displays the appropriate one when its radio button is checked. Also, it sets the styles for the content 
+  element and its child elements such as figure and a tag. */
 
 /* Set the default styles for the content elements */
 .about-profile .content {
-    display: none;
-  }
-  
-  /* Show the content element for Lexi when its radio button is checked */
-  #lexi_l:checked ~ #lexi {
-    display: flex;
- padding: 2%;
-    border-radius: 0 5px 5px 5px;
-   color: white;
-    align-items: center;
-    border: 2px solid white;
-       /* background-color: #fe9d30;
-    box-shadow: 3px 0px 0px 5px #fe9d30;
-    border: 2px solid black; */
+  display: none;
+}
 
-  }
-  
-  /* Show the content element for Sam when its radio button is checked */
-  #sam_l:checked ~ #sam {
-    display: flex;
-    padding: 2%;
-    border-radius: 5px 5px 5px 5px;
-  color: white;
-     align-items: center;
-     border: 2px solid white;
-     
-      /* background-color: #fe9d30;
-    box-shadow: 3px 0px 0px 5px #fe9d30;
-    border: 2px solid black; */
-  }
-  
-  /* Show the content element for Preston when its radio button is checked */
-  #preston_l:checked ~ #preston {
-    display: flex;
-    padding: 2%;
-    border-radius: 5px 5px 5px 5px;
-  color: white;
-     align-items: center;
-     border: 2px solid white;
-     
-      /* background-color: #fe9d30;
-    box-shadow: 3px 0px 0px 5px #fe9d30;
-    border: 2px solid black; */
-  }
-  
-  /* Show the content element for Saffan when its radio button is checked */
-  #saffan_l:checked ~ #saffan {
-    display: flex;
-    padding: 2%;
-    border-radius: 5px 5px 5px 5px;
-  color: white;
-     align-items: center;
-     border: 2px solid white;
-     
-      /* background-color: #fe9d30;
-    box-shadow: 3px 0px 0px 5px #fe9d30;
-    border: 2px solid black; */
-  }
-  
-  /* Show the content element for Randew when its radio button is checked */
-  #randew_l:checked ~ #randew {
-    display: flex;
-    padding: 2%;
-    border-radius: 5px 5px 5px 5px;
-  color: white;
-     align-items: center;
-     border: 2px solid white;
-     
-      /* background-color: #fe9d30;
-    box-shadow: 3px 0px 0px 5px #fe9d30;
-    border: 2px solid black; */
-  }
-  
- .about-profile .content figure {
-    display: inline-block;
-    width: 25%;
-    margin: 5%;
+
+/* Show the content element for Lexi when its radio button is checked */
+/* don't change this, the border radius is different with other sections */
+#lexi_l:checked~#lexi {
+  display: flex;
+  padding: 2%;
+  border-radius: 0 5px 5px 5px;
+  align-items: center;
+  border: 4px solid var(--main-color);
+}
+
+/* Show the content element for Sam when its radio button is checked */
+#sam_l:checked~#sam {
+  display: flex;
+}
+
+/* Show the content element for Preston when its radio button is checked */
+#preston_l:checked~#preston {
+  display: flex;
+}
+
+/* Show the content element for Saffan when its radio button is checked */
+#saffan_l:checked~#saffan {
+  display: flex;
+}
+
+/* Show the content element for Randew when its radio button is checked */
+#randew_l:checked~#randew {
+  display: flex;
+}
+
+/* Set the content display for sam, preston, saffan and randew */
+.about-profile .content {
+  padding: 2%;
+  border-radius: 5px 5px 5px 5px;
+  align-items: center;
+  border: 4px solid var(--main-color);
+}
+
+.about-profile .content a {
+  color: black;
+}
+
+/* set profile image display in line with the profile content */
+.about-profile .content figure {
+  display: inline-block;
+  width: 25%;
+  margin: 5%;
 }
 
 .about-profile .content figure img {
-    width: 90%;
+  width: 90%;
 }
 
-.about-profile .content figcaption a {
-    color: white;
-
-}
 
 .about-profile-content {
-    display: inline-block;
-    width: 70%;
-    padding: 2%;
+  display: inline-block;
+  width: 70%;
+  padding: 2%;
 }
 
-.about-profile-content h2 {
-    margin-top: 0;
-}
-
-.about-profile-content p a {
-    color: white;
-}
-  
+/* set style for unselected label*/
 .about-profile label {
-    display: inline-block;
-    width: 15%;
-    text-align: left;
-    padding: 5px;
-    border-radius: 5px 5px 0 0;
-    /* border: 2px solid black; */
-    box-sizing: border-box;
-    margin-bottom: -2px;
+  display: inline-block;
+  width: 15%;
+  text-align: left;
+  padding: 5px;
+  border-radius: 5px 5px 0 0;
+  box-sizing: border-box;
+  margin-bottom: -4px;
+}
 
-    /* background-color: #000000; */
-  }
-
+/* set style for hovered label */
 .about-profile label:hover {
-    background-color: #fe9d30;
-    color: white;
-    border:2px solid white;
-    border-bottom: #fe9d30;
-  }
+  background-color: var(--main-color);
+  border: 2px solid var(--main-color);
+  border-bottom: var(--main-color);
+}
 
-.about-profile input[type="radio"]:checked + label {
-    background-color: #000000;
-    /* box-shadow: 0px -3px 0px 2px #fe9d30; */
-    /* border: 2px solid black; */
-    /* background-color: #fe9d30; */
-    color: white;
-    border:2px solid white;
-    border-bottom: #fe9d30;
-  }
+/* set style for checked label */
+.about-profile input[type="radio"]:checked+label {
+  border: 4px solid var(--main-color);
+  border-bottom: #ffffff;
+  background-color: #ffffff;
+  z-index: 2;
+}
 
+/* hide radio button */
 .about-profile input {
-    display: none;
-  }
-
-  .about-profile {
-    
-  }
-
-  .about-main  {
-    margin: 0 5%;
-  }
-
-  /* Profile styling-strip */
-  .profile {
-    display: flex;
-    align-items: center;
+  display: none;
 }
 
-.about-strip-profile .profile figure {
-    display: inline-block;
-    width: 30%;
-    margin: 0 5% 0 5%;
-}
-
-.about-strip-profile .grey {
-    background-color: #fe9d30;
-    border-radius: 10px;
-}
-
-.about-strip-profile figure img {
-    width: 100%;
-}
-
-.about-strip-profile .profile p {
-    display: inline-block;
-    width: 70%;
-    padding: 10%;
-} 
-
-.about-strip-profile .profile p a {
-    color: white;
+/* set style for the meet our team introduction */
+#team-introduction {
+  width: 50%;
+  text-align: center;
+  padding: 5% 25%;
+  background-color: var(--main-color);
+  color: white;
+  border-radius: 5px;
+  margin-bottom: 5%;
 }
 
 
-  /* About page-section 2 : time table styling */
-  
-  
-  .about-timetable {
-      max-width: 100%;
-  }
+/* About page-section 2 : time table styling */
+/* This section includes styles for the timetable section such as border, font weight, background color, 
+and column header. */
+.about-timetable {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
 
- .about-timetable table {
-      border: 2px solid #fe9d30;
-      border-collapse: collapse;
- color: white;
- background-color: #000000;
-  }
+.about-timetable table {
+  border: 2px solid var(--main-color);
+  border-collapse: collapse;
+  color: rgb(0, 0, 0);
+  background-color: #ffffff;
+  display: block;
+  border-radius: 5px;
+}
 
- .about-timetable td,
-  th {
-    border: 1px solid #ffffff;
-    border-right: none;
-    border-left: none;
-  }
-  
+.about-timetable td,
+th {
+  border: 1px solid var(--main-color);
+  border-right: none;
+  border-left: none;
+  font-weight: bold;
+  margin: auto;
+}
+
+/* Cancel the border of coloured cells */
 .about-timetable .color {
   border: none;
 }
 
+/* set header in column row to bold and other styles */
 .about-timetable .column-header {
 
-  font-weight: 700;
+  font-weight: bold;
   font-size: 20px;
   padding: 10px;
-  border-right:1px solid #ffffff;;
+  border-right: 1px solid var(--main-color);
+  ;
 }
 
-.about-timetable  .one {
-      background-color: #caf0f8;
-  }
-  
-.about-timetable  .two {
-      background-color: #90e0ef;
-  }
-  
-.about-timetable  .three {
-      background-color: #0096c7;
-  }
-  
-.about-timetable  .four {
-      background-color: #0077b6;
-  }
-  
-.about-timetable  .five {
-      background-color: #023e8a;
-  }
-  
-.about-timetable  .six {
-      background-color: #e76f51;
-  }
-  
-/* About Page-section 3: group details */
-.about-group-details dt,
-dd {
-    display: inline-block;
-    font-size: 15px;
-    margin-left: 5px;
-    font-weight: 700;
+/* Colouring specific cell to reflect our assignment plan */
+.about-timetable .one {
+  background-color: #caf0f8;
+}
+
+.about-timetable .two {
+  background-color: #90e0ef;
+}
+
+.about-timetable .three {
+  background-color: #0096c7;
+}
+
+.about-timetable .four {
+  background-color: #0077b6;
+}
+
+.about-timetable .five {
+  background-color: #023e8a;
+}
+
+.about-timetable .six {
+  background-color: #e76f51;
+}
+
+
+
+/* About Page-section 3: about us - group details */
+/* This section contains styles for the about us section such as width, border-radius,
+ figure width, and max-width. It also includes styles for the definition list such as 
+ text-align, display, and flex-wrap. */
+
+.about-group-details {
+  width: 50%;
+  color: white;
+  border-radius: 1%;
+}
+
+/* set team photo float at the right of definition list */
+.about-group-info figure {
+  width: 40%;
+  text-align: center;
+  float: right;
+  margin: 0 0 0 5%;
+}
+
+/* give team photo a border and restrict its width */
+.about-group-info figure img {
+  max-width: 80%;
+  border: #e76f51 5px solid;
+}
+
+/* definitin list styling */
+.about-body dl {
+  text-align: left;
+  display: flex;
+  flex-wrap: wrap;
+}
+
+/* set dd is displaying at the right of dt in the same line */
+.about-body dt,
+.about-body dd {
+  display: inline-block;
+  font-size: 20px;
+  margin-left: 5px;
+  font-weight: 700;
 
 }
 
-.about-group-details dl {
-    text-align: center;
+.about-body dt {
+  width: 20%;
 }
 
-.about-group-details h1 {
-    text-align: center;
+.about-body dd {
+  width: 70%;
+}
+
+.about-group-details a {
+  color: white;
 }
 
 .about-group-details {
-    background-color: #fe9d30;
-    padding: 5% 5% 10% 5%;
-    margin: 5% 0;
+  background-color: var(--main-color);
+  padding: 5% 5% 10% 5%;
+  margin: 5% 0;
 }
 
-/* animation */
 
+/* About Page-section 4: map and contact us */
+/* sets the display to flex and centers the items horizontally and vertically.*/
+.about-map {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* sets the figure width(iframe) to 40% and centers the content horizontally. */
+.about-map figure {
+  width: 40%;
+  text-align: center;
+}
+
+/* style contact us content */
+.about-map-address {
+  width: 50%;
+  padding: 5%;
+  background-color: var(--main-color);
+  color: white;
+  border-radius: 5px;
+}
+
+.about-map-address a {
+  color: white;
+}
+
+/* give map a fixed height and 100% width of figure element */
+iframe {
+  width: 100%;
+  height: 400px;
+}
+
+/* section5 key values flip nimation */
+#about-value {
+  text-align: center;
+}
+
+/* set flipper container to flex, allowing flippers to distribute evenly */
+.flip-container {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  width: 100%;
+  height: 100%;
+}
+
+/* sets the width to 20%, height to 250px, adds a transition effect when 
+transforming, sets the transform style to preserve-3d */
+.flipper {
+  width: 20%;
+  height: 250px;
+  transition: transform 0.6s;
+  transform-style: preserve-3d;
+  margin-bottom: 5%;
+  max-width: 300px;
+  max-height: 300px;
+  perspective: 1000px;
+}
+
+/* set the front and back of the flipper to absolute position so they are 
+ at the same position of the page, also hides the backface of the elements 
+ during the 3D transform.*/
+.flipper .front,
+.flipper .back {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: var(--main-color);
+  backface-visibility: hidden;
+  text-align: center;
+  border-radius: 5%;
+}
+
+/* set front is on top of back content */
+.flipper .front {
+  z-index: 2;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+
+.front figure img {
+  width: 100%;
+  max-width: 211px;
+}
+
+/*  rotating back 180 degrees along the y-axis so that it appears flipped over*/
+.flipper .back {
+  transform: rotateY(180deg);
+
+}
+
+.flipper .back p {
+  font-weight: 700;
+  font-size: 0.9rem;
+  color: white;
+  margin: 0 5%;
+}
+
+.flipper .back h2 {
+  color: white;
+  font-size: 1.2rem;
+}
+
+/* when hover, applies a 3D rotation to the flipper element, rotating it */
+.flipper:hover {
+  transform: rotateY(180deg);
+}
+
+/* About page - section6 reactive effect */
+/* This is the media query section of the CSS code which targets screens with a maximum 
+width of 768px, typically mobile devices. It adjusts the styling of various sections to 
+make them more responsive and mobile-friendly. */
+@media (max-width: 768px) {
+
+  /* change font size to smaller size, prevent text overflow the box */
+  .about-group-details {
+    font-size: 0.6rem;
+    word-wrap: break-word;
+    width: 100%;
+  }
+
+  .about-group-info dt,
+  .about-group-info dd {
+    font-size: 0.6rem;
+  }
+
+  /* set team photo display on top of About us content, not showing the figure caption */
+  .about-group-info figure {
+    clear: both;
+    float: none;
+    width: 100%;
+  }
+
+
+  .about-group-info figure figcaption {
+    display: none;
+  }
+
+  /* set map appear on top of contact us content, set both map and contact us content width
+   to 100% */
+  .about-map {
+    flex-direction: column;
+  }
+
+  .about-map figure {
+    width: 100%;
+    margin: 0;
+  }
+
+  .about-map figure img {
+    max-width: 100%;
+  }
+
+  .about-map-address {
+    width: 100%;
+  }
+
+  /* set key values flip animation display in column, also change content style to be more suitable
+  to display on small screen */
+  .flip-container {
+    flex-direction: column;
+  }
+
+  .flipper {
+    width: 50%;
+    margin: 0;
+  }
+
+  .flipper figure img {
+    width: 80%;
+  }
+
+  .flipper .front {
+    height: 200px;
+  }
+
+  .flipper .front figure {
+    width: 80%;
+  }
+
+  .flipper .back {
+    height: 200px;
+  }
+
+}
