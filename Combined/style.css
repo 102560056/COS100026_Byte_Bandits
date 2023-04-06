@@ -313,33 +313,31 @@ input[type=submit] {
   padding-bottom: 5vh;
 }
 
-.about-group-info {
-  display: flex;
-}
-
 .about-group-details {
   width: 50%;
   background-color: var(--main-color);
   color: white;
   padding: 2rem;
-  margin-right: 2rem;
   border-radius: 1rem;
 }
 
 .about-group-img {
-  max-width: 50%;
+  width: 50%;
   height: 100%;
-  width: auto;
   border: #ccc 2px solid;
+  float: right;
+  margin-left: 2rem;
+  clear: none;
 }
 
-.about-group-details table {
+#enhancement-lexi {
+  clear: both;
+  padding-top: 5vh;
+}
+
+.about-group-details dl {
   width: 100%;
   padding: 1rem 0;
-}
-
-.about-group-details table td {
-  max-width: 60%;
 }
 
 .about-group-details a {
@@ -649,8 +647,9 @@ make them more responsive and mobile-friendly. */
   }
 
   .about-group-img {
-    margin-top: 2vh;
+    margin: 0 0 2rem 0;
     max-width: 100%;
+    float: none;
   }
 
   .about-map-address {
