@@ -469,7 +469,9 @@ transforming, sets the transform style to preserve-3d */
 
 
 .about-profile-content {
-  display: inline-block;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
   width: 70%;
   padding: 2%;
 }
