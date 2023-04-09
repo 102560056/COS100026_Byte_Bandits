@@ -288,7 +288,7 @@ input[type=submit] {
 
 
 /* ------------ About-Lexi ------------ */
-
+/* Styles for headings in the about page*/
 .about-main h2,
 .enh-main h2 {
   font-weight: bold;
@@ -298,10 +298,12 @@ input[type=submit] {
   text-decoration-color: var(--main-color);
 }
 
+/* Styles for horizontal line in 'About' section */
 .about-main hr {
   margin-bottom: 2rem;
 }
 
+/* Styles for arrow icon in 'About' page */
 .about-arrow {
   text-align: center;
   font-size: 30px;
@@ -313,14 +315,17 @@ input[type=submit] {
   padding-bottom: 5vh;
 }
 
+/* Styles for group details */
 .about-group-details {
   width: 50%;
   background-color: var(--main-color);
   color: white;
   padding: 2rem;
-  border-radius: 1rem;
+  border-radius: 5px;
+  word-wrap: break-word;
 }
 
+/* Styles for group image*/
 .about-group-img {
   width: 50%;
   height: 100%;
@@ -335,10 +340,33 @@ input[type=submit] {
   padding-top: 5vh;
 }
 
-.about-group-details dl {
-  width: 100%;
+
+/* definitin list styling */
+.about-body dl {
+    text-align: left;
+    display: flex;
+    flex-wrap: wrap;
+    width: 100%;
   padding: 1rem 0;
-}
+  }
+  
+  /* set dd is displaying at the right of dt in the same line */
+  .about-body dt,
+  .about-body dd {
+    display: inline-block;
+    margin-left: 5px;
+    font-weight: 700;
+  
+  }
+  
+  .about-body dt {
+    width: 20%;
+  }
+  
+  .about-body dd {
+    width: 70%;
+  }
+  
 
 .about-group-details a {
   color: white;
@@ -358,7 +386,7 @@ input[type=submit] {
   margin-right: 2rem;
 }
 
-/* sets the width to 20%, height to 250px, adds a transition effect when 
+/* sets the flipper width, max-width and max-height, adds a transition effect when 
 transforming, sets the transform style to preserve-3d */
 .flipper {
   height: 25vh;
@@ -366,6 +394,8 @@ transforming, sets the transform style to preserve-3d */
   transform-style: preserve-3d;
   perspective: 1000px;
   width: 25%;
+  max-width: 300px;
+    max-height: 300px
 }
 
 /* set the front and back of the flipper to absolute position so they are 
@@ -399,6 +429,7 @@ transforming, sets the transform style to preserve-3d */
   flex-direction: column;
 }
 
+/* set font style for back of the flipper */
 .flipper .back {
   font-size: 1rem;
   font-weight: 400;
@@ -418,10 +449,11 @@ transforming, sets the transform style to preserve-3d */
   transform: rotateY(180deg);
 }
 
-.flipper img {
-  height: 100%;
-}
-
+.front figure img {
+    width: 100%;
+    max-width: 211px;
+  }
+  
 
 /* ------------ Intro Section ------------ */
 
@@ -467,7 +499,7 @@ transforming, sets the transform style to preserve-3d */
   width: 90%;
 }
 
-
+/* styling the detail content for each team member */
 .about-profile-content {
   display: flex;
   flex-direction: column;
@@ -510,26 +542,31 @@ transforming, sets the transform style to preserve-3d */
   border-radius: 0 5px 5px 5px;
   align-items: center;
   border: 4px solid var(--main-color);
+  word-wrap: break-word;
 }
 
 /* Show the content element for Sam when its radio button is checked */
 #sam_l:checked~#sam {
   display: flex;
+  word-wrap: break-word;
 }
 
 /* Show the content element for Preston when its radio button is checked */
 #preston_l:checked~#preston {
   display: flex;
+  word-wrap: break-word;
 }
 
 /* Show the content element for Saffan when its radio button is checked */
 #saffan_l:checked~#saffan {
   display: flex;
+  word-wrap: break-word;
 }
 
 /* Show the content element for Randew when its radio button is checked */
 #randew_l:checked~#randew {
   display: flex;
+  word-wrap: break-word;
 }
 
 /* ------------ Contact Section ------------ */
@@ -563,7 +600,7 @@ transforming, sets the transform style to preserve-3d */
 }
 
 /* ------------ Timetable Section ------------ */
-
+/* styling timetable, tables and table cells in timetable section */
 .about-timetable {
   display: flex;
   justify-content: center;
@@ -632,7 +669,7 @@ transforming, sets the transform style to preserve-3d */
 
 
 /* This is the media query section of the CSS code which targets screens with a maximum 
-width of 768px, typically mobile devices. It adjusts the styling of various sections to 
+width of 900px, typically mobile devices. It adjusts the styling of various sections to 
 make them more responsive and mobile-friendly. */
 @media (max-width: 900px) {
 
@@ -660,6 +697,35 @@ make them more responsive and mobile-friendly. */
 
   .iframe {
     height: 40vh;
+  }
+
+  /* set key values flip animation display in column, also change content style to be more suitable
+  to display on small screen */
+  .flip-container {
+    flex-direction: column;
+  }
+
+  .flipper {
+    width: 50%;
+    margin: 5%;
+    min-width: 122px;
+    min-height: 206px;
+  }
+
+  .flipper figure img {
+    width: 80%;
+  }
+
+  .flipper .front {
+    height: 200px;
+  }
+
+  .flipper .front figure {
+    width: 80%;
+  }
+
+  .flipper .back {
+    height: 200px;
   }
 
 }
