@@ -572,12 +572,12 @@ transforming, sets the transform style to preserve-3d */
 /* ------------ Contact Section ------------ */
 
 /* About Page-section 4: map and contact us */
-/* sets the display to flex and centers the items horizontally and vertically.*/
+/* sets the display to flex*/
 .about-map {
   display: flex;
 }
 
-/* sets the figure width(iframe) to 40% and centers the content horizontally. */
+/*  Styles for children of .about-map element  */
 .about-map>* {
   width: 50%;
 }
