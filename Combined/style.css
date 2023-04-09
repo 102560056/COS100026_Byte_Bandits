@@ -716,6 +716,7 @@ make them more responsive and mobile-friendly. */
   margin: 2em;
 }
 
+
 .enh-enhance-sect>h3 {
   margin: 1em 2em;
 }
@@ -733,7 +734,7 @@ make them more responsive and mobile-friendly. */
   margin-bottom: 1em;
 }
 
-/* Style the code example boxes, keeping them square, ensuring text-wrapping, and try make writing code in them easy */
+/* Style the code example boxes, keeping them square, ensuring text-wrapping, and try make writing code snippets easy */
 .enh-codebox {
   font-family: monospace;
   margin: 0em 4em 1em 4em;
