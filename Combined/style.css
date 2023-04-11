@@ -431,15 +431,11 @@ transforming, sets the transform style to preserve-3d */
   text-align: center;
   border-radius: 5%;
   padding: 2rem;
-}
-
-/* set front is on top of back content */
-.flipper .front,
-.flipper .back {
   display: flex;
   align-items: center;
   justify-content: center;
 }
+
 
 /*  rotating back 180 degrees along the y-axis so that it appears flipped over*/
 .flipper .back {
