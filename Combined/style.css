@@ -313,6 +313,14 @@ input[type=submit] {
   text-decoration-color: var(--main-color);
 }
 
+.about-main h1{
+    font-weight: bold;
+    text-align: center;
+    font-size: 2rem;
+    text-decoration: underline;
+    text-decoration-color: var(--main-color);
+}
+
 /* Styles for horizontal line in 'About' section */
 .about-main hr {
   margin-bottom: 2rem;
@@ -387,7 +395,7 @@ input[type=submit] {
   color: white;
 }
 
-/* ------------ Flipper Section ------------ */
+/* ------------ Flipper Section - Lexi ------------ */
 
 /* set flipper container to flex, allowing flippers to distribute evenly */
 .flip-container {
@@ -470,7 +478,7 @@ transforming, sets the transform style to preserve-3d */
 }
 
 
-/* ------------ Intro Section ------------ */
+/* ------------ Intro Section_Lexi ------------ */
 
 /* set style for the meet our team introduction */
 #team-introduction {
@@ -481,7 +489,7 @@ transforming, sets the transform style to preserve-3d */
   border-radius: 5px;
 }
 
-/* ------------ Profiles Section ------------ */
+/* ------------ Profiles Section-Lexi ------------ */
 /* hide radio button */
 .about-profile input {
   display: none;
@@ -584,7 +592,7 @@ transforming, sets the transform style to preserve-3d */
   word-wrap: break-word;
 }
 
-/* ------------ Contact Section ------------ */
+/* ------------ Contact Section-Lexi ------------ */
 
 /* About Page-section 4: map and contact us */
 /* sets the display to flex*/
@@ -614,7 +622,7 @@ transforming, sets the transform style to preserve-3d */
   margin-top: 1rem;
 }
 
-/* ------------ Timetable Section ------------ */
+/* ------------ Timetable Section-Lexi ------------ */
 /* styling timetable, tables and table cells in timetable section */
 .about-timetable {
   display: flex;
@@ -682,7 +690,7 @@ transforming, sets the transform style to preserve-3d */
 
 
 
-
+/*------------Reactive Section-Lexi -------------   */
 /* This is the media query section of the CSS code which targets screens with a maximum 
 width of 900px, typically mobile devices. It adjusts the styling of various sections to 
 make them more responsive and mobile-friendly. */
