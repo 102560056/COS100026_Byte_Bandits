@@ -103,7 +103,7 @@
             </fieldset>
 
             <!-- Gender,  radio inputs grouped  using a fieldset and legend  -->
-            <fieldset class="apply-gender">
+            <fieldset class="apply-gender apply-full-width">
 
                 <table>
                     <tr>
@@ -177,18 +177,19 @@
         Other skills,  textarea  -->
             <fieldset class="apply-skills">
                 <label class="apply-bold">Skills List</label>
-                <label class="apply-skill"><input type="checkbox" name="skill[]" id="CSS">CSS</label>
-                <label class="apply-skill"><input type="checkbox" name="skill[]" id="HTML">HTML</label>
-                <label class="apply-skill"><input type="checkbox" name="skill[]" id="Ruby">Ruby</label>
-                <label class="apply-skill"><input type="checkbox" name="skill[]" id="C#">C#</label>
-                <label class="apply-skill"><input type="checkbox" name="skill[]" id="Python">Python</label>
+                <label class="apply-skill"><input type="checkbox" name="skill[]" value="CSS" id="CSS">CSS</label>
+                <label class="apply-skill"><input type="checkbox" name="skill[]" value="HTML" id="HTML">HTML</label>
+                <label class="apply-skill"><input type="checkbox" name="skill[]" value="Ruby" id="Ruby">Ruby</label>
+                <label class="apply-skill"><input type="checkbox" name="skill[]" value="C#" id="C#">C#</label>
+                <label class="apply-skill"><input type="checkbox" name="skill[]" value="Python"
+                        id="Python">Python</label>
                 <label class="apply-other-label"><input type="checkbox" name="skill[]" id="other">Other
                     Skills</label>
                 <textarea name="skills_description" id="skills_description" class="apply-other-input"
                     style="resize: none;"></textarea>
             </fieldset>
 
-            <fieldset class="apply-full-width">
+            <fieldset class="apply-full-width apply-submit">
                 <input type="submit" value="Apply">
             </fieldset>
         </form>

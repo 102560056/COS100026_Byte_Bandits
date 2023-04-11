@@ -286,7 +286,7 @@ fieldset.apply-full-width {
 }
 
 /* Sam.B Styling submit button on hover effect*/
-fieldset.apply-full-width :hover {
+.apply-submit :hover {
   cursor: pointer;
   background-color: var(--main-color);
 }
@@ -812,7 +812,7 @@ This makes sure that every line isn't beginning at the end of the left side of t
 /* 'Apply Now!' button was created in the center of the page, which takes user to the apply
   page if clicked. */
 #jobs-apply-container {
-    text-align: center;
+  text-align: center;
 }
 
 .jobs-apply-center {
