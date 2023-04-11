@@ -225,6 +225,10 @@ fieldset.apply-full-width {
   width: 40%;
 }
 
+.apply-main input::placeholder {
+  font-style: italic;
+}
+
 .apply-bold {
   font-weight: bold;
 }
@@ -343,30 +347,30 @@ input[type=submit] {
 
 /* definitin list styling */
 .about-body dl {
-    text-align: left;
-    display: flex;
-    flex-wrap: wrap;
-    width: 100%;
+  text-align: left;
+  display: flex;
+  flex-wrap: wrap;
+  width: 100%;
   padding: 1rem 0;
-  }
-  
-  /* set dd is displaying at the right of dt in the same line */
-  .about-body dt,
-  .about-body dd {
-    display: inline-block;
-    margin-left: 5px;
-    font-weight: 700;
-  
-  }
-  
-  .about-body dt {
-    width: 20%;
-  }
-  
-  .about-body dd {
-    width: 70%;
-  }
-  
+}
+
+/* set dd is displaying at the right of dt in the same line */
+.about-body dt,
+.about-body dd {
+  display: inline-block;
+  margin-left: 5px;
+  font-weight: 700;
+
+}
+
+.about-body dt {
+  width: 20%;
+}
+
+.about-body dd {
+  width: 70%;
+}
+
 
 .about-group-details a {
   color: white;
@@ -395,7 +399,7 @@ transforming, sets the transform style to preserve-3d */
   perspective: 1000px;
   width: 25%;
   max-width: 300px;
-    max-height: 300px
+  max-height: 300px
 }
 
 /* set the front and back of the flipper to absolute position so they are 
@@ -450,10 +454,10 @@ transforming, sets the transform style to preserve-3d */
 }
 
 .front figure img {
-    width: 100%;
-    max-width: 211px;
-  }
-  
+  width: 100%;
+  max-width: 211px;
+}
+
 
 /* ------------ Intro Section ------------ */
 
