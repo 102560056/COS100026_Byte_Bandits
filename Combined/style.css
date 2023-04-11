@@ -746,8 +746,21 @@ make them more responsive and mobile-friendly. */
 
 /* ------------ Jobs ------------ */
 
-.important-info {
-  width: 25%;
+/* Title of 'Jobs' Page - add padding to counter main's padding */
+#job-title {
+  text-align: center;
+  color: var(--main-color);
+  font-variant: normal;
+  padding: 0 0 8vh 0;
+}
+
+
+/* Important-info is for the aside information. 
+  Background colour was used, along with a black border with dashes.
+  Aside information was placed to the right side of the screen. 
+  Padding was also created for aside text */
+.jobs-important_info {
+  width: 25vw;
   padding-left: 7px;
   margin-left: 15px;
   float: right;
@@ -758,40 +771,32 @@ make them more responsive and mobile-friendly. */
   padding-right: 2.5%;
 }
 
-/* Important-info is for the aside information. 
-  Background colour was used, along with a black border with dashes.
-  Aside information was placed to the right side of the screen. 
-  Padding was also created for aside text */
-
-
-.sect_collapse summary {
+.jobs-sect_collapse summary {
   cursor: pointer
 }
 
-.sect_collapse summary>* {
+/* Display job title inline with the arrow at the start of <details>*/
+.jobs-sect_collapse summary>* {
   display: inline;
   margin: 0 auto;
   max-width: 60rem;
   padding: 0.5rem;
 }
 
-/* sect_collapse summary was used to display job title inline with the arrow */
-
+/* jobs-info is used to create a gap between the description of both jobs and the left side of the website.
+This makes sure that every line isn't beginning at the end of the left side of the website  */
 .jobs-info {
   padding-left: 5%;
 }
 
-/* jobs-info is used to create a gap between the description of both jobs and the left side of the website.
-This makes sure that every line isn't beginning at the end of the left side of the website  */
-
-.sect_collapse {
+/* Class for <details>, creates two different tabs for both job descriptions. */
+.jobs-sect_collapse {
   background: #eee;
   margin-bottom: 2rem;
-  padding: 0.5rem 1rem;
+  padding: 1rem;
 }
 
-/* sect_collapse is used to create two different tabs for both job descriptions. */
-
+/* Site-wide main colour is used for Job Titles and sub-headers */
 .jobs-header {
   color: var(--main-color);
 }
@@ -800,13 +805,14 @@ This makes sure that every line isn't beginning at the end of the left side of t
   color: var(--main-color)
 }
 
-/* a certain main colour is used for Job Titles and sub-headers */
 
-.apply-center {
-  margin: auto;
-  position: relative;
-  top: 27.5%;
-  left: 50%;
+/* 'Apply Now!' button was created in the center of the page, which takes user to the apply
+  page if clicked. */
+#jobs-apply-container {
+    text-align: center;
+}
+
+.jobs-apply-center {
   background-color: #ef4856;
   text-decoration: none;
   border: 2px solid rgb(101, 101, 101);
@@ -816,21 +822,11 @@ This makes sure that every line isn't beginning at the end of the left side of t
   color: white;
 }
 
-/* 'Apply Now!' button was created in the center of the page, which then takes user to the apply
-  page if clicked. */
-
-.apply-center:hover {
-  cursor: pointer;
-  background-color: var(--main-color);
-}
-
 /* A pseudo element of hover is used in order for user to know that their cursor is over the 
     'Apply Now! button. */
-
-#job-title {
-  text-align: center;
-  color: var(--main-color);
-  font-variant: normal;
+.jobs-apply-center:hover {
+  cursor: pointer;
+  background-color: var(--main-color);
 }
 
 /* -------- Enhancements ---------- */
