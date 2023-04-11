@@ -8,12 +8,6 @@
 }
 
 /* Sam.B Overide default behaviours to produce more predictible behaviours */
-html {
-  height: 100vh;
-  overflow-x: hidden;
-}
-
-/* Sam.B Overide default behaviours to produce more predictible behaviours */
 * {
   outline: none;
   font-family: 'Roboto', sans-serif;
@@ -27,6 +21,7 @@ html {
   color: var(--main-color);
 }
 
+/* Sam.B Each page will be placed within a main tag and this sets the defult padding and width */
 main {
   width: 100vw;
   padding: 8vh 10vw;
