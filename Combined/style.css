@@ -210,14 +210,12 @@ section ul li a {
   justify-content: center;
 }
 
-form {
-  /* width: 50%; */
-}
-
+/* Sam.B Put some padding around every element within the form */
 form>* {
   padding: 1rem 0;
 }
 
+/* Sam.B Splits every section within the fieldset into two halves  */
 fieldset {
   border: none;
   display: grid;
@@ -225,6 +223,13 @@ fieldset {
   margin: auto;
 }
 
+fieldset input[type=text] {
+  margin-left: 1rem;
+}
+
+fieldset input {
+  padding: .2rem;
+}
 
 fieldset.apply-full-width {
   grid-template-columns: 1fr;
@@ -250,20 +255,19 @@ fieldset.apply-full-width {
   padding-bottom: 1rem;
 }
 
-.other-input {
+.apply-other-input {
   grid-area: input;
   justify-content: stretch;
   height: 15rem;
-  max-width: 80%;
 }
 
-.other-label {
+.apply-other-label {
   grid-area: label;
 }
 
 .apply-skills {
   display: grid;
-  grid-template-columns: 1fr 4fr;
+  grid-template-columns: 1fr 1fr;
   grid-template-areas:
     "header header"
     ". label"
@@ -277,6 +281,7 @@ fieldset.apply-full-width {
 }
 
 .apply-skill {
+  padding: .2rem;
   display: flex;
 }
 
@@ -294,8 +299,6 @@ input[type=submit] {
   border-radius: .3rem;
   padding: 1rem;
 }
-
-
 
 
 
