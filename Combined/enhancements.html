@@ -109,34 +109,107 @@
         </section>
 
         <section class="enh-enhance-sect">
-            <h3>ENH_2_TITLE</h3>
+            <h3>Enhancement2-flip animation & toggle display</h3>
             <hr>
             <p>
-                how it goes beyond the basic requirements of the assignment
+                Lexi designed the second enhancement to our website, which includes two features on the About page: the
+                flip card animation in the "Key Values" part and the toggle display of group members' personal
+                information in the "Meet Our Members" area. These features significantly enhance the layout and
+                interactivity of the About page, providing users with an engaging and dynamic element. <br>
+
+                This enhancement goes well beyond the original assignment requirements, as it utilises a range of
+                advanced CSS techniques that were not covered in our classes. These techniques include the use of
+                transition and transform properties, the general sibling combinator, and the:checked pseudo-class.
+            </p>
+            <p><strong> 1. the flip card animation</strong></p>
+            <p>This effect is achieved by using transition and transform properties. Firstly, I created a flipper
+                section in html file that contains two sections that belong to front and back classes respectively,
+                which include the content I want to display on the flip card. Secondly, in css file, I adds a transition
+                effect to the flipper class using transition: transform 0.6s, transform style is set to preserve-3d to
+                bring a 3d effect. Thirdly, I set the front and back sections to be absolute position so they are at the
+                same position of the page, also hides the backface of the elements during the 3D transform. Then, I
+                rotated the back section 180 degrees along the y-axis so the front face of the back section faces back
+                now. Finally, hovering over the flipper part rotates it in 3D, revealing the back section's content.</p>
+            <p class="enh-code-desc"><strong>
+                    Screenshot</strong>
             </p>
 
-            <p class="enh-code-desc">
-                html code description
+            <figure>
+                <img src="images/lexifeature1.png" alt="">
+            </figure>
+
+            <p class="enh-code-desc"><strong>
+                    html code</strong>
             </p>
 
-            <pre><code class="enh-codebox">html code implementatio
-	asdasd
-    </code></pre>
+            <figure>
+                <img src="images/htmlcode1.png" alt="">
+            </figure>
 
-            <p class="enh-code-desc">
-                css code description
+            <p class="enh-code-desc"><strong>
+                    css code</strong>
             </p>
 
-            <pre><code class="enh-codebox">first line of code
-	another line! use character codes like &lt, &gt, &amp for html and css stuff.
-	last line
-    </code></pre>
+            <figure>
+                <img src="images/csscode1.png" alt="">
+            </figure>
 
+
+            <p><strong> 2.For the toggle display</strong></p>
+            <p>Radio button group in html, ~ general sibling combinator, :checked pseudo-class, and # id selector in css
+                helped me to achieve this feature. Firstly, I set the label of each radio input to my team members'
+                names and the name attribute to the same. Thus just one label/input can be selected. The section
+                including one person's details is given a #id of their name. Secondly, display: none hides the radio
+                input button but leaves the label visible. Thirdly, I set the default display styles for all sections
+                containing personal details to none, hiding them if the correlated radio input is not selected. Lastly,
+                I use #lexi_l:checked~#lexi to set when the lexi label is selected, the style of the element that has an
+                id #lexi will be updated to the following style to reveal the personal details of Lexi (display change
+                from none to flex). Same code applies to every group members. </p>
+                <p class="enh-code-desc"><strong>
+                    Screenshot</strong>
+            </p>
+
+            <figure>
+                <img src="images/lexifeature2.png" alt="">
+            </figure>
+
+            <p class="enh-code-desc"><strong>
+                    html code</strong>
+            </p>
+
+            <figure>
+                <figcaption>*only the personal detail section of Lexi is displayed here as all other members' sections
+                    are following the same pattern</figcaption>
+                <img src="images/htmlcode2.png" alt="">
+
+            </figure>
+
+            <p class="enh-code-desc"><strong>
+                    css code</strong>
+            </p>
+
+            <figure>
+                <figcaption>*only the style details for Lexi and Sam's personal information section are displayed here
+                    as all other members' sections are following the same pattern</figcaption>
+                <img src="images/csscode2.png" alt="">
+
+            </figure>
+
+            <p><strong>
+                    References to third party sources for this enhancement</strong>
+            </p>
             <p>
-                references to third party sources for this enhancement
+                <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/transition">Transition, MDN
+                    https://developer.mozilla.org/en-US/docs/Web/CSS/transition</a><br>
+                <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/transform">Transform, MDN
+                    https://developer.mozilla.org/en-US/docs/Web/CSS/transform</a><br>
+                <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/backface-visibility">Backface-visibility, MDN
+                    https://developer.mozilla.org/en-US/docs/Web/CSS/backface-visibility</a><br>
+                <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/CSS_Selectors">CSS_Selector, MDN
+                    https://developer.mozilla.org/en-US/docs/Web/CSS/CSS_Selectors</a>
             </p>
 
-            <p><a class="enh-local-link">a link to the enhancement in place on this site</a></p>
+            <p><a href="about.html#enhancement-lexi" class="enh-local-link">Link to the enhancement</a></p>
 
         </section>
     </main>
