@@ -880,7 +880,11 @@ This makes sure that every line isn't beginning at the end of the left side of t
   min-width: 40%;
 }
 
-
+.enh-enhance-sect figure img, .enh-enhance-sect figure figcaption{
+    width: 90%;
+    margin-left: 5%;
+    margin-bottom: 2%;
+}
 
 /* ------------ Footer ------------ */
 footer>* {
