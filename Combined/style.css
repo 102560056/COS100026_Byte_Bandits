@@ -80,7 +80,7 @@ header ul a {
   width: 16vw;
 }
 
-/* Sam.B Colours the  */
+/* Sam.B Colours the links  */
 header ul li a,
 section ul li a {
   color: rgb(101, 101, 101);
@@ -96,6 +96,7 @@ section ul li a {
   display: none;
 }
 
+/* Sam.B Sets the ul to be a coloumn and its padding*/
 .drop-down ul {
   display: flex;
   flex-direction: column;
@@ -103,6 +104,7 @@ section ul li a {
   height: 80vh;
 }
 
+/* Sam.B Flexs the li element and allows the a element to be centered */
 .drop-down ul li {
   height: 20%;
   display: flex;
@@ -308,12 +310,12 @@ input[type=submit] {
   text-decoration-color: var(--main-color);
 }
 
-.about-main h1{
-    font-weight: bold;
-    text-align: center;
-    font-size: 2rem;
-    text-decoration: underline;
-    text-decoration-color: var(--main-color);
+h1 {
+  font-weight: bold;
+  text-align: center;
+  font-size: 2rem;
+  text-decoration: underline;
+  text-decoration-color: var(--main-color);
 }
 
 /* Styles for horizontal line in 'About' section */
@@ -880,10 +882,11 @@ This makes sure that every line isn't beginning at the end of the left side of t
   min-width: 40%;
 }
 
-.enh-enhance-sect figure img, .enh-enhance-sect figure figcaption{
-    width: 90%;
-    margin-left: 5%;
-    margin-bottom: 2%;
+.enh-enhance-sect figure img,
+.enh-enhance-sect figure figcaption {
+  width: 90%;
+  margin-left: 5%;
+  margin-bottom: 2%;
 }
 
 /* ------------ Footer ------------ */
