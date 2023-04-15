@@ -1,0 +1,737 @@
+/* ------------ Global Styles ------------ */
+@import url('https://fonts.googleapis.com/css2?family=Calistoga&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap');
+
+/* Sam.B Global Variables for standardised styling */
+:root {
+    font-size: 16px;
+    --main-color: #EC1C2D;
+}
+
+/* Sam.B Overide default behaviours to produce more predictible behaviours */
+html {
+    height: 100vh;
+    overflow-x: hidden;
+}
+
+/* Sam.B Overide default behaviours to produce more predictible behaviours */
+* {
+    outline: none;
+    font-family: 'Roboto', sans-serif;
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+/* Sam.B All elements tagged with main-color will be assigned the main color allowing us to change our minds later */
+.main-color {
+    color: var(--main-color);
+}
+
+main {
+    width: 100vw;
+    padding: 8vh 10vw;
+}
+
+
+
+
+/* ------------ Header ------------ */
+header {
+    position: sticky;
+    top: 0;
+    padding: 6vh 10vw;
+    font-size: 1rem;
+    font-weight: bold;
+    background-color: white;
+    box-shadow: 0 0 .8rem 0 #ccc;
+    border-radius: .5rem;
+}
+
+/* Sam.B Hover effects for seleting another page in header. change color and scale up with animations */
+header a :hover {
+    cursor: pointer;
+    text-align: center;
+}
+
+.original-menu :hover {
+    color: var(--main-color);
+    font-size: 1.25rem;
+    transition: ease 100ms;
+}
+
+/* Sam.B Basic headerbar stylings */
+header ul {
+    display: flex;
+    list-style: none;
+    text-align: center;
+    align-items: center;
+}
+
+.static-menu ul li {
+    list-style-type: none;
+    text-align: center;
+    width: 13vw;
+}
+
+header ul a {
+    text-decoration: none;
+    color: black;
+    width: 16vw;
+}
+
+.container{
+    height: auto;
+    width: 100%;
+}
+
+.drop-down {
+    background-color: white;
+    position: absolute;
+    left: 0;
+    width: 100vw;
+    font-size: 2rem;
+    display: none;
+}
+
+.drop-down ul{
+    display: flex;
+    flex-direction: column;
+    padding-top: 5vh;
+    height: 80vh;
+}
+
+.drop-down ul li{
+    height: 20%;
+    display: flex;
+}
+
+.drop-down a{
+    align-self: center;
+    width: fit-content;
+}
+
+.drop-down ul :hover {
+    color: black;
+}
+
+.hamburger-menu {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.hamburger-menu input {
+    appearance: none;
+    width: max-content;
+}
+
+.close{
+    display: none;
+    position: relative;
+}
+
+.menu{
+    position: relative;
+}
+
+@keyframes drop-down-expand {
+    from {height: 0;}
+    to {height: 80vh;}
+}
+
+header ul li a,
+section ul li a {
+    color: rgb(101, 101, 101);
+    text-decoration: none;
+}
+
+
+
+
+/* ------------ Apply ------------ */
+.apply-main {
+    display: flex;
+    justify-content: center;
+}
+
+form {
+    width: 50%;
+}
+
+form>* {
+    padding: 1rem 0;
+}
+
+fieldset {
+    border: none;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    margin: auto;
+}
+
+
+fieldset.apply-full-width {
+    grid-template-columns: 1fr;
+    width: 40%;
+}
+
+.apply-bold{
+    font-weight: bold;
+}
+
+.other-label {
+    justify-self: start;
+}
+
+.apply-skills :first-child {
+    grid-area: header;
+    padding-bottom: 1rem;
+}
+
+.other-input {
+    grid-area: input;
+    justify-content: stretch;
+    height: 15rem;
+    max-width: 80%;
+}
+
+.other-label {
+    grid-area: label;
+}
+
+.apply-skills {
+    display: grid;
+    grid-template-columns: 1fr 4fr;
+    grid-template-areas:
+        "header header"
+        ". label"
+        ". input"
+        ". input"
+        ". input"
+        ". input"
+        ". input"
+        ". input"
+        ". input";
+}
+
+.apply-skill {
+    display: flex;
+}
+
+fieldset.apply-full-width :hover {
+    cursor: pointer;
+    background-color: var(--main-color);
+}
+
+/* Sam.B Styling submit button */
+input[type=submit] {
+    background-color: #ef4856;
+    color: white;
+    border: 2px solid rgb(101, 101, 101);
+    border-radius: .3rem;
+    padding: 1rem;
+}
+
+
+
+
+
+/* ------------ About ------------ */
+/* Set the default styles for the content elements */
+.about-profile .content {
+display: none;
+}
+
+/* Show the content element for Lexi when its radio button is checked */
+#lexi_l:checked ~ #lexi {
+display: flex;
+padding: 2%;
+border-radius: 0 5px 5px 5px;
+color: white;
+align-items: center;
+border: 2px solid white;
+}
+
+/* Show the content element for Sam when its radio button is checked */
+#sam_l:checked ~ #sam {
+display: flex;
+padding: 2%;
+border-radius: 5px 5px 5px 5px;
+color: white;
+align-items: center;
+border: 2px solid white;
+border: 2px solid black; 
+}
+
+/* Show the content element for Preston when its radio button is checked */
+#preston_l:checked ~ #preston {
+display: flex;
+padding: 2%;
+border-radius: 5px 5px 5px 5px;
+color: white;
+align-items: center;
+border: 2px solid white;
+border: 2px solid black; 
+}
+
+/* Show the content element for Saffan when its radio button is checked */
+#saffan_l:checked ~ #saffan {
+display: flex;
+padding: 2%;
+border-radius: 5px 5px 5px 5px;
+color: white;
+align-items: center;
+border: 2px solid white;
+}
+
+/* Show the content element for Randew when its radio button is checked */
+#randew_l:checked ~ #randew {
+display: flex;
+padding: 2%;
+border-radius: 5px 5px 5px 5px;
+color: white;
+    align-items: center;
+    border: 2px solid white;
+    
+    /* background-color: #fe9d30;
+box-shadow: 3px 0px 0px 5px #fe9d30;
+border: 2px solid black; */
+}
+  
+ .about-profile .content figure {
+    display: inline-block;
+    width: 25%;
+    margin: 5%;
+}
+
+.about-profile .content figure img {
+    width: 90%;
+}
+
+.about-profile .content figcaption a {
+    color: white;
+
+}
+
+.about-profile-content {
+    display: inline-block;
+    width: 70%;
+    padding: 2%;
+}
+
+.about-profile-content h2 {
+    margin-top: 0;
+}
+
+.about-profile-content p a {
+    color: white;
+}
+  
+.about-profile label {
+display: inline-block;
+width: 15%;
+text-align: left;
+padding: 5px;
+border-radius: 5px 5px 0 0;
+/* border: 2px solid black; */
+box-sizing: border-box;
+margin-bottom: -2px;
+
+/* background-color: #000000; */
+}
+
+.about-profile label:hover {
+background-color: #fe9d30;
+color: white;
+border:2px solid white;
+border-bottom: #fe9d30;
+}
+
+.about-profile input[type="radio"]:checked + label {
+background-color: #000000;
+/* box-shadow: 0px -3px 0px 2px #fe9d30; */
+/* border: 2px solid black; */
+/* background-color: #fe9d30; */
+color: white;
+border:2px solid white;
+border-bottom: #fe9d30;
+}
+
+.about-profile input {
+display: none;
+}
+
+.about-profile {
+
+}
+
+.about-main  {
+margin: 0 5%;
+}
+
+/* Profile styling-strip */
+.profile {
+    display: flex;
+    align-items: center;
+}
+
+.about-strip-profile .profile figure {
+    display: inline-block;
+    width: 30%;
+    margin: 0 5% 0 5%;
+}
+
+.about-strip-profile .grey {
+    background-color: #fe9d30;
+    border-radius: 10px;
+}
+
+.about-strip-profile figure img {
+    width: 100%;
+}
+
+.about-strip-profile .profile p {
+    display: inline-block;
+    width: 70%;
+    padding: 10%;
+} 
+
+.about-strip-profile .profile p a {
+    color: white;
+}
+
+/* About page-section 2 : time table styling */
+.about-timetable {
+      max-width: 100%;
+}
+
+.about-timetable table {
+    border: 2px solid #fe9d30;
+    border-collapse: collapse;
+color: white;
+background-color: #000000;
+}
+
+.about-timetable td,
+th {
+border: 1px solid #ffffff;
+border-right: none;
+border-left: none;
+}
+  
+.about-timetable .color {
+  border: none;
+}
+
+.about-timetable .column-header {
+
+  font-weight: 700;
+  font-size: 20px;
+  padding: 10px;
+  border-right:1px solid #ffffff;;
+}
+
+.about-timetable  .one {
+      background-color: #caf0f8;
+}
+  
+.about-timetable  .two {
+      background-color: #90e0ef;
+}
+  
+.about-timetable  .three {
+      background-color: #0096c7;
+}
+  
+.about-timetable  .four {
+      background-color: #0077b6;
+}
+  
+.about-timetable  .five {
+      background-color: #023e8a;
+}
+  
+.about-timetable  .six {
+      background-color: #e76f51;
+}
+/* ------------ Footer ------------ */
+footer>* {
+    color: white;
+    fill: white;
+    margin: auto;
+}
+
+footer {
+    background-color: #000000;
+    width: 100%;
+    padding: 0 10vw 1rem 10vw;
+    font-size: small;
+    justify-content: center;
+    text-align: center;
+}
+
+footer ul {
+    list-style: none;
+    display: flex;
+    width: 100%;
+    justify-content: center;
+    padding: 1rem;
+}
+
+footer li {
+    width: fit-content;
+    margin: 0 0.5rem 0 0.5rem;
+}
+
+footer a {
+    text-decoration: none;
+    color: #ccc;
+    display: flex;
+    align-items: center;
+}
+
+footer section {
+    font-size: 1rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 1rem;
+}
+
+footer table :hover, footer a :hover{
+    color: white;
+}
+
+footer h2{
+    font-size: 1rem;
+}
+
+.footer-statement{
+    max-width: 30%;
+    display: flex;
+    padding: 1rem;
+}
+
+.footer-statement img{
+    padding-right: 0.5rem;
+}
+
+
+
+
+
+/* ------------ Resolution Handling ------------ */
+@media only screen and (max-width: 900px) {
+    ul :is(.original-menu, .main-color) {
+        display: none;
+    }
+    :has([type=checkbox]:checked) ~ .drop-down {
+        display: block;
+        animation: drop-down-expand .3s;
+        height: 80vh;
+    }
+
+    :has([type=checkbox]:checked){
+        overflow: none;
+    }
+
+    [type=checkbox]:checked ~ .close{
+        display: block;
+    }
+    
+    [type=checkbox]:checked ~ .menu{
+        display: none;
+    }
+
+    footer .footer-statment{
+        display: none;
+    } 
+}
+
+@media only screen and (min-width: 900px) {
+    .hamburger-menu {
+        display: none;
+    }
+}
+
+/* ================================================================= */
+
+/* HOME PAGE STYLING */
+
+.body-text-home-centerpiece {
+    font-size: 60px;
+    padding-top: 50px;
+    padding-bottom: 20px;
+    font-weight: bold;
+}
+
+.body-text-home-description {
+    font-size: 1.1rem;
+    line-height: 1.5;
+    color: #555;
+    margin-top: 20px;
+    margin-left: 200px;
+    margin-right: 200px;
+    margin-bottom: 20px;
+    text-align: center;
+}
+
+.body-text-home-description:hover {
+    color: #005a8c;
+}
+
+
+.body-text-home-description-heading {
+    font-size: 50px;
+    padding-top: 30px;
+    padding-bottom: 30px;
+    text-align: center;
+}
+
+.body-text-home-description-content-heading {
+    font-size: 30px;
+    padding-bottom: 20px;
+    text-align: center
+}
+
+.home-bottom-content-heading {
+    font-size: 25px;
+    text-align: center
+}
+
+.body-text-home-description-content {
+    font-size: 1.0rem;
+    line-height: 1.5;
+    color: #555;
+    margin-top: 10px;
+    margin-left: 30px;
+    margin-right: 30px;
+    margin-bottom: 20px;
+    text-align: center;
+}
+
+.opening-elements {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: row;
+}
+
+.centerpiece-image {
+    width: 400px;
+    height: auto;
+    padding-right: 30px;
+}
+
+.main-descriptive-text {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: row;
+}
+
+.decription-icon {
+    width: 10px;
+    height: 10px;
+    align-items: center;
+}
+
+.home-bottom-img {
+    align-items: center;
+}
+
+/* Create three equal columns that float next to each other */
+.column-home {
+    float: left;
+    width: 33.33%;
+    text-align: center;
+}
+
+.body-text-home-description-content:hover {
+    color: #005a8c;
+}
+
+/* Clear floats after the columns */
+.row-home:after {
+    content: "";
+    display: table;
+    clear: both;
+}
+
+/* Responsive layout - makes the three columns stack on top of each other instead of next to each other on smaller screens (600px wide or less) */
+@media screen and (max-width: 600px) {
+    .column {
+        width: 100%;
+    }
+}
+
+#slideshow {
+    overflow: hidden;
+    height: 510px;
+    width: 728px;
+    margin: 0 auto;
+}
+
+.slide {
+    float: left;
+    height: 510px;
+    width: 728px;
+}
+
+.slide-wrapper {
+
+    /* Calculate the total width on the
+  basis of number of slides */
+    width: calc(728px * 4);
+
+    /* Specify the animation with the
+  duration and speed */
+    animation: slide 10s ease infinite;
+}
+
+/* Set the background color
+of each of the slides */
+
+.slide:nth-child(1) {
+    background: black;
+}
+
+.slide:nth-child(2) {
+    background: black;
+}
+
+.slide:nth-child(3) {
+    background: black;
+}
+
+.slide:nth-child(4) {
+    background: black;
+}
+
+@keyframes slide {
+
+    /* Calculate the margin-left for
+  each of the slides */
+    20% {
+        margin-left: 0px;
+    }
+
+    40% {
+        margin-left: calc(-728px * 1);
+    }
+
+    60% {
+        margin-left: calc(-728px * 2);
+    }
+
+    80% {
+        margin-left: calc(-728px * 3);
+    }
+}
+
+.home-bottom-heading {
+    font-size: 40px;
+    padding-top: 30px;
+    padding-bottom: 30px;
+    text-align: center;
+}
