@@ -233,10 +233,6 @@ fieldset.apply-full-width {
   width: 40%;
 }
 
-fieldset.apply-gender {
-    grid-template-columns: 1fr;
-    width:100%;
-}
 
 /* Sam.B Pseudo element to make placeholders italic */
 .apply-main input::placeholder {
@@ -893,6 +889,186 @@ This makes sure that every line isn't beginning at the end of the left side of t
   margin-bottom: 2%;
 }
 
+/* =========================Home Page============================= */
+
+.body-text-home-centerpiece {
+  font-size: 60px;
+  padding-top: 50px;
+  padding-bottom: 20px;
+  font-weight: bold;
+}
+
+.body-text-home-description {
+  font-size: 1.1rem;
+  line-height: 1.5;
+  color: #555;
+  margin-top: 20px;
+  margin-left: 200px;
+  margin-right: 200px;
+  margin-bottom: 20px;
+  text-align: center;
+}
+
+.body-text-home-description:hover {
+  color: #005a8c;
+}
+
+
+.body-text-home-description-heading {
+  font-size: 50px;
+  padding-top: 30px;
+  padding-bottom: 30px;
+  text-align: center;
+}
+
+.body-text-home-description-content-heading {
+  font-size: 30px;
+  padding-bottom: 20px;
+  text-align: center
+}
+
+.home-bottom-content-heading {
+  font-size: 25px;
+  text-align: center
+}
+
+.body-text-home-description-content {
+  font-size: 1.0rem;
+  line-height: 1.5;
+  color: #555;
+  margin-top: 10px;
+  margin-left: 30px;
+  margin-right: 30px;
+  margin-bottom: 20px;
+  text-align: center;
+}
+
+.opening-elements {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: row;
+}
+
+.centerpiece-image {
+  width: 400px;
+  height: auto;
+  padding-right: 30px;
+}
+
+.main-descriptive-text {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: row;
+}
+
+.decription-icon {
+  width: 10px;
+  height: 10px;
+  align-items: center;
+}
+
+.home-bottom-img {
+  align-items: center;
+}
+
+/* Create three equal columns that float next to each other */
+.column-home {
+  float: left;
+  width: 33.33%;
+  text-align: center;
+}
+
+.body-text-home-description-content:hover {
+  color: #005a8c;
+}
+
+/* Clear floats after the columns */
+.row-home:after {
+  content: "";
+  display: table;
+  clear: both;
+}
+
+/* Responsive layout - makes the three columns stack on top of each other instead of next to each other on smaller screens (600px wide or less) */
+@media screen and (max-width: 600px) {
+  .column {
+      width: 100%;
+  }
+}
+
+#slideshow {
+  overflow: hidden;
+  height: 510px;
+  width: 728px;
+  margin: 0 auto;
+}
+
+.slide {
+  float: left;
+  height: 510px;
+  width: 728px;
+}
+
+.slide-wrapper {
+
+  /* Calculate the total width on the
+basis of number of slides */
+  width: calc(728px * 4);
+
+  /* Specify the animation with the
+duration and speed */
+  animation: slide 10s ease infinite;
+}
+
+/* Set the background color
+of each of the slides */
+
+.slide:nth-child(1) {
+  background: black;
+}
+
+.slide:nth-child(2) {
+  background: black;
+}
+
+.slide:nth-child(3) {
+  background: black;
+}
+
+.slide:nth-child(4) {
+  background: black;
+}
+
+@keyframes slide {
+
+  /* Calculate the margin-left for
+each of the slides */
+  20% {
+      margin-left: 0px;
+  }
+
+  40% {
+      margin-left: calc(-728px * 1);
+  }
+
+  60% {
+      margin-left: calc(-728px * 2);
+  }
+
+  80% {
+      margin-left: calc(-728px * 3);
+  }
+}
+
+.home-bottom-heading {
+  font-size: 40px;
+  padding-top: 30px;
+  padding-bottom: 30px;
+  text-align: center;
+}
+
 /* ------------ Footer ------------ */
 footer>* {
   color: white;
@@ -944,4 +1120,8 @@ footer a :hover {
 
 footer h2 {
   font-size: 1rem;
+}
+
+.index {
+  background: url(media/speckled-background.jpg)
 }
