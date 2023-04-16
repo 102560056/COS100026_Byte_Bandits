@@ -233,6 +233,10 @@ fieldset.apply-full-width {
   width: 40%;
 }
 
+fieldset.apply-gender {
+    grid-template-columns: 1fr;
+    width:100%;
+}
 
 /* Sam.B Pseudo element to make placeholders italic */
 .apply-main input::placeholder {
