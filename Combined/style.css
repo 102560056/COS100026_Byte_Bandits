@@ -23,7 +23,7 @@
 
 /* Sam.B Each page will be placed within a main tag and this sets the defult padding and width */
 main {
-  width: 100vw;
+  width: 100%;
   padding: 8vh 10vw;
 }
 
@@ -233,6 +233,10 @@ fieldset.apply-full-width {
   width: 40%;
 }
 
+fieldset.apply-gender {
+    grid-template-columns: 1fr;
+    width: 100%;
+}
 
 /* Sam.B Pseudo element to make placeholders italic */
 .apply-main input::placeholder {
