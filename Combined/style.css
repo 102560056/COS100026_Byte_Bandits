@@ -1073,6 +1073,13 @@ each of the slides */
   text-align: center;
 }
 
+.home-video-link-section {
+    padding: 1em;
+    width: 50%;
+    margin: auto;
+    text-align: center;
+}
+
 /* ------------ Footer ------------ */
 footer>* {
   color: white;
