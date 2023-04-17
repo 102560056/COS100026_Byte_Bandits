@@ -896,7 +896,7 @@ This makes sure that every line isn't beginning at the end of the left side of t
 /* =========================Home Page============================= */
 
 .body-text-home-centerpiece {
-  font-size: 60px;
+  font-size: 4rem;
   padding-top: 50px;
   padding-bottom: 20px;
   font-weight: bold;
@@ -906,10 +906,10 @@ This makes sure that every line isn't beginning at the end of the left side of t
   font-size: 1.1rem;
   line-height: 1.5;
   color: #555;
-  margin-top: 20px;
-  margin-left: 200px;
-  margin-right: 200px;
-  margin-bottom: 20px;
+  margin-top: 1vw;
+  margin-left: 8vw;
+  margin-right: 8vw;
+  margin-bottom: 1vw;
   text-align: center;
 }
 
@@ -919,14 +919,14 @@ This makes sure that every line isn't beginning at the end of the left side of t
 
 
 .body-text-home-description-heading {
-  font-size: 50px;
+  font-size: 3.5rem;
   padding-top: 30px;
   padding-bottom: 30px;
   text-align: center;
 }
 
 .body-text-home-description-content-heading {
-  font-size: 30px;
+  font-size: 2rem;
   padding-bottom: 20px;
   text-align: center
 }
@@ -955,9 +955,22 @@ This makes sure that every line isn't beginning at the end of the left side of t
 }
 
 .centerpiece-image {
-  width: 400px;
-  height: auto;
-  padding-right: 30px;
+    width: 100vw;
+    max-width: 400px;
+    height: auto;
+    padding-right: 30px;
+}
+
+@media (max-width:800px) {
+    
+    .centerpiece-image {
+	display: none;
+    }
+
+    .body-text-home-centerpiece {
+	max-width: 300px;
+	text-align: center;
+    }
 }
 
 .main-descriptive-text {
@@ -974,7 +987,9 @@ This makes sure that every line isn't beginning at the end of the left side of t
 }
 
 .home-bottom-img {
-  align-items: center;
+    align-items: center;
+    width: 80vw;
+    max-width: 400px;
 }
 
 /* Create three equal columns that float next to each other */
@@ -996,30 +1011,41 @@ This makes sure that every line isn't beginning at the end of the left side of t
 }
 
 /* Responsive layout - makes the three columns stack on top of each other instead of next to each other on smaller screens (600px wide or less) */
-@media screen and (max-width: 600px) {
-  .column {
+@media screen and (max-width:1600px) {
+  .column-home {
       width: 100%;
   }
 }
 
 #slideshow {
   overflow: hidden;
-  height: 510px;
-  width: 728px;
+  height: 56vw;
+  width: 80vw;
+  max-width: 728px;
+  max-height: 510px;
   margin: 0 auto;
 }
 
 .slide {
   float: left;
-  height: 510px;
-  width: 728px;
+  height: 56vw;
+  width: 80vw;
+  max-width: 728px;
+  max-height: 510px;
+}
+
+.slide-piece {
+    height: 56vw;
+    width: 80vw;
+    max-width: 728px;
+    max-height: 510px;
 }
 
 .slide-wrapper {
 
   /* Calculate the total width on the
 basis of number of slides */
-  width: calc(728px * 4);
+  width: max(calc(728px * 4), calc(80vw * 4));
 
   /* Specify the animation with the
 duration and speed */
@@ -1054,15 +1080,15 @@ each of the slides */
   }
 
   40% {
-      margin-left: calc(-728px * 1);
+      margin-left: max(calc(-728px * 1), calc(-80vw * 1));
   }
 
   60% {
-      margin-left: calc(-728px * 2);
+      margin-left: max(calc(-728px * 2), calc(-80vw * 2));
   }
 
   80% {
-      margin-left: calc(-728px * 3);
+       margin-left: max(calc(-728px * 3), calc(-80vw * 3));
   }
 }
 
