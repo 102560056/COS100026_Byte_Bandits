@@ -74,7 +74,8 @@ header ul {
 }
 
 /* Sam.B Styling for the company logo and subsequent text */
-header ul a {
+header ul li .icon,
+header ul li a {
   text-decoration: none;
   color: black;
   width: 16vw;
@@ -754,12 +755,10 @@ make them more responsive and mobile-friendly. */
 
 /* ------------ Jobs ------------ */
 
-/* Title of 'Jobs' Page - add padding to counter main's padding */
 #job-title {
   text-align: center;
-  color: var(--main-color);
   font-variant: normal;
-  padding: 0 0 8vh 0;
+
 }
 
 
