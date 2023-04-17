@@ -768,7 +768,6 @@ make them more responsive and mobile-friendly. */
   Padding was also created for aside text */
 .jobs-important_info {
   width: 25vw;
-  padding-left: 7px;
   margin-left: 15px;
   float: right;
   font-style: italic;
