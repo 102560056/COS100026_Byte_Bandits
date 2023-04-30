@@ -1,0 +1,1162 @@
+/* ------------ Global Styles ------------ */
+@import url('https://fonts.googleapis.com/css2?family=Calistoga&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap');
+
+/* Sam.B Global Variables for standardised styling */
+:root {
+  font-size: 16px;
+  --main-color: #EC1C2D;
+}
+
+/* Sam.B Overide default behaviours to produce more predictible behaviours */
+* {
+  outline: none;
+  font-family: 'Roboto', sans-serif;
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+/* Sam.B All elements tagged with main-color will be assigned the main color allowing us to change our minds later */
+.main-color {
+  color: var(--main-color);
+}
+
+/* Sam.B Each page will be placed within a main tag and this sets the defult padding and width */
+main {
+  width: 100%;
+  padding: 8vh 10vw;
+}
+
+
+
+
+/* ------------ Header ------------ */
+
+/* Sam.B Setting the header to stay on the top of the screen above any elements */
+header {
+  z-index: 1;
+  position: sticky;
+  top: 0;
+  padding: 6vh 10vw;
+  font-size: 1rem;
+  font-weight: bold;
+  background-color: white;
+  box-shadow: 0 0 .8rem 0 #ccc;
+  border-radius: .5rem;
+}
+
+/* Sam.B General link styles */
+header a :hover {
+  cursor: pointer;
+  text-align: center;
+}
+
+/* Sam.B Hovering over the defult nav menu items causes them to change to the main colour and enlarge slightly */
+.original-menu :hover {
+  color: var(--main-color);
+  font-size: 1.1rem;
+  transition: ease 100ms;
+}
+
+/* Sam.B Header elements are listed horizontally and spaced out evenly a centered */
+header ul {
+  display: flex;
+  list-style: none;
+  text-align: center;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.original-menu {
+  list-style-type: none;
+  text-align: center;
+  width: 13vw;
+}
+
+/* Sam.B Styling for the company logo and subsequent text */
+header ul li .icon,
+header ul li a {
+  text-decoration: none;
+  color: black;
+  width: 16vw;
+}
+
+/* Sam.B Colours the links  */
+header ul li a,
+section ul li a {
+  color: rgb(101, 101, 101);
+}
+
+/* Sam.B Setting styles for the secondary menu the shows when the hamburger menu is clicked, hidden by defult */
+.drop-down {
+  background-color: white;
+  position: absolute;
+  left: 0;
+  width: 100vw;
+  font-size: 2rem;
+  display: none;
+}
+
+/* Sam.B Sets the ul to be a coloumn and its padding*/
+.drop-down ul {
+  display: flex;
+  flex-direction: column;
+  padding-top: 5vh;
+  height: 80vh;
+}
+
+/* Sam.B Flexs the li element and allows the a element to be centered */
+.drop-down ul li {
+  height: 20%;
+  display: flex;
+}
+
+/* Sam.B Centered drop down content */
+.drop-down a {
+  align-self: center;
+  width: fit-content;
+}
+
+.drop-down ul :hover {
+  color: black;
+}
+
+/* Sam.B Keeps both icons centered in the same place */
+.hamburger-menu {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+/* Sam.B Makes the litteral checkbox hidden */
+.hamburger-menu input {
+  appearance: none;
+}
+
+/* Sam.B Hide the close icon by defult */
+.close {
+  display: none;
+}
+
+/* Sam.B Animations for expanding navbar  */
+@keyframes drop-down-expand {
+  from {
+    height: 0;
+  }
+
+  to {
+    height: 90vh;
+  }
+}
+
+@keyframes ul-expand {
+  from {
+    height: 0;
+  }
+
+  to {
+    height: 80vh;
+  }
+}
+
+/* ------------ Resolution Handling ------------ */
+@media only screen and (max-width: 900px) {
+
+  /* Sam.B Hides the origional menu when the screen shrimks */
+  ul :is(.original-menu, .main-color) {
+    display: none;
+  }
+
+  /* Sam.B Adds an animation over .3 seconds to the drop down menu background */
+  :has(.hamburger-menu [type=checkbox]:checked)~.drop-down {
+    display: block;
+    animation: drop-down-expand .3s;
+    height: 90vh;
+  }
+
+  /* Sam.B Adds an animation over .3 seconds to the drop down menu contents */
+  :has(.hamburger-menu [type=checkbox]:checked)~.drop-down ul {
+    animation: ul-expand .3s;
+    height: 80vh;
+  }
+
+  /* Sam.B When the hamburger menu is clicked, change out the icon for a 'closed' icon */
+  [type=checkbox]:checked~.close {
+    display: block;
+  }
+
+  /* Sam.B When the hamburger menu is clicked, hide the menu icon */
+  [type=checkbox]:checked~.menu {
+    display: none;
+  }
+
+}
+
+@media only screen and (min-width: 900px) {
+
+  /* Sam.B Hide hamburger menu again if the screen is scaled back up */
+  .hamburger-menu {
+    display: none;
+  }
+}
+
+
+
+/* ------------ Apply ------------ */
+.apply-main {
+  display: flex;
+  justify-content: center;
+}
+
+/* Sam.B Put some padding around every element within the form */
+form>* {
+  padding: 1rem 0;
+}
+
+/* Sam.B Splits every section within the fieldset into two halves  */
+fieldset {
+  border: none;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  margin: auto;
+}
+
+fieldset input[type=text] {
+  margin-left: 1rem;
+}
+
+fieldset input {
+  padding: .2rem;
+}
+
+fieldset.apply-full-width {
+  grid-template-columns: 1fr;
+  width: 40%;
+}
+
+fieldset.apply-gender {
+    grid-template-columns: 1fr;
+    width: 100%;
+}
+
+/* Sam.B Pseudo element to make placeholders italic */
+.apply-main input::placeholder {
+  font-style: italic;
+}
+
+.apply-bold {
+  font-weight: bold;
+}
+
+.other-label {
+  justify-self: start;
+}
+
+.apply-skills :first-child {
+  grid-area: header;
+  padding-bottom: 1rem;
+}
+
+.apply-other-input {
+  grid-area: input;
+  justify-content: stretch;
+  height: 15rem;
+}
+
+.apply-other-label {
+  grid-area: label;
+}
+
+.apply-skills {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-template-areas:
+    "header header"
+    ". label"
+    ". input"
+    ". input"
+    ". input"
+    ". input"
+    ". input"
+    ". input"
+    ". input";
+}
+
+.apply-skill {
+  padding: .2rem;
+  display: flex;
+}
+
+/* Sam.B Styling submit button on hover effect*/
+.apply-submit :hover {
+  cursor: pointer;
+  background-color: var(--main-color);
+}
+
+/* Sam.B Styling submit button styling*/
+input[type=submit] {
+  background-color: #ef4856;
+  color: white;
+  border: 2px solid rgb(101, 101, 101);
+  border-radius: .3rem;
+  padding: 1rem;
+}
+
+
+
+/* ------------ About-Lexi ------------ */
+/* Styles for headings in the about page*/
+.about-main h2,
+.enh-main h2 {
+  font-weight: bold;
+  text-align: center;
+  font-size: 1.5rem;
+  text-decoration: underline;
+  text-decoration-color: var(--main-color);
+}
+
+h1 {
+  font-weight: bold;
+  text-align: center;
+  font-size: 2rem;
+  text-decoration: underline;
+  text-decoration-color: var(--main-color);
+}
+
+/* Styles for horizontal line in 'About' section */
+.about-main hr {
+  margin-bottom: 2rem;
+}
+
+/* Styles for arrow icon in 'About' page */
+.about-arrow {
+  text-align: center;
+  font-size: 30px;
+  color: var(--main-color);
+  padding: 1rem 0;
+}
+
+.about-main>section:not(:last-child) {
+  padding-bottom: 5vh;
+}
+
+/* Styles for group details */
+.about-group-details {
+  width: 50%;
+  background-color: var(--main-color);
+  color: white;
+  padding: 2rem;
+  border-radius: 5px;
+  word-wrap: break-word;
+}
+
+/* Styles for group image*/
+.about-group-img {
+  width: 50%;
+  height: 100%;
+  border: #ccc 2px solid;
+  float: right;
+  margin-left: 2rem;
+  clear: none;
+}
+
+#enhancement-lexi {
+  clear: both;
+  padding-top: 5vh;
+}
+
+
+/* definitin list styling */
+.about-body dl {
+  text-align: left;
+  display: flex;
+  flex-wrap: wrap;
+  width: 100%;
+  padding: 1rem 0;
+}
+
+/* set dd is displaying at the right of dt in the same line */
+.about-body dt,
+.about-body dd {
+  display: inline-block;
+  margin-left: 5px;
+  font-weight: 700;
+
+}
+
+.about-body dt {
+  width: 20%;
+}
+
+.about-body dd {
+  width: 70%;
+}
+
+
+.about-group-details a {
+  color: white;
+}
+
+/* ------------ Flipper Section - Lexi ------------ */
+
+/* set flipper container to flex, allowing flippers to distribute evenly */
+.flip-container {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+}
+
+/* Sets margin on the first three flippers */
+.flip-container .flipper:not(.flip-container :last-child) {
+  margin-right: 2rem;
+}
+
+/* sets the flipper width, max-width and max-height, adds a transition effect when 
+transforming, sets the transform style to preserve-3d */
+.flipper {
+  height: 25vh;
+  transition: transform 0.6s;
+  transform-style: preserve-3d;
+  perspective: 1000px;
+  width: 25%;
+  max-width: 300px;
+  max-height: 300px
+}
+
+/* set the front and back of the flipper to absolute position so they are 
+ at the same position of the page, also hides the backface of the elements 
+ during the 3D transform.*/
+.flipper .front,
+.flipper .back {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: var(--main-color);
+  backface-visibility: hidden;
+  text-align: center;
+  border-radius: 5%;
+  padding: 2rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+
+/*  rotating back 180 degrees along the y-axis so that it appears flipped over*/
+.flipper .back {
+  transform: rotateY(180deg);
+  flex-direction: column;
+}
+
+/* set font style for back of the flipper */
+.flipper .back {
+  font-size: 1rem;
+  font-weight: 400;
+  color: white;
+  margin: 0 5%;
+}
+
+.flipper .back h3 {
+  font-weight: 800;
+  margin-bottom: 1rem;
+  color: white;
+  font-size: 1.2rem;
+}
+
+/* when hover, applies a 3D rotation to the flipper element, rotating it */
+.flipper:hover {
+  transform: rotateY(180deg);
+}
+
+.front figure img {
+  width: 100%;
+  max-width: 211px;
+}
+
+
+/* ------------ Intro Section_Lexi ------------ */
+
+/* set style for the meet our team introduction */
+#team-introduction {
+  text-align: center;
+  padding: 10vh 10vw;
+  background-color: var(--main-color);
+  color: white;
+  border-radius: 5px;
+}
+
+/* ------------ Profiles Section-Lexi ------------ */
+/* hide radio button */
+.about-profile input {
+  display: none;
+}
+
+/* Set the default styles for the content elements */
+.about-profile .content {
+  display: none;
+}
+
+/* Set the content display for sam, preston, saffan and randew */
+.about-profile .content {
+  padding: 2rem;
+  border-radius: 5px;
+  border: 4px solid var(--main-color);
+}
+
+.about-profile .content a {
+  color: black;
+}
+
+/* set profile image display in line with the profile content */
+.about-profile .content figure {
+  display: inline-block;
+  width: 25%;
+  margin: 5%;
+}
+
+.about-profile .content figure img {
+  width: 90%;
+}
+
+/* styling the detail content for each team member */
+.about-profile-content {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  width: 70%;
+  padding: 2%;
+}
+
+/* set style for unselected label*/
+.about-profile label {
+  display: inline-block;
+  text-align: left;
+  padding: 5px;
+  border-radius: 5px 5px 0 0;
+  margin-bottom: -4px;
+  width: 15%;
+}
+
+/* set style for hovered label */
+.about-profile label:hover {
+  background-color: var(--main-color);
+  border: 2px solid var(--main-color);
+  border-bottom: var(--main-color);
+}
+
+/* set style for checked label */
+.about-profile input[type="radio"]:checked+label {
+  border: 4px solid var(--main-color);
+  border-bottom: #ffffff;
+  background-color: #ffffff;
+  z-index: 2;
+  font-weight: bold;
+}
+
+/* Show the content element for Lexi when its radio button is checked */
+/* don't change this, the border radius is different with other sections */
+#lexi_l:checked~#lexi {
+  display: flex;
+  padding: 2%;
+  border-radius: 0 5px 5px 5px;
+  align-items: center;
+  border: 4px solid var(--main-color);
+  word-wrap: break-word;
+}
+
+/* Show the content element for Sam when its radio button is checked */
+#sam_l:checked~#sam {
+  display: flex;
+  word-wrap: break-word;
+}
+
+/* Show the content element for Preston when its radio button is checked */
+#preston_l:checked~#preston {
+  display: flex;
+  word-wrap: break-word;
+}
+
+/* Show the content element for Saffan when its radio button is checked */
+#saffan_l:checked~#saffan {
+  display: flex;
+  word-wrap: break-word;
+}
+
+/* Show the content element for Randew when its radio button is checked */
+#randew_l:checked~#randew {
+  display: flex;
+  word-wrap: break-word;
+}
+
+/* ------------ Contact Section-Lexi ------------ */
+
+/* About Page-section 4: map and contact us */
+/* sets the display to flex*/
+.about-map {
+  display: flex;
+}
+
+/*  Styles for children of .about-map element  */
+.about-map>* {
+  width: 50%;
+}
+
+/* style contact us content */
+.about-map-address {
+  padding: 2rem;
+  background-color: var(--main-color);
+  color: white;
+  border-radius: 5px;
+  margin-left: 2rem;
+}
+
+.about-map-address a {
+  color: white;
+}
+
+.about-map-address p {
+  margin-top: 1rem;
+}
+
+/* ------------ Timetable Section-Lexi ------------ */
+/* styling timetable, tables and table cells in timetable section */
+.about-timetable {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.about-timetable table {
+  border: 2px solid var(--main-color);
+  border-collapse: collapse;
+  color: rgb(0, 0, 0);
+  background-color: #ffffff;
+  display: block;
+  border-radius: 5px;
+}
+
+.about-timetable td,
+.about-timetable th {
+  border: 1px solid var(--main-color);
+  border-right: none;
+  border-left: none;
+  font-weight: bold;
+  margin: auto;
+}
+
+/* Cancel the border of coloured cells */
+.about-timetable .color {
+  border: none;
+}
+
+/* set header in column row to bold and other styles */
+.about-timetable .column-header {
+
+  font-weight: bold;
+  font-size: 20px;
+  padding: 10px;
+  border-right: 1px solid var(--main-color);
+  ;
+}
+
+/* Colouring specific cell to reflect our assignment plan */
+.about-timetable .one {
+  background-color: #caf0f8;
+}
+
+.about-timetable .two {
+  background-color: #90e0ef;
+}
+
+.about-timetable .three {
+  background-color: #0096c7;
+}
+
+.about-timetable .four {
+  background-color: #0077b6;
+}
+
+.about-timetable .five {
+  background-color: #023e8a;
+}
+
+.about-timetable .six {
+  background-color: #e76f51;
+}
+
+
+
+/*------------Reactive Section-Lexi -------------   */
+/* This is the media query section of the CSS code which targets screens with a maximum 
+width of 900px, typically mobile devices. It adjusts the styling of various sections to 
+make them more responsive and mobile-friendly. */
+@media (max-width: 900px) {
+
+  .about-group-info,
+  .about-map {
+    flex-direction: column;
+  }
+
+  .about-group-details,
+  .about-group-img,
+  .about-map-address,
+  .iframe {
+    width: 100%;
+  }
+
+  .about-group-img {
+    margin: 0 0 2rem 0;
+    max-width: 100%;
+    float: none;
+  }
+
+  .about-map-address {
+    margin: 2rem 0 0 0;
+  }
+
+  .iframe {
+    height: 40vh;
+  }
+
+  /* set key values flip animation display in column, also change content style to be more suitable
+  to display on small screen */
+  .flip-container {
+    flex-direction: column;
+  }
+
+  .flipper {
+    width: 50%;
+    margin: 5%;
+    min-width: 122px;
+    min-height: 206px;
+  }
+
+  .flipper figure img {
+    width: 80%;
+  }
+
+  .flipper .front {
+    height: 200px;
+  }
+
+  .flipper .front figure {
+    width: 80%;
+  }
+
+  .flipper .back {
+    height: 200px;
+  }
+
+}
+
+
+
+/* ------------ Jobs ------------ */
+
+#job-title {
+  text-align: center;
+  font-variant: normal;
+
+}
+
+
+/* Important-info is for the aside information. 
+  Background colour was used, along with a black border with dashes.
+  Aside information was placed to the right side of the screen. 
+  Padding was also created for aside text */
+.jobs-important_info {
+  width: 25vw;
+  margin-left: 15px;
+  float: right;
+  font-style: italic;
+  background-color: lightpink;
+  border-style: dashed;
+  padding-left: 1.5%;
+  padding-right: 2.5%;
+}
+
+.jobs-sect_collapse summary {
+  cursor: pointer
+}
+
+/* Display job title inline with the arrow at the start of <details>*/
+.jobs-sect_collapse summary>* {
+  display: inline;
+  margin: 0 auto;
+  max-width: 60rem;
+  padding: 0.5rem;
+}
+
+/* jobs-info is used to create a gap between the description of both jobs and the left side of the website.
+This makes sure that every line isn't beginning at the end of the left side of the website  */
+.jobs-info {
+  padding-left: 5%;
+}
+
+/* Class for <details>, creates two different tabs for both job descriptions. */
+.jobs-sect_collapse {
+  background: #eee;
+  margin-bottom: 2rem;
+  padding: 1rem;
+}
+
+/* Site-wide main colour is used for Job Titles and sub-headers */
+.jobs-header {
+  color: var(--main-color);
+}
+
+.jobs-sub-header {
+  color: var(--main-color)
+}
+
+
+/* 'Apply Now!' button was created in the center of the page, which takes user to the apply
+  page if clicked. */
+#jobs-apply-container {
+  text-align: center;
+}
+
+.jobs-apply-center {
+  background-color: #ef4856;
+  text-decoration: none;
+  border: 2px solid rgb(101, 101, 101);
+  border-radius: .3rem;
+  padding: 1rem;
+  text-decoration: none;
+  color: white;
+}
+
+/* A pseudo element of hover is used in order for user to know that their cursor is over the 
+    'Apply Now! button. */
+.jobs-apply-center:hover {
+  cursor: pointer;
+  background-color: var(--main-color);
+}
+
+/* -------- Enhancements ---------- */
+
+
+#enh-title>* {
+  text-align: center;
+}
+
+/* Style each enhancement description section*/
+.enh-enhance-sect {
+  background-color: lightgrey;
+  border: solid;
+  border-width: .3em;
+  border-radius: .4em;
+  border-color: var(--main-color);
+  margin: 2em;
+}
+
+
+.enh-enhance-sect>h3 {
+  margin: 1em 2em;
+}
+
+.enh-enhance-sect>hr {
+  margin: 0% 2.5% 0% 2.5%;
+}
+
+.enh-enhance-sect>p {
+  padding: 1em 3em;
+}
+
+/* Style the bottom paragraph (link to enhancement paragraph) to give some room at the bottom of the section*/
+.enh-enhance-sect>p:last-child {
+  margin-bottom: 1em;
+}
+
+/* Style the code example boxes, keeping them square, ensuring text-wrapping, and try make writing code snippets easy */
+.enh-codebox {
+  font-family: monospace;
+  margin: 0em 4em 1em 4em;
+  background: white;
+  word-wrap: break-word;
+  padding: .1rem .3rem .2rem;
+  border-radius: .2rem;
+  display: block;
+  white-space: pre-line;
+  max-width: 700px;
+  min-width: 40%;
+}
+
+.enh-enhance-sect figure img,
+.enh-enhance-sect figure figcaption {
+  width: 90%;
+  margin-left: 5%;
+  margin-bottom: 2%;
+}
+
+/* =========================Home Page============================= */
+
+.body-text-home-centerpiece {
+  font-size: 4rem;
+  padding-top: 50px;
+  padding-bottom: 20px;
+  font-weight: bold;
+}
+
+.body-text-home-description {
+  font-size: 1.1rem;
+  line-height: 1.5;
+  color: #555;
+  margin-top: 1vw;
+  margin-left: 8vw;
+  margin-right: 8vw;
+  margin-bottom: 1vw;
+  text-align: center;
+}
+
+.body-text-home-description:hover {
+  color: #005a8c;
+}
+
+
+.body-text-home-description-heading {
+  font-size: 3.5rem;
+  padding-top: 30px;
+  padding-bottom: 30px;
+  text-align: center;
+}
+
+.body-text-home-description-content-heading {
+  font-size: 2rem;
+  padding-bottom: 20px;
+  text-align: center
+}
+
+.home-bottom-content-heading {
+  font-size: 25px;
+  text-align: center
+}
+
+.body-text-home-description-content {
+  font-size: 1.0rem;
+  line-height: 1.5;
+  color: #555;
+  margin-top: 10px;
+  margin-left: 30px;
+  margin-right: 30px;
+  margin-bottom: 20px;
+  text-align: center;
+}
+
+.opening-elements {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: row;
+}
+
+.centerpiece-image {
+    width: 100vw;
+    max-width: 400px;
+    height: auto;
+    padding-right: 30px;
+}
+
+@media (max-width:800px) {
+    
+    .centerpiece-image {
+	display: none;
+    }
+
+    .body-text-home-centerpiece {
+	max-width: 300px;
+	text-align: center;
+    }
+}
+
+.main-descriptive-text {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: row;
+}
+
+.decription-icon {
+  width: 10px;
+  height: 10px;
+  align-items: center;
+}
+
+.home-bottom-img {
+    align-items: center;
+    width: 80vw;
+    max-width: 400px;
+}
+
+/* Create three equal columns that float next to each other */
+.column-home {
+  float: left;
+  width: 33.33%;
+  text-align: center;
+}
+
+.body-text-home-description-content:hover {
+  color: #005a8c;
+}
+
+/* Clear floats after the columns */
+.row-home:after {
+  content: "";
+  display: table;
+  clear: both;
+}
+
+/* Responsive layout - makes the three columns stack on top of each other instead of next to each other on smaller screens (600px wide or less) */
+@media screen and (max-width:1600px) {
+  .column-home {
+      width: 100%;
+  }
+}
+
+#slideshow {
+  overflow: hidden;
+  height: 56vw;
+  width: 80vw;
+  max-width: 728px;
+  max-height: 510px;
+  margin: 0 auto;
+}
+
+.slide {
+  float: left;
+  height: 56vw;
+  width: 80vw;
+  max-width: 728px;
+  max-height: 510px;
+}
+
+.slide-piece {
+    height: 56vw;
+    width: 80vw;
+    max-width: 728px;
+    max-height: 510px;
+}
+
+.slide-wrapper {
+
+  /* Calculate the total width on the
+basis of number of slides */
+  width: max(calc(728px * 4), calc(80vw * 4));
+
+  /* Specify the animation with the
+duration and speed */
+  animation: slide 10s ease infinite;
+}
+
+/* Set the background color
+of each of the slides */
+
+.slide:nth-child(1) {
+  background: black;
+}
+
+.slide:nth-child(2) {
+  background: black;
+}
+
+.slide:nth-child(3) {
+  background: black;
+}
+
+.slide:nth-child(4) {
+  background: black;
+}
+
+@keyframes slide {
+
+  /* Calculate the margin-left for
+each of the slides */
+  20% {
+      margin-left: 0px;
+  }
+
+  40% {
+      margin-left: max(calc(-728px * 1), calc(-80vw * 1));
+  }
+
+  60% {
+      margin-left: max(calc(-728px * 2), calc(-80vw * 2));
+  }
+
+  80% {
+       margin-left: max(calc(-728px * 3), calc(-80vw * 3));
+  }
+}
+
+.home-bottom-heading {
+  font-size: 40px;
+  padding-top: 30px;
+  padding-bottom: 30px;
+  text-align: center;
+}
+
+.home-video-link-section {
+    padding: 1em;
+    width: 50%;
+    margin: auto;
+    text-align: center;
+}
+
+/* ------------ Footer ------------ */
+footer>* {
+  color: white;
+  fill: white;
+  margin: auto;
+}
+
+footer {
+  background-color: #000000;
+  width: 100%;
+  padding: 0 10vw 1rem 10vw;
+  font-size: small;
+  justify-content: center;
+  text-align: center;
+}
+
+footer ul {
+  list-style: none;
+  display: flex;
+  width: 100%;
+  justify-content: center;
+  padding: 1rem;
+}
+
+footer li {
+  width: fit-content;
+  margin: 0 0.5rem 0 0.5rem;
+}
+
+footer a {
+  text-decoration: none;
+  color: #ccc;
+  display: flex;
+  align-items: center;
+}
+
+footer section {
+  font-size: 1rem;
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+  padding: 1rem;
+}
+
+footer table :hover,
+footer a :hover {
+  color: white;
+}
+
+footer h2 {
+  font-size: 1rem;
+}
+
+.index {
+  background: url(images/speckled-background.jpg)
+}

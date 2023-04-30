@@ -6,14 +6,77 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Apply</title>
-    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="styles/style.css">
 </head>
 
 
 <body>
+<<<<<<< HEAD:Combined/apply.php
     <?php
         include_once("header.inc");
     ?>
+=======
+    <header>
+        <section class="static-menu">
+            <ul>
+	       <li>
+                    <a href="index.html" class="icon">
+                      <img src="images/byte-logo.svg" alt="Byte company logo">Byte&#8482;
+                    </a>
+	       </li>
+	       
+                <li class="original-menu">
+                    <a href="index.html">Home</a>
+                </li>
+
+                <li class="original-menu">
+                    <a href="about.html">About</a>
+                </li>
+
+                <li class="original-menu">
+                    <a href="jobs.html">Jobs</a>
+                </li>
+
+                <li class="original-menu main-color">
+                    <a href="apply.html" class="main-color">Apply</a>
+                </li>
+
+                <li class="original-menu">
+                    <a href="enhancements.html">Enhancements</a>
+                </li>
+
+                <li>
+                    <label class="hamburger-menu">
+                        <input type="checkbox">
+                        <img src="images/menu.svg" alt="" class="menu">
+                        <img src="images/close.svg" alt="" class="close">
+                    </label>
+                </li>
+            </ul>
+        </section>
+        <section class="drop-down">
+            <ul>
+                <li>
+                    <a href="index.html">Home</a>
+                </li>
+                <li>
+                    <a href="about.html">About</a>
+                </li>
+                <li>
+                    <a href="jobs.html">Jobs</a>
+                </li>
+                <li>
+                    <a href="apply.html">Apply</a>
+                </li>
+                <li>
+                    <a href="enhancements.html">Enhancements</a>
+                </li>
+            </ul>
+        </section>
+    </header>
+
+    <!-- -------------------------------- -->
+>>>>>>> 02b8691345a62383bebec40dc16f2b43f7b0ef7e:Combined/apply.html
 
     <main class="apply-main">
         <form action="https://mercury.swin.edu.au/it000000/formtest.php" method="post">
