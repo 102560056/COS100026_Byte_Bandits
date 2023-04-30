@@ -11,64 +11,9 @@
 
 
 <body>
-  <header>
-    <section class="static-menu">
-      <ul>
-        <a href="index.html" class="icon">
-          <img src="images/byte-logo.svg" alt="Byte company logo">Byte&#8482;
-        </a>
-
-        <li class="original-menu">
-          <a href="index.html">Home</a>
-        </li>
-
-        <li class="original-menu">
-          <a href="about.html">About</a>
-        </li>
-
-        <li class="original-menu main-color">
-          <a href="jobs.html" class="main-color">Jobs</a>
-        </li>
-
-        <li class="original-menu main-color">
-          <a href="apply.html">Apply</a>
-        </li>
-
-        <li class="original-menu">
-          <a href="enhancements.html">Enhancements</a>
-        </li>
-
-        <li>
-          <label class="hamburger-menu">
-            <input type="checkbox">
-            <img src="images/menu.svg" alt="" class="menu">
-            <img src="images/close.svg" alt="" class="close">
-          </label>
-        </li>
-      </ul>
-    </section>
-    <section class="drop-down">
-      <ul>
-        <li>
-          <a href="index.html">Home</a>
-        </li>
-        <li>
-          <a href="about.html">About</a>
-        </li>
-        <li>
-          <a href="jobs.html">Jobs</a>
-        </li>
-        <li>
-          <a href="apply.html">Apply</a>
-        </li>
-        <li>
-          <a href="enhancements.html">Enhancements</a>
-        </li>
-      </ul>
-    </section>
-  </header>
-
-  <!-- -------------------------------- -->
+  <?php
+    include_once("header.inc");
+  ?>
 
   <!-- Main -->
 
@@ -296,60 +241,9 @@
     </div>
   </main>
 
-  <!-- -------------------------------- -->
-
-  <footer>
-    <section>
-      <img src="images/footer-logo.png" alt="Swinburne logo">
-      <table>
-        <tr>
-          <td><a href="index.html">Home</a></td>
-        </tr>
-        <tr>
-          <td><a href="about.html#contact-us">Contact Us</a></td>
-        </tr>
-        <tr>
-          <td><a href="jobs.html">Job</a></td>
-        </tr>
-        <tr>
-          <td><a href="apply.html">Apply</a></td>
-        </tr>
-      </table>
-    </section>
-    <hr>
-    <ul>
-      <li>
-        <a href="mailto:102560056@student.swin.edu.au">
-          <img src="images/email.svg">
-          <p>Sam Banfield</p>
-        </a>
-      </li>
-      <li>
-        <a href="mailto:104119968@student.swin.edu.au">
-          <img src="images/email.svg">
-          <p>Saffan Malik</p>
-        </a>
-      </li>
-      <li>
-        <a href="mailto:104453323@student.swin.edu.au">
-          <img src="images/email.svg">
-          <p>Preston Hulme</p>
-        </a>
-      </li>
-      <li>
-        <a href="mailto:104147451@student.swin.edu.au">
-          <img src="images/email.svg">
-          <p>Lexi Peng</p>
-        </a>
-      </li>
-      <li>
-        <a href="mailto:103163537@student.swin.edu.au">
-          <img src="images/email.svg">
-          <p>Randew Kumarasinghe</p>
-        </a>
-      </li>
-    </ul>
-  </footer>
+  <?php
+    include_once("footer.inc");
+  ?>
 </body>
 
 </html>
