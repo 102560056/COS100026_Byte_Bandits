@@ -1,0 +1,101 @@
+<!-- S.Banfield 17/5/23
+Used to recreate the header without mercury. -->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="styles/style.css">
+    <title>Document</title>
+</head>
+<body>
+    <header>
+        <section class="static-menu">
+            <ul>
+                <li>
+                    <a href="index.php" class="icon">
+                        <img src="images/byte-logo.svg" alt="Byte company logo">Byte&#8482;
+                    </a>
+                </li>
+    
+                <li class="original-menu">
+                    <a href="index.php"',($pageName == 'index')?$color:'','>Home</a>
+                </li>
+    
+                <li class="original-menu">
+                    <a href="about.php"',($pageName == 'about')?$color:'','>About</a>
+                </li>
+
+                <li class="original-menu">
+                    <a href="manage.php"',($pageName == 'manage')?$color:'','>Manage</a>
+                </li>
+    
+                <li class="original-menu">
+                    <a href="jobs.php"',($pageName == 'jobs')?$color:'','>Jobs</a>
+                </li>
+    
+                <li class="original-menu">
+                    <a href="apply.php"',($pageName == 'apply')?$color:'','>Apply</a>
+                </li>
+
+                <li class="original-menu">
+                </li>
+    
+                <li class="original-menu">
+                    <a href="enhancements.php"',($pageName == 'enhancements')?$color:'','>Enhancements</a>
+                </li>
+                <li>
+                    <label class="hamburger-menu">
+                        <input type="checkbox">
+                        <img src="images/" alt="" class="menu">
+                        <img src="images/close.svg" alt="" class="close">
+                    </label>
+                </li>
+            </ul>
+        </section>
+
+        
+
+        <section class="drop-down">
+            <ul>
+                <li>
+                    <a href="index.php">Home</a>
+                </li>
+                <li>
+                    <a href="about.php">About</a>
+                </li>
+                <li>
+                    <a href="jobs.php">Jobs</a>
+                </li>
+                <li>
+                    <a href="apply.php">Apply</a>
+                </li>
+                <li>
+                    <a href="enhancements.php">Enhancements</a>
+                </li>
+            </ul>
+        </section>
+    </header>
+    <section class="login">
+        <form method="post" action="">
+            <label for="username">Username:</label>
+            <input type="text" name="username" id="username" pattern="^([a-zA-Z]|[0-9])$" required>
+            <label for="password">Password:</label>
+            <input type="password" name="password" id="password" required>
+            <button type="submit">Login</button>
+        </form>
+    </section>
+
+    <!-- <section class="logout">
+        <form method="post" action="">
+            <button type="submit">Login</button>
+        </form>
+    </section> -->
+    
+    <main>
+        asdfg
+    </main>
+</body>
+</html>
