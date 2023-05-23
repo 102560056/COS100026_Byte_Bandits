@@ -12,12 +12,12 @@
 
 <body>
     <?php
-        include_once("header.inc");
+        include_once("header.inc"); 
     ?>
 
     <main class="apply-main">
-        <form action="https://mercury.swin.edu.au/it000000/formtest.php" method="post">
-
+        <form action="processEOI.php" method="post" novalidate="novalidate"> <!-- remove novalidate for final verison -->
+    
             <fieldset>
                 <!-- Job reference number, exactly 5 alphanumeric characters  -->
                 <label for="job_refrence" class="apply-bold">Job reference number:</label>
@@ -80,6 +80,13 @@
                     required>
             </fieldset>
 
+            <!-- Suburb/Town,  max 40 characters -->
+            <fieldset>
+                <label for="suburb" class="apply-bold">Suburb/Town:</label>
+                <input type="text" name="suburb" id="suburb" placeholder="Suburb/Town" maxlength="40"
+                    required>
+            </fieldset>
+
             <!-- State,  drop down selection from 
         VIC,NSW,QLD,NT,WA,SA,TAS,ACT -->
             <fieldset>
@@ -126,7 +133,7 @@
                 <label class="apply-skill"><input type="checkbox" name="skill[]" value="C#" id="C#">C#</label>
                 <label class="apply-skill"><input type="checkbox" name="skill[]" value="Python"
                         id="Python">Python</label>
-                <label class="apply-other-label"><input type="checkbox" name="skill[]" value="other" id="other"
+                <label class="apply-other-label"><input type="checkbox" name="skill_other" value="other" id="other"
                         checked>Other
                     Skills</label>
                 <textarea name="skills_description" id="skills_description" class="apply-other-input"
