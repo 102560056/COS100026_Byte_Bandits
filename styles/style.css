@@ -17,7 +17,7 @@
 }
 
 /* Sam.B All elements tagged with main-color will be assigned the main color allowing us to change our minds later */
-.main-color{
+.main-color {
   color: var(--main-color);
 }
 
@@ -200,11 +200,13 @@ section ul li a {
   }
 }
 
-.login, .logout {
+.login,
+.logout {
   float: right;
 }
 
-.login form, .logout form{
+.login form,
+.logout form {
   box-shadow: 0 0 .8rem 0 #ccc;
   border-bottom-left-radius: .5rem;
   width: 30vw;
@@ -214,16 +216,17 @@ section ul li a {
   grid-auto-flow: row;
 }
 
-.login form > label  {
+.login form>label {
   grid-column: labels;
+  padding-right: 1rem;
   grid-row: auto;
   display: flex;
   align-items: center;
 }
 
-.login form > input,
-.login form > textarea,
-.login form > button {
+.login form>input,
+.login form>textarea,
+.login form>button {
   grid-column: controls;
   grid-row: auto;
   border: none;
@@ -231,22 +234,23 @@ section ul li a {
   margin: 0.2rem;
 }
 
-.login form > button {
+.login form>button {
   margin-top: 1rem;
 }
 
-.login button, .logout button{
+.login button,
+.logout button {
   border-radius: .2rem;
   font-size: 1.1rem;
 }
 
-.login input{
+.login input {
   border-radius: .2rem;
   background-color: #E9E9ED;
 }
 
 
-main{
+main {
   height: 300vh;
 }
 
@@ -283,8 +287,8 @@ main{
 }
 
 .apply-main fieldset.apply-gender {
-    grid-template-columns: 1fr;
-    width: 100%;
+  grid-template-columns: 1fr;
+  width: 100%;
 }
 
 /* Sam.B Pseudo element to make placeholders italic */
@@ -1001,22 +1005,22 @@ This makes sure that every line isn't beginning at the end of the left side of t
 }
 
 .centerpiece-image {
-    width: 100vw;
-    max-width: 400px;
-    height: auto;
-    padding-right: 30px;
+  width: 100vw;
+  max-width: 400px;
+  height: auto;
+  padding-right: 30px;
 }
 
 @media (max-width:800px) {
-    
-    .centerpiece-image {
-	display: none;
-    }
 
-    .body-text-home-centerpiece {
-	max-width: 300px;
-	text-align: center;
-    }
+  .centerpiece-image {
+    display: none;
+  }
+
+  .body-text-home-centerpiece {
+    max-width: 300px;
+    text-align: center;
+  }
 }
 
 .main-descriptive-text {
@@ -1033,9 +1037,9 @@ This makes sure that every line isn't beginning at the end of the left side of t
 }
 
 .home-bottom-img {
-    align-items: center;
-    width: 80vw;
-    max-width: 400px;
+  align-items: center;
+  width: 80vw;
+  max-width: 400px;
 }
 
 /* Create three equal columns that float next to each other */
@@ -1059,7 +1063,7 @@ This makes sure that every line isn't beginning at the end of the left side of t
 /* Responsive layout - makes the three columns stack on top of each other instead of next to each other on smaller screens (600px wide or less) */
 @media screen and (max-width:1600px) {
   .column-home {
-      width: 100%;
+    width: 100%;
   }
 }
 
@@ -1081,10 +1085,10 @@ This makes sure that every line isn't beginning at the end of the left side of t
 }
 
 .slide-piece {
-    height: 56vw;
-    width: 80vw;
-    max-width: 728px;
-    max-height: 510px;
+  height: 56vw;
+  width: 80vw;
+  max-width: 728px;
+  max-height: 510px;
 }
 
 .slide-wrapper {
@@ -1122,19 +1126,19 @@ of each of the slides */
   /* Calculate the margin-left for
 each of the slides */
   20% {
-      margin-left: 0px;
+    margin-left: 0px;
   }
 
   40% {
-      margin-left: max(calc(-728px * 1), calc(-80vw * 1));
+    margin-left: max(calc(-728px * 1), calc(-80vw * 1));
   }
 
   60% {
-      margin-left: max(calc(-728px * 2), calc(-80vw * 2));
+    margin-left: max(calc(-728px * 2), calc(-80vw * 2));
   }
 
   80% {
-       margin-left: max(calc(-728px * 3), calc(-80vw * 3));
+    margin-left: max(calc(-728px * 3), calc(-80vw * 3));
   }
 }
 
@@ -1146,10 +1150,10 @@ each of the slides */
 }
 
 .home-video-link-section {
-    padding: 1em;
-    width: 50%;
-    margin: auto;
-    text-align: center;
+  padding: 1em;
+  width: 50%;
+  margin: auto;
+  text-align: center;
 }
 
 /* ------------ Footer ------------ */
