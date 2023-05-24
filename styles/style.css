@@ -249,11 +249,6 @@ section ul li a {
   background-color: #E9E9ED;
 }
 
-
-main {
-  height: 300vh;
-}
-
 /* ------------ Apply ------------ */
 .apply-main {
   display: flex;
@@ -1211,4 +1206,41 @@ footer h2 {
 
 .index {
   background: url(images/speckled-background.jpg)
+}
+
+/* ------------ EOI Manage ------------ */
+
+table {
+  border-collapse: collapse
+}
+
+th,
+td {
+  padding: 1rem;
+  margin: 0;
+}
+
+.manage-main tbody tr:hover {
+  background-color: #b0b0b0;
+  border: #b0b0b0 1px solid;
+}
+
+.manage-main table {
+  overflow-x: scroll;
+}
+
+main {
+  height: 300vh;
+}
+
+.status[value="New"] {
+  color: green;
+}
+
+.status[value="Current"] {
+  color: yellow;
+}
+
+.status[value="Final"] {
+  color: red;
 }

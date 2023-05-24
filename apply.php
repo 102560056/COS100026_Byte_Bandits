@@ -120,13 +120,18 @@
             <!-- Skill list (The last item in list should read “Other skills...”), checkbox inputs 
         Other skills,  textarea  -->
             <fieldset class="apply-skills">
-                <label class="apply-bold">Skills List</label>
-                <label class="apply-skill"><input type="checkbox" name="skill[]" value="CSS" id="CSS">CSS</label>
-                <label class="apply-skill"><input type="checkbox" name="skill[]" value="HTML" id="HTML">HTML</label>
-                <label class="apply-skill"><input type="checkbox" name="skill[]" value="Ruby" id="Ruby">Ruby</label>
-                <label class="apply-skill"><input type="checkbox" name="skill[]" value="C#" id="C#">C#</label>
-                <label class="apply-skill"><input type="checkbox" name="skill[]" value="Python"
-                        id="Python">Python</label>
+
+            <?php
+            // Call GET Skills
+            // <label class="apply-bold">Skills List</label>
+            // <label class="apply-skill"><input type="checkbox" name="skill[]" value="CSS" id="CSS">CSS</label>
+            // <label class="apply-skill"><input type="checkbox" name="skill[]" value="HTML" id="HTML">HTML</label>
+            // <label class="apply-skill"><input type="checkbox" name="skill[]" value="Ruby" id="Ruby">Ruby</label>
+            // <label class="apply-skill"><input type="checkbox" name="skill[]" value="C#" id="C#">C#</label>
+            // <label class="apply-skill"><input type="checkbox" name="skill[]" value="Python"
+            // id="Python">Python</label>
+            ?>
+
                 <label class="apply-other-label"><input type="checkbox" name="skill[]" value="other" id="other"
                         checked>Other
                     Skills</label>
