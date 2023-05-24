@@ -43,13 +43,23 @@ Used to recreate the header without mercury. -->
                 </li>
 
                 <li class="original-menu">
+                    <label class="login-menu">
+                        <input type="checkbox">
+                        <div>
+                             S
+                        </div>
+                        <img src="images/person.svg">
+                    </label>
+                </li>
+
+                <li class="original-menu">
                     <a href="enhancements.php"',($pageName == ' enhancements')?$color:'','>Enhancements</a>
                 </li>
                 <li>
                     <label class="hamburger-menu">
                         <input type="checkbox">
-                        <img src="images/" alt="" class="menu">
-                        <img src="images/close.svg" alt="" class="close">
+                        <img src="images/" class="menu">
+                        <img src="images/close.svg" class="close">
                     </label>
                 </li>
             </ul>
@@ -77,7 +87,8 @@ Used to recreate the header without mercury. -->
             </ul>
         </section>
     </header>
-    <section class="login">
+
+    <!-- <section class="login">
         <form method="post" action="">
             <label for="username">Username:</label>
             <input type="text" name="username" id="username" pattern="^([a-zA-Z]|[0-9])$" required>
@@ -85,16 +96,19 @@ Used to recreate the header without mercury. -->
             <input type="password" name="password" id="password" required>
             <button type="submit">Login</button>
         </form>
-    </section>
-
-    <!-- <section class="logout">
-        <form method="post" action="">
-            <button type="submit">Login</button>
-        </form>
     </section> -->
 
+    <section class="logout">
+        <form method="post" action="">
+            <div class="profile-icon">
+                S
+            </div>
+            <p>First LastName</p>
+            <button type="submit">Logout</button>
+        </form>
+    </section>
+
     <main>
-        asdfg
     </main>
 </body>
 

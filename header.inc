@@ -29,6 +29,10 @@
                     </li>
 
                     <li class="original-menu">
+                        <a href="manage.php"',($pageName == 'manage')?$color:'','>Manage</a>
+                    </li>
+
+                    <li class="original-menu">
                         <a href="enhancements.php"',($pageName == 'enhancements')?$color:'','>Enhancements</a>
                     </li>
 

@@ -244,10 +244,43 @@ section ul li a {
   margin-top: 1rem;
 }
 
-.login button,
-.logout button {
+.login button{
   border-radius: .2rem;
   font-size: 1.1rem;
+  cursor: pointer;
+}
+
+.logout button{
+  font-size: 1.1rem;
+  border-radius: .2rem;
+  padding: .5rem;
+  cursor: pointer;
+}
+
+.logout form{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.logout form > *{
+  padding-left: .5rem;
+  padding-right: .5rem;
+  margin-left: .5rem;
+  margin-right: .5rem;
+}
+
+.profile-icon{
+  background-color: var(--main-color);
+  border-radius: 50%;
+  width: 5vw;
+  height: 5vw;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: white;
+  border: #000000 solid 1px;
+  font-size: 2rem;
 }
 
 .login input {
