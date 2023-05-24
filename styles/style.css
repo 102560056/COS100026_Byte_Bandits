@@ -21,6 +21,10 @@
   color: var(--main-color);
 }
 
+.main-color-icon {
+  filter: invert(21%) sepia(99%) saturate(4705%) hue-rotate(346deg) brightness(93%) contrast(98%);
+}
+
 /* Sam.B Each page will be placed within a main tag and this sets the defult padding and width */
 main {
   width: 100%;
@@ -34,7 +38,7 @@ main {
 
 /* Sam.B Setting the header to stay on the top of the screen above any elements */
 header {
-  z-index: 1;
+  z-index: 2;
   position: sticky;
   top: 0;
   padding: 6vh 10vw;
@@ -202,6 +206,8 @@ section ul li a {
 
 .login,
 .logout {
+  position: sticky;
+  top: 24vh;
   float: right;
 }
 
@@ -1210,27 +1216,64 @@ footer h2 {
 
 /* ------------ EOI Manage ------------ */
 
-table {
-  border-collapse: collapse
-}
-
-th,
-td {
-  padding: 1rem;
-  margin: 0;
-}
-
-.manage-main tbody tr:hover {
-  background-color: #b0b0b0;
-  border: #b0b0b0 1px solid;
+.manage-main > *{
+  font-size: 8px;
 }
 
 .manage-main table {
-  overflow-x: scroll;
+  border-collapse: collapse
 }
 
-main {
-  height: 300vh;
+.manage-main table > * {
+  table-layout: fixed;
+  padding: 1rem;
+}
+
+.manage-main th,
+.manage-main td {
+  width: 7vw;
+  text-align: center;
+  border: 1px solid black;
+}
+
+.manage-main table tr:first-child th {
+  border-top: 0;
+}
+.manage-main table tr:last-child td {
+  border-bottom: 0;
+}
+.manage-main table tr td:first-child,
+.manage-main table tr th:first-child {
+  border-left: 0;
+}
+.manage-main table tr td:last-child,
+.manage-main table tr th:last-child {
+  border-right: 0;
+}
+
+.manage-main th{
+  height: 10vh;
+  position: sticky;
+  top: 24vh;
+  background-color: var(--main-color);
+  color: white;
+  z-index: 1;
+}
+
+.manage-other-skills div{
+  max-height: 20vh;
+  min-height: 10vh;
+  overflow-y: scroll;
+}
+
+
+
+.manage-main tbody tr:hover {
+  background-color: rgba(221, 221, 221, 0.5);
+}
+
+.manage-main table {
+  clear: both;
 }
 
 .status[value="New"] {
@@ -1243,4 +1286,27 @@ main {
 
 .status[value="Final"] {
   color: red;
+}
+
+main {
+  height: 300vh;
+}
+
+.manage-main form{
+  float: right;
+  display: flex;
+  height: 5vh;
+  margin-bottom: 5vh;
+}
+
+.manage-main button{
+  display: flex;
+  justify-content: center;
+  margin-left: 1rem;
+}
+
+.manage-main table button{
+  background: none;
+  border: none;
+  cursor: pointer;
 }
