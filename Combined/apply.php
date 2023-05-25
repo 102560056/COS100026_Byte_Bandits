@@ -13,16 +13,29 @@
 <body>
     <?php
         include_once("header.inc"); 
+        require_once ("settings.php"); // connection info
+
+        // Create Connection, check if connection is successful, otherwise stop running the code
+        $conn = @mysqli_connect($host,
+        $user,
+        $pwd,
+        $sql_db) or die("<p>Unable to connect to the database server.</p>"
+        . "<p>Error code " . mysqli_connect_errno()
+        . ": " . mysqli_connect_error() . "</p>");
     ?>
 
     <main class="apply-main">
-        <form action="processEOI.php" method="post" novalidate="novalidate"> <!-- remove novalidate for final verison -->
+        <form action="processEOI.php" method="post"> <!-- remove novalidate for final verison -->
     
             <fieldset>
                 <!-- Job reference number, exactly 5 alphanumeric characters  -->
                 <label for="job_refrence" class="apply-bold">Job reference number:</label>
-                <input type="text" name="job_refrence" id="job_refrence" pattern="^([a-zA-Z]|[0-9]){5,5}$" maxlength="5"
-                    required>
+                <select name="job_refrence" id="job_refrence" required>
+                    <option value="" selected disabled>Select</option>
+                    <option value="DAT40">DAT40</option>
+                    <option value="SOF23">SOF23</option>
+                </select>
+ 
             </fieldset>
 
             <!-- First name, max 20 alpha characters -->
@@ -127,12 +140,23 @@
         Other skills,  textarea  -->
             <fieldset class="apply-skills">
                 <label class="apply-bold">Skills List</label>
-                <label class="apply-skill"><input type="checkbox" name="skill[]" value="CSS" id="CSS">CSS</label>
-                <label class="apply-skill"><input type="checkbox" name="skill[]" value="HTML" id="HTML">HTML</label>
-                <label class="apply-skill"><input type="checkbox" name="skill[]" value="Ruby" id="Ruby">Ruby</label>
-                <label class="apply-skill"><input type="checkbox" name="skill[]" value="C#" id="C#">C#</label>
-                <label class="apply-skill"><input type="checkbox" name="skill[]" value="Python"
-                        id="Python">Python</label>
+                <?php
+                    // Get each skills element in the Skills table from the database, and insert a checkbox option for each of them.
+
+                    $query = "SELECT skill_name FROM Skills";
+
+                    $result = @mysqli_query($conn, $query)
+                        or die ("<p>Something wrong with database query.</p>" 
+                    . "<p>Error code " . mysqli_errno($conn)
+                    . ": " . mysqli_error($conn) . "</p>");
+
+                    while ($row = mysqli_fetch_assoc($result)) {
+                        echo "<label class=\"apply-skill\"><input type=\"checkbox\" name=\"skill[]\" value=\"" , $row["skill_name"] , "\" id=\"" , $row["skill_name"] , "\">" , $row["skill_name"] , "</label>\n\t\t\t\t";
+                    }
+
+                    mysqli_free_result($result);
+                ?>
+
                 <label class="apply-other-label"><input type="checkbox" name="skill_other" value="other" id="other"
                         checked>Other
                     Skills</label>
