@@ -42,6 +42,7 @@ header {
   position: sticky;
   top: 0;
   padding: 6vh 10vw;
+  height: 20vh;
   font-size: 1rem;
   font-weight: bold;
   background-color: white;
@@ -1281,100 +1282,98 @@ footer h2 {
 
 /* ------------ EOI Manage ------------ */
 
-.manage-main>* {
-  font-size: 8px;
+.eoi-table {
+  display: grid;
+  grid-template-columns: repeat(14, 1fr);
+  overflow-x: scroll;
+  scrollbar-width: thin;
 }
 
-.manage-main table {
-  border-collapse: collapse
-}
-
-.manage-main table>* {
-  table-layout: fixed;
-  padding: 1rem;
-}
-
-.manage-main th,
-.manage-main td {
-  width: 7vw;
-  text-align: center;
-  border: 1px solid black;
-}
-
-.manage-main table tr:first-child th {
-  border-top: 0;
-}
-
-.manage-main table tr:last-child td {
-  border-bottom: 0;
-}
-
-.manage-main table tr td:first-child,
-.manage-main table tr th:first-child {
-  border-left: 0;
-}
-
-.manage-main table tr td:last-child,
-.manage-main table tr th:last-child {
-  border-right: 0;
-}
-
-.manage-main th {
-  height: 10vh;
-  position: sticky;
-  top: 24vh;
+.eoi-table-header {
   background-color: var(--main-color);
-  color: white;
-  z-index: 1;
-}
-
-.manage-other-skills div {
-  max-height: 20vh;
-  min-height: 10vh;
-  overflow-y: scroll;
-}
-
-
-
-.manage-main tbody tr:hover {
-  background-color: rgba(221, 221, 221, 0.5);
-}
-
-.manage-main table {
-  clear: both;
-}
-
-.status[value="New"] {
-  color: green;
-}
-
-.status[value="Current"] {
-  color: yellow;
-}
-
-.status[value="Final"] {
-  color: red;
-}
-
-main {
-  height: 300vh;
-}
-
-.manage-main form {
-  float: right;
-  display: flex;
+  font-weight: bold;
   height: 5vh;
-  margin-bottom: 5vh;
 }
 
-.manage-main button {
+.manage-other-skills {
+  width: 20vw;
+  max-height: 10vh;
+  overflow-y: scroll;
+  scrollbar-width: none;
+}
+
+.eoi-table p {
+  font-size: 8px;
+  padding: .5rem;
+  text-align: center;
+}
+
+.eoi-center {
   display: flex;
+  align-items: center;
   justify-content: center;
-  margin-left: 1rem;
 }
 
-.manage-main table button {
-  background: none;
+.eoi-delete {
   border: none;
+  background: none;
   cursor: pointer;
+  width: 1vw;
+}
+
+.eoi-delete {
+  border: none;
+  background: none;
+  cursor: pointer;
+  width: 2vh;
+}
+
+.eoi-status {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  min-width: max-content;
+}
+
+.eoi-status select {
+  text-align-last: center;
+  width: 80%;
+}
+
+.eoi-status button {
+  width: 80%;
+  cursor: pointer;
+}
+
+.manage-search-bars {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 2vh;
+  align-items: baseline;
+}
+
+.manage-search-bars button :hover {
+  cursor: pointer;
+}
+
+.manage-search-bars img {
+  max-height: 2vh;
+}
+
+.manage-search-bars form {
+  height: 3vh;
+  display: flex;
+}
+
+.manage-main input {
+  margin-right: 0.5rem;
+  min-width: none;
+  width: 100%;
+  box-sizing: border-box
+}
+
+
+.manage-search-bars form img {
+  min-width: 3vh;
 }
