@@ -68,7 +68,7 @@ header ul {
   list-style: none;
   text-align: center;
   align-items: center;
-  justify-content: space-between;
+  justify-content: space-evenly;
 }
 
 .original-menu {
@@ -90,6 +90,7 @@ header ul li a,
 section ul li a {
   color: rgb(101, 101, 101);
 }
+
 
 /* Sam.B Setting styles for the secondary menu the shows when the hamburger menu is clicked, hidden by defult */
 .drop-down {
@@ -126,14 +127,16 @@ section ul li a {
 }
 
 /* Sam.B Keeps both icons centered in the same place */
-.hamburger-menu {
+.hamburger-menu,
+.login-menu {
   display: flex;
   justify-content: center;
   align-items: center;
 }
 
 /* Sam.B Makes the litteral checkbox hidden */
-.hamburger-menu input {
+.hamburger-menu input,
+.login-menu input {
   appearance: none;
 }
 
@@ -206,16 +209,28 @@ section ul li a {
 
 .login,
 .logout {
-  position: sticky;
-  top: 24vh;
+  position: static;
+  top: 0;
   float: right;
+}
+
+.login-menu {
+  width: 13vw;
+}
+
+.login-component {
+  display: none;
+}
+
+:has(.login-menu [type=checkbox]:checked)~.login-component {
+  display: block;
 }
 
 .login form,
 .logout form {
   box-shadow: 0 0 .8rem 0 #ccc;
   border-bottom-left-radius: .5rem;
-  width: 30vw;
+  min-width: 30vw;
   padding: 2rem;
   display: grid;
   grid-template-columns: [labels] auto [controls] 1fr;
@@ -244,37 +259,54 @@ section ul li a {
   margin-top: 1rem;
 }
 
-.login button{
+.login button {
   border-radius: .2rem;
   font-size: 1.1rem;
   cursor: pointer;
 }
 
-.logout button{
+.logout button {
   font-size: 1.1rem;
   border-radius: .2rem;
   padding: .5rem;
   cursor: pointer;
 }
 
-.logout form{
+.logout form {
   display: flex;
   justify-content: center;
   align-items: center;
 }
 
-.logout form > *{
+.logout form>* {
   padding-left: .5rem;
   padding-right: .5rem;
   margin-left: .5rem;
   margin-right: .5rem;
 }
 
-.profile-icon{
+.login-menu div {
+  border-radius: 50%;
+  background-color: #EC1C2D;
+  min-width: 7vh;
+  height: 7vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: white;
+  border: #000000 solid 1px;
+}
+
+.login-menu :hover {
+  cursor: pointer;
+  color: white;
+}
+
+.profile-icon {
   background-color: var(--main-color);
   border-radius: 50%;
-  width: 5vw;
-  height: 5vw;
+  min-width: 10vh;
+  height: 10vh;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -1249,7 +1281,7 @@ footer h2 {
 
 /* ------------ EOI Manage ------------ */
 
-.manage-main > *{
+.manage-main>* {
   font-size: 8px;
 }
 
@@ -1257,7 +1289,7 @@ footer h2 {
   border-collapse: collapse
 }
 
-.manage-main table > * {
+.manage-main table>* {
   table-layout: fixed;
   padding: 1rem;
 }
@@ -1272,19 +1304,22 @@ footer h2 {
 .manage-main table tr:first-child th {
   border-top: 0;
 }
+
 .manage-main table tr:last-child td {
   border-bottom: 0;
 }
+
 .manage-main table tr td:first-child,
 .manage-main table tr th:first-child {
   border-left: 0;
 }
+
 .manage-main table tr td:last-child,
 .manage-main table tr th:last-child {
   border-right: 0;
 }
 
-.manage-main th{
+.manage-main th {
   height: 10vh;
   position: sticky;
   top: 24vh;
@@ -1293,7 +1328,7 @@ footer h2 {
   z-index: 1;
 }
 
-.manage-other-skills div{
+.manage-other-skills div {
   max-height: 20vh;
   min-height: 10vh;
   overflow-y: scroll;
@@ -1325,20 +1360,20 @@ main {
   height: 300vh;
 }
 
-.manage-main form{
+.manage-main form {
   float: right;
   display: flex;
   height: 5vh;
   margin-bottom: 5vh;
 }
 
-.manage-main button{
+.manage-main button {
   display: flex;
   justify-content: center;
   margin-left: 1rem;
 }
 
-.manage-main table button{
+.manage-main table button {
   background: none;
   border: none;
   cursor: pointer;
