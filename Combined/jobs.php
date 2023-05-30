@@ -143,7 +143,7 @@
           <p>
             <strong>Job Type: </strong>Full-Time<br>
             <strong>Salary Range: </strong>$90k - $140k<br>
-            <strong>Position Reference Number: </strong> DaT40<br>
+            <strong>Position Reference Number: </strong> DAT40<br>
             <strong>Location: </strong>Melbourne<br>
             <strong>Applicant Reporting to: </strong> Development Team
           </p>

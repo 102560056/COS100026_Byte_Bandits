@@ -267,23 +267,41 @@ fieldset.apply-gender {
   grid-area: label;
 }
 
+/* Preston.H - inelegant solution to problem with the spacing of skills in this grid. 
+Now that the elements are generated with php, they space incorrectly if there's more 
+elements than ". input" grid areas. I just added a bunch more areas but it's not scalable.
+Mostly works for this purpose though, this form would never have a large number of checkboxes here.
+
+*/
 .apply-skills {
   display: grid;
   grid-template-columns: 1fr 1fr;
   grid-template-areas:
-    "header header"
-    ". label"
-    ". input"
-    ". input"
-    ". input"
-    ". input"
-    ". input"
-    ". input"
-    ". input";
+  "header header"
+  ". label"
+  ". input"
+  ". input"
+  ". input"
+  ". input"
+  ". input"
+  ". input"
+  ". input"
+  ". input"
+  ". input"
+  ". input"
+  ". input"
+  ". input"
+  ". input"
+  ". input"
+  ". input"
+  ". input"
+  ". input"
+  ". input"
+  ". input";
 }
 
 .apply-skill {
-  padding: .2rem;
+  padding: 0.5rem;
   display: flex;
 }
 
