@@ -12,6 +12,7 @@
 
 <body class = "index">
     <?php
+        session_start();
         include_once "header.inc";
         ColorHeader('index');
     ?>

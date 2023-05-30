@@ -1,9 +1,8 @@
 <?php
+    include("settings.php");
+
     function ColorHeader($pageName){
         $color = 'class = "main-color"';
-
-        // $_SESSION["loggedin"] = true;
-        // $_SESSION["username"] = 'example'; 
 
         $username_first_letter = @strtoupper(substr($_SESSION["username"],0,1));
 
@@ -102,7 +101,7 @@
                             ,$username_first_letter,
                         '</div>
                         <p>',$_SESSION["username"],'</p>
-                        <button type="submit">Logout</button>
+                        <button type="submit" name="logout" value="logout">Logout</button>
                     </form>
                 </section>';
         }
@@ -110,12 +109,42 @@
             echo'<section class="login login-component">
                     <form method="post" action="">
                         <label for="username">Username:</label>
-                        <input type="text" name="username" id="username" pattern="^([a-zA-Z]|[0-9])$" required>
+                        <input type="text" name="username" id="username" pattern="^([a-zA-Z]|[0-9])*$" required>
                         <label for="password">Password:</label>
                         <input type="password" name="password" id="password" required>
                         <button type="submit">Login</button>
                     </form>
                 </section>';
+        };
+    };
+
+    if(isset($_POST["logout"]) && !empty($_POST["logout"]))
+    {
+        session_unset();
+        echo "<meta http-equiv='refresh' content='0'>";
+    };
+
+    if(isset($_POST["username"]) && !empty($_POST["username"]) && isset($_POST["password"]) && !empty($_POST["password"]))
+    {
+        $conn = @mysqli_connect
+        (
+            $host, $user, $pwd, $sql_db
+        );
+        
+        if(!$conn){
+            echo "<p>Database Connection Failiure!</p>";
+        }
+        else
+        {
+            $sql_table = "Users";
+        
+            $query = "SELECT * FROM ".$sql_table." WHERE username = \"".$_POST["username"]."\" AND password = \"".$_POST["password"]."\"";
+            $result = mysqli_fetch_array(mysqli_query($conn, $query));
+            if($result){
+                @session_start();
+                @$_SESSION["loggedin"] = true;
+                @$_SESSION["username"] = $result[0];
+            };
         };
     };
 ?>

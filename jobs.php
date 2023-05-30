@@ -12,6 +12,7 @@
 
 <body>
   <?php
+    session_start();
     include_once "header.inc";
     ColorHeader('jobs');
   ?>

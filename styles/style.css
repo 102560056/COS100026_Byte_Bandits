@@ -1279,7 +1279,7 @@ footer h2 {
 
 .eoi-table {
   display: grid;
-  grid-template-columns: repeat(14, 1fr);
+  grid-template-columns: repeat(15, 1fr);
   overflow-x: scroll;
   scrollbar-width: thin;
 }
@@ -1298,6 +1298,7 @@ footer h2 {
 }
 
 .eoi-table p {
+  min-height: 7vh;
   font-size: 8px;
   padding: .5rem;
   text-align: center;
