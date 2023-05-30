@@ -25,7 +25,7 @@
     ?>
 
     <main class="apply-main">
-        <form action="processEOI.php" method="post"> <!-- remove novalidate for final verison -->
+        <form action="processEOI.php" method="post" novalidate="novalidate"> <!-- remove novalidate for final verison -->
     
             <fieldset>
                 <!-- Job reference number, exactly 5 alphanumeric characters  -->
@@ -165,7 +165,7 @@
             </fieldset>
 
             <fieldset class="apply-full-width apply-submit">
-                <input type="submit" value="Apply">
+                <input type="submit" name = "submit" value="Apply">
             </fieldset>
         </form>
     </main>

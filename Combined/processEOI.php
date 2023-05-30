@@ -11,7 +11,8 @@
 
 <body>
 <?php
-
+// redirect back to apply page if this wasn't a legit submission
+if (isset($_POST["submit"])) {
     // ******** TODO LIST *********
     // - style/format the error/success messages returned to the user, making them more than just plaintext on the screen
     // - include a button to go back to the home page after a successful EOI process
@@ -39,7 +40,9 @@
     // Upon successful connection
 
     // Check all data came from a form submission
+   
     $skills_desc = "";
+    $job_refrence = "";
     if (isset ($_POST["job_refrence"])) $job_refrence = $_POST["job_refrence"];
     if (isset ($_POST["first_name"])) $first_name = $_POST["first_name"];
     if (isset ($_POST["last_name"])) $last_name = $_POST["last_name"];
@@ -177,12 +180,41 @@
     // Validate post_code
     if ($post_code == "") {
         $errMsg .= "<p>You must enter a postcode.</p>";
+    } else {
+        $postcode_regex = '';
+        switch ($state) {
+            case 'VIC':
+                $postcode_regex = '/^3[0-9]{3}$/';
+                break;
+            case 'NSW':
+                $postcode_regex = '/^2[0-9]{3}$/';
+                break;
+            case 'QLD':
+                $postcode_regex = '/^4[0-9]{3}$/';
+                break;
+            case 'NT':
+                $postcode_regex = '/^0[0-9]{3}$/';
+                break;
+            case 'WA':
+                $postcode_regex = '/^6[0-9]{3}$/';
+                break;
+            case 'SA':
+                $postcode_regex = '/^5[0-9]{3}$/';
+                break;
+            case 'TAS':
+                $postcode_regex = '/^7[0-9]{3}$/';
+                break;
+            case 'ACT':
+                $postcode_regex = '/^2[0-9]{3}$/';
+                break;
+            default:
+                $errMsg .= "<p>Invalid state selected.</p>";
+                break;
+        }
+        if (!($postcode_regex !== '' && preg_match($postcode_regex, $postcode) == 1)) {
+            $errMsg .= "<p>Invalid postcode for selected state.</p>";
+        }
     }
-    else if (strlen($post_code) != 4) {
-        $errMsg .= "<p>Post code must be four digits</p>";
-    }
-    // MATCH POSTCODE TO STATE VALIDATION HERE
-
 
     // Validate email
     if ($email == "") {
@@ -207,7 +239,7 @@
         }
     }
 
-    // If anything didn't validate, echo the error message
+    // If anything didn't validate, echo the error message and don't interact with the database
     if($errMsg != ""){
         echo $errMsg;
     }
@@ -335,6 +367,10 @@
 
     // close the database connection
     mysqli_close($conn);
+
+} else {
+    header ("location: apply.php");
+}
 ?>
 </body>
 </html>
