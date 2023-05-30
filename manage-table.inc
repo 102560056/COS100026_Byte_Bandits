@@ -1,6 +1,5 @@
 <?php
 include("settings.php");
-
 $conn = @mysqli_connect
 (
     $host, $user, $pwd, $sql_db
@@ -12,18 +11,19 @@ if(!$conn){
 }
 else
 {
-    $sql_table = "Eois";
-
+    // TODO
+    // $_POST['search-string'];
+    // $query = "SELECT Eois.*, GROUP_CONCAT(Eoi_Skills.skill_name) AS skills FROM Eois LEFT JOIN Eoi_Skills ON Eois.eoi_id = Eoi_Skills.eoi_id GROUP BY Eois.eoi_id;";
     $query = "SELECT Eois.*, GROUP_CONCAT(Eoi_Skills.skill_name) AS skills FROM Eois LEFT JOIN Eoi_Skills ON Eois.eoi_id = Eoi_Skills.eoi_id GROUP BY Eois.eoi_id;";
 
     $result = mysqli_query($conn, $query);
 
     // Table Header
     echo '<section class="eoi-table">';
-    echo '<p class="eoi-table-header eoi-center">Job #</p>';
+    echo '<p class="eoi-table-header eoi-center">Job Ref #</p>';
     echo '<p class="eoi-table-header eoi-center">First name</p>';
     echo '<p class="eoi-table-header eoi-center">Last name</p>';
-    echo '<p class="eoi-table-header eoi-center">Date of Birp</p>';
+    echo '<p class="eoi-table-header eoi-center">Date of Birth</p>';
     echo '<p class="eoi-table-header eoi-center">Gender</p>';
     echo '<p class="eoi-table-header eoi-center">Street Address</p>';
     echo '<p class="eoi-table-header eoi-center">Suburb</p>';
@@ -76,6 +76,7 @@ else
     mysqli_close($conn);
 };
 
+//Delete Single Records
 if(isset($_POST["delete-record"]) && !empty($_POST["delete-record"]))
 {
     $conn = @mysqli_connect
@@ -88,9 +89,7 @@ if(isset($_POST["delete-record"]) && !empty($_POST["delete-record"]))
     }
     else
     {
-        $sql_table = "Eois";
-
-        $query = "DELETE FROM ".$sql_table." WHERE eoi_id =".$_POST["delete-record"];
+        $query = "DELETE FROM Eois WHERE eoi_id = ".$_POST["delete-record"];
 
         $result = mysqli_query($conn, $query);
         if(!$result){
@@ -103,6 +102,7 @@ if(isset($_POST["delete-record"]) && !empty($_POST["delete-record"]))
     mysqli_close($conn);
 };
 
+//Update Status
 if(isset($_POST["status"]) && !empty($_POST["status"]))
 {
     $conn = @mysqli_connect
@@ -115,9 +115,8 @@ if(isset($_POST["status"]) && !empty($_POST["status"]))
     }
     else
     {
-        $sql_table = "Eois";
 
-        $query = "UPDATE ".$sql_table." SET status_code = \"".$_POST["status"]. "\" WHERE eoi_id = ".$_POST["status-id"];
+        $query = "UPDATE Eois SET status_code = \"".$_POST["status"]. "\" WHERE eoi_id = ".$_POST["status-id"];
 
         if(mysqli_query($conn, $query)){
             echo '<p>Successfully updated record!</p>';
@@ -130,6 +129,7 @@ if(isset($_POST["status"]) && !empty($_POST["status"]))
     mysqli_close($conn);
 };
 
+//Delete Job Refrences
 if(isset($_POST["delete-all"]) && !empty($_POST["delete-all"]))
 {
     $conn = @mysqli_connect
@@ -142,9 +142,7 @@ if(isset($_POST["delete-all"]) && !empty($_POST["delete-all"]))
     }
     else
     {
-        $sql_table = "Eois";
-        
-        $query = "DELETE FROM ".$sql_table." WHERE job_ref_id = \"".$_POST["delete-all"]."\"";
+        $query = "DELETE FROM Eois WHERE job_ref_id = \"".$_POST["delete-all"]."\"";
 
         if(mysqli_query($conn, $query)){
             echo '<p>Successfully deleted records!</p>';
@@ -156,5 +154,4 @@ if(isset($_POST["delete-all"]) && !empty($_POST["delete-all"]))
     };
     mysqli_close($conn);
 };
-
 ?>

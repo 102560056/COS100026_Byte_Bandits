@@ -10,8 +10,11 @@
 <body>
     <?php
         session_start();
+        if (!isset($_SESSION['loggedin'])) {
+            header("Location: index.php");
+        };
         include_once "header.inc";
-        ColorHeader('management');
+        ColorHeader('manage');
     ?>
 
     <main class="manage-main">
@@ -24,9 +27,9 @@
                 </button>
             </form>
 
-            <form action="">
-                <input type="text">
-                <button type="submit" name="search">
+            <form method="post" action="">
+                <input type="text" name="search-string">
+                <button type="submit">
                     <img src="images/search.svg" alt="">
                 </button>
             </form>
