@@ -38,7 +38,7 @@ main {
 
 /* Sam.B Setting the header to stay on the top of the screen above any elements */
 header {
-  z-index: 2;
+  z-index: 1;
   position: sticky;
   top: 0;
   padding: 6vh 10vw;
@@ -208,19 +208,14 @@ section ul li a {
   }
 }
 
-.login,
-.logout {
-  position: static;
-  top: 0;
-  float: right;
-}
-
 .login-menu {
   width: 13vw;
 }
 
 .login-component {
+  position: absolute;
   display: none;
+  right: 0;
 }
 
 :has(.login-menu [type=checkbox]:checked)~.login-component {
@@ -229,6 +224,7 @@ section ul li a {
 
 .login form,
 .logout form {
+  background-color: white;
   box-shadow: 0 0 .8rem 0 #ccc;
   border-bottom-left-radius: .5rem;
   min-width: 30vw;
@@ -670,7 +666,7 @@ transforming, sets the transform style to preserve-3d */
   border: 4px solid var(--main-color);
   border-bottom: #ffffff;
   background-color: #ffffff;
-  z-index: 2;
+  z-index: 1;
   font-weight: bold;
 }
 
@@ -877,7 +873,6 @@ make them more responsive and mobile-friendly. */
 #job-title {
   text-align: center;
   font-variant: normal;
-
 }
 
 
