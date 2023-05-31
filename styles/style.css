@@ -1275,7 +1275,7 @@ footer h2 {
 }
 
 .index {
-  background: url(images/speckled-background.jpg)
+  background: url('../images/speckled-background.jpg');
 }
 
 /* ------------ EOI Manage ------------ */
