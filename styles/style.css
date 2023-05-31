@@ -1376,3 +1376,11 @@ footer h2 {
 .manage-search-bars form img {
   min-width: 3vh;
 }
+
+/* ------------ EOI Manage ------------ */
+
+.error-msg {
+  padding: 1em;
+  text-align: center;
+  color: red;
+}

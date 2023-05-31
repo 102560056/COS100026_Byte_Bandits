@@ -5,21 +5,23 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Apply</title>
+    <title>EOI Applied</title>
     <link rel="stylesheet" href="styles/style.css">
 </head>
 
 <body>
 <?php
+include_once("header.inc"); 
+ColorHeader('apply');
+?>
+<main>
+<?php
+ // ******** TODO LIST *********
+// - style/format the error/success messages returned to the user, making them more than just plaintext on the screen
 
-    // ******** TODO LIST *********
-    // - style/format the error/success messages returned to the user, making them more than just plaintext on the screen
-    // - include a button to go back to the home page after a successful EOI process
-    //
-     
-    include_once("header.inc"); 
-    require_once ("settings.php"); // connection info
-
+// redirect back to apply page if this wasn't a legit submission
+if (isset($_POST["submit"])) {
+    
     function sanitise_input($data) {
         $data = trim($data);
         $data = stripslashes($data);
@@ -40,6 +42,7 @@
 
     // Check all data came from a form submission
     $skills_desc = "";
+    $job_refrence = "";
     if (isset ($_POST["job_refrence"])) $job_refrence = $_POST["job_refrence"];
     if (isset ($_POST["first_name"])) $first_name = $_POST["first_name"];
     if (isset ($_POST["last_name"])) $last_name = $_POST["last_name"];
@@ -89,21 +92,16 @@
     $errMsg = "";
 
     // Validate job ref number
-        // Validate State
-        $valid_states = [
-            'DAT',
-            'NSW',
-        ];
-    
-        if (!in_array($state, $valid_states)) {
-            $errMsg .= "<p>You must select a state.</p>";
-        }
+    $valid_refs = [
+        'DAT40',
+        'SOF23'
+    ];
+        
     if ($job_refrence == "") {
         $errMsg .= "<p>You must choose a job reference ID.</p>";
-    }
-
-    else if (strlen($job_refrence) != 5) {
-        $errMsg .= "<p>Job Reference must be 5 characters</p>";
+    } 
+    else if (!in_array($job_refrence, $valid_refs)) {
+        $errMsg .= "<p>You must select a valid Job reference ID.</p>";
     }
 
     // Validate first name
@@ -177,12 +175,41 @@
     // Validate post_code
     if ($post_code == "") {
         $errMsg .= "<p>You must enter a postcode.</p>";
+    } else {
+        $postcode_regex = '';
+        switch ($state) {
+            case 'VIC':
+                $postcode_regex = '/^3[0-9]{3}$/';
+                break;
+            case 'NSW':
+                $postcode_regex = '/^2[0-9]{3}$/';
+                break;
+            case 'QLD':
+                $postcode_regex = '/^4[0-9]{3}$/';
+                break;
+            case 'NT':
+                $postcode_regex = '/^0[0-9]{3}$/';
+                break;
+            case 'WA':
+                $postcode_regex = '/^6[0-9]{3}$/';
+                break;
+            case 'SA':
+                $postcode_regex = '/^5[0-9]{3}$/';
+                break;
+            case 'TAS':
+                $postcode_regex = '/^7[0-9]{3}$/';
+                break;
+            case 'ACT':
+                $postcode_regex = '/^2[0-9]{3}$/';
+                break;
+            default:
+                $errMsg .= "<p>Invalid state selected.</p>";
+                break;
+        }
+        if (!($postcode_regex !== '' && preg_match($postcode_regex, $post_code) == 1)) {
+            $errMsg .= "<p>Invalid postcode for selected state.</p>";
+        }
     }
-    else if (strlen($post_code) != 4) {
-        $errMsg .= "<p>Post code must be four digits</p>";
-    }
-    // MATCH POSTCODE TO STATE VALIDATION HERE
-
 
     // Validate email
     if ($email == "") {
@@ -207,8 +234,23 @@
         }
     }
 
-    // If anything didn't validate, echo the error message
+    // Validate that the user doesn't have a job application already for this job
+    $query = "SELECT eoi_id FROM Eois WHERE first_name = '$first_name' AND last_name = '$last_name' AND email_address = '$email';";
+    $result = mysqli_query($conn, $query);
+
+    if ($result->num_rows > 0) {
+        $errMsg .= "<p class='error-msg'>You have already applied for this job.</p>";
+    }
+
+
+
+    // If anything didn't validate, echo the error message and don't interact with the database
     if($errMsg != ""){
+        echo "<section id='enh-title'>\n";
+        echo "<h1 id='job-title'>Error!</h1>\n";
+        echo "<p>Something went wrong...</p>\n";
+        echo "</section>\n";
+        
         echo $errMsg;
     }
     else { // everything valid!
@@ -327,7 +369,10 @@
             }
         }
 
-        echo "<p>Successfully created new EOI, your application ID is: " . $new_id . ".";
+        echo "<section id='enh-title'>\n";
+        echo "<h1 id='job-title'>Application Success!</h1>\n";
+        echo "<p>Successfully created new EOI, your application ID is: $new_id.</p>\n";
+        echo "</section>\n";
 
         if ($result != true || $result != false) @mysqli_free_result($result);
 
@@ -335,7 +380,12 @@
 
     // close the database connection
     mysqli_close($conn);
+
+} else {
+    header ("location: apply.php");
+}
 ?>
+</main>
 </body>
 </html>
     
