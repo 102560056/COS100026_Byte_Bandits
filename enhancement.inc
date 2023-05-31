@@ -14,8 +14,6 @@ else
     // TODO
     @$query = "SELECT Eois.*, GROUP_CONCAT(Eoi_Skills.skill_name) AS skills, CONCAT(Eois.first_name, ' ', Eois.last_name) AS full_name FROM Eois LEFT JOIN Eoi_Skills ON Eois.eoi_id = Eoi_Skills.eoi_id WHERE CONCAT(Eois.first_name, ' ', Eois.last_name) LIKE '%".$_POST['search-string']."%' OR Eois.job_ref_id LIKE '%".$_POST['search-string']."%' GROUP BY Eois.eoi_id;";
 
-    echo $query;
-
     $result = mysqli_query($conn, $query);
 
     // Table Header
