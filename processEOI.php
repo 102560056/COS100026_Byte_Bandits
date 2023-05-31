@@ -5,21 +5,23 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Apply</title>
+    <title>EOI Applied</title>
     <link rel="stylesheet" href="styles/style.css">
 </head>
 
 <body>
 <?php
+include_once("header.inc"); 
+ColorHeader('apply');
+?>
+<main>
+<?php
+ // ******** TODO LIST *********
+// - style/format the error/success messages returned to the user, making them more than just plaintext on the screen
 
-    // ******** TODO LIST *********
-    // - style/format the error/success messages returned to the user, making them more than just plaintext on the screen
-    // - include a button to go back to the home page after a successful EOI process
-    //
-     
-    include_once("header.inc"); 
-    require_once ("settings.php"); // connection info
-
+// redirect back to apply page if this wasn't a legit submission
+if (isset($_POST["submit"])) {
+    
     function sanitise_input($data) {
         $data = trim($data);
         $data = stripslashes($data);
@@ -40,6 +42,7 @@
 
     // Check all data came from a form submission
     $skills_desc = "";
+    $job_refrence = "";
     if (isset ($_POST["job_refrence"])) $job_refrence = $_POST["job_refrence"];
     if (isset ($_POST["first_name"])) $first_name = $_POST["first_name"];
     if (isset ($_POST["last_name"])) $last_name = $_POST["last_name"];
@@ -89,73 +92,68 @@
     $errMsg = "";
 
     // Validate job ref number
-        // Validate State
-        $valid_states = [
-            'DAT',
-            'NSW',
-        ];
-    
-        if (!in_array($state, $valid_states)) {
-            $errMsg .= "<p>You must select a state.</p>";
-        }
+    $valid_refs = [
+        'DAT40',
+        'SOF23'
+    ];
+        
     if ($job_refrence == "") {
-        $errMsg .= "<p>You must choose a job reference ID.</p>";
-    }
-
-    else if (strlen($job_refrence) != 5) {
-        $errMsg .= "<p>Job Reference must be 5 characters</p>";
+        $errMsg .= "<p class='error-msg'>You must choose a job reference ID.</p>";
+    } 
+    else if (!in_array($job_refrence, $valid_refs)) {
+        $errMsg .= "<p class='error-msg'>You must select a valid Job reference ID.</p>";
     }
 
     // Validate first name
     if ($first_name == "") {
-        $errMsg .= "<p>You must enter your first name.</p>";
+        $errMsg .= "<p class='error-msg'>You must enter your first name.</p>";
     }
     else if (strlen($first_name) > 20) {
-        $errMsg .= "<p>First name must be at most 20 characters</p>";
+        $errMsg .= "<p class='error-msg'>First name must be at most 20 characters</p>";
     }
     else if (!preg_match("/^[a-zA-z]*$/", $first_name)) {
-        $errMsg .= "<p>Only alphabet letters allowed in your first name.</p>";
+        $errMsg .= "<p class='error-msg'>Only alphabet letters allowed in your first name.</p>";
     }
 
     // Validate last name
     if ($last_name == "") {
-        $errMsg .= "<p>You must enter your last name.</p>";
+        $errMsg .= "<p class='error-msg'>You must enter your last name.</p>";
     }
     else if (strlen($last_name) > 20) {
-        $errMsg .= "<p>Last name must be at most 20 characters</p>";
+        $errMsg .= "<p class='error-msg'>Last name must be at most 20 characters</p>";
     }
     else if (!preg_match("/^[a-zA-z]*$/", $last_name)) {
-        $errMsg .= "<p>Only alphabet letters allowed in your last name.</p>";
+        $errMsg .= "<p class='error-msg'>Only alphabet letters allowed in your last name.</p>";
     }
 
     // Validate date of birth
     if ($dob == "") {
-        $errMsg .= "<p>You must enter your age.</p>";
+        $errMsg .= "<p class='error-msg'>You must enter your age.</p>";
     }
     else {
         $age = date_diff(date_create($dob), date_create(date("Y-m-d")))->format('%y');
-        if ($age < 15 || $age > 80) $errMsg .= "<p>Age must be a number between 15 and 80.</p>";
+        if ($age < 15 || $age > 80) $errMsg .= "<p class='error-msg'>Age must be a number between 15 and 80.</p>";
     }
 
     // Validate gender
     if ($gender == "") {
-        $errMsg .= "<p>You must select a gender.</p>";
+        $errMsg .= "<p class='error-msg'>You must select a gender.</p>";
     }
 
     // Validate street_address
     if ($street_address == "") {
-        $errMsg .= "<p>You must enter a street address.</p>";
+        $errMsg .= "<p class='error-msg'>You must enter a street address.</p>";
     }
     else if (strlen($street_address) > 40) {
-        $errMsg .= "<p>Address cannot be longer than 40 characters</p>";
+        $errMsg .= "<p class='error-msg'>Address cannot be longer than 40 characters</p>";
     }
 
     // Validate suburb
     if ($suburb == "") {
-        $errMsg .= "<p>You must enter a suburb or town.</p>";
+        $errMsg .= "<p class='error-msg'>You must enter a suburb or town.</p>";
     }
     else if (strlen($suburb) > 40) {
-        $errMsg .= "<p>Address cannot be longer than 40 characters</p>";
+        $errMsg .= "<p class='error-msg'>Address cannot be longer than 40 characters</p>";
     }
 
     // Validate State
@@ -171,44 +169,88 @@
     ];
 
     if (!in_array($state, $valid_states)) {
-        $errMsg .= "<p>You must select a state.</p>";
+        $errMsg .= "<p class='error-msg'>You must select a state.</p>";
     }
 
     // Validate post_code
     if ($post_code == "") {
-        $errMsg .= "<p>You must enter a postcode.</p>";
+        $errMsg .= "<p class='error-msg'>You must enter a postcode.</p>";
+    } else {
+        $postcode_regex = '';
+        switch ($state) {
+            case 'VIC':
+                $postcode_regex = '/^3[0-9]{3}$/';
+                break;
+            case 'NSW':
+                $postcode_regex = '/^2[0-9]{3}$/';
+                break;
+            case 'QLD':
+                $postcode_regex = '/^4[0-9]{3}$/';
+                break;
+            case 'NT':
+                $postcode_regex = '/^0[0-9]{3}$/';
+                break;
+            case 'WA':
+                $postcode_regex = '/^6[0-9]{3}$/';
+                break;
+            case 'SA':
+                $postcode_regex = '/^5[0-9]{3}$/';
+                break;
+            case 'TAS':
+                $postcode_regex = '/^7[0-9]{3}$/';
+                break;
+            case 'ACT':
+                $postcode_regex = '/^2[0-9]{3}$/';
+                break;
+            default:
+                $errMsg .= "<p class='error-msg'>Invalid state selected.</p>";
+                break;
+        }
+        if (!($postcode_regex !== '' && preg_match($postcode_regex, $post_code) == 1)) {
+            $errMsg .= "<p class='error-msg'>Invalid postcode for selected state.</p>";
+        }
     }
-    else if (strlen($post_code) != 4) {
-        $errMsg .= "<p>Post code must be four digits</p>";
-    }
-    // MATCH POSTCODE TO STATE VALIDATION HERE
-
 
     // Validate email
     if ($email == "") {
-        $errMsg .= "<p>You must enter an email address.</p>";
+        $errMsg .= "<p class='error-msg'>You must enter an email address.</p>";
     }
     else if (!filter_var($email, FILTER_VALIDATE_EMAIL)) {
-        $errMsg .= "<p>You must enter a valid email address.</p>";
+        $errMsg .= "<p class='error-msg'>You must enter a valid email address.</p>";
     }
 
     // Validate phone
     if ($phone == "") {
-        $errMsg .= "<p>You must enter a phone number.</p>";
+        $errMsg .= "<p class='error-msg'>You must enter a phone number.</p>";
     }
     else if (!preg_match("/^[\d| ]{8,12}$/", $phone)) {
-        $errMsg .= "<p>You must enter a valid phone number.</p>";
+        $errMsg .= "<p class='error-msg'>You must enter a valid phone number.</p>";
     }
 
     // Validate other skills
     if ($skill_other != "") {
         if ($skills_desc == "") {
-            $errMsg .= "<p>You selected 'other skills' and didn't write anything in the field.</p>";
+            $errMsg .= "<p class='error-msg'>You selected 'other skills' and didn't write anything in the field.</p>";
         }
     }
 
-    // If anything didn't validate, echo the error message
+    // Validate that the user doesn't have a job application already for this job
+    $query = "SELECT eoi_id FROM Eois WHERE first_name = '$first_name' AND last_name = '$last_name' AND email_address = '$email';";
+    $result = mysqli_query($conn, $query);
+
+    if ($result->num_rows > 0) {
+        $errMsg .= "<p class='error-msg'>You have already applied for this job.</p>";
+    }
+
+
+
+    // If anything didn't validate, echo the error message and don't interact with the database
     if($errMsg != ""){
+        echo "<section id='enh-title'>\n";
+        echo "<h1 id='job-title'>Error!</h1>\n";
+        echo "<p>Something went wrong...</p>\n";
+        echo "</section>\n";
+        
         echo $errMsg;
     }
     else { // everything valid!
@@ -327,7 +369,10 @@
             }
         }
 
-        echo "<p>Successfully created new EOI, your application ID is: " . $new_id . ".";
+        echo "<section id='enh-title'>\n";
+        echo "<h1 id='job-title'>Application Success!</h1>\n";
+        echo "<p>Successfully created new EOI, your application ID is: $new_id.</p>\n";
+        echo "</section>\n";
 
         if ($result != true || $result != false) @mysqli_free_result($result);
 
@@ -335,7 +380,12 @@
 
     // close the database connection
     mysqli_close($conn);
+
+} else {
+    header ("location: apply.php");
+}
 ?>
+</main>
 </body>
 </html>
     
