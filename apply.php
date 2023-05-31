@@ -12,6 +12,7 @@
 
 <body>
     <?php
+        session_start();
         include_once("header.inc"); 
         require_once ("settings.php"); // connection info
         ColorHeader('apply');
@@ -137,7 +138,7 @@
                     required>
             </fieldset>
 
-            <!-- Skill list (The last item in list should read “Other skills...”), checkbox inputs 
+            <!-- Skill list (The last item in list should read ï¿½Other skills...ï¿½), checkbox inputs 
         Other skills,  textarea  -->
             <fieldset class="apply-skills">
                 <label class="apply-bold">Skills List</label>
