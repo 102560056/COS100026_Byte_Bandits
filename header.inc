@@ -37,6 +37,7 @@
                     </li>';
 
                     if(isset($_SESSION["loggedin"]) && $_SESSION["loggedin"] === true){
+                        // Show Manage Page if Logged in
                         echo'<li class="original-menu">
                                 <a href="manage.php"',($pageName == 'manage')?$color:'','>Manage</a>
                             </li>';
@@ -44,6 +45,7 @@
 
                     if(isset($_SESSION["loggedin"]) && $_SESSION["loggedin"] === true)
                     {
+                        // Show Username if logged in
                         echo'<li>
                             <label class="login-menu">
                                 <input type="checkbox">
@@ -54,6 +56,7 @@
                         </li>';
                     }
                     else {
+                        // Show Generic Icon if logged out
                         echo'<li>
                             <label class="login-menu">
                                 <input type="checkbox">
@@ -95,6 +98,7 @@
         </header>';
         if(isset($_SESSION["loggedin"]) && $_SESSION["loggedin"] === true)
         {
+            //Show Logout if Logged in 
             echo'<section class="logout login-component">
                     <form method="post" action="">
                         <div class="profile-icon">'
@@ -106,6 +110,7 @@
                 </section>';
         }
         else {
+            //Show Login if not Logged in 
             echo'<section class="login login-component">
                     <form method="post" action="">
                         <label for="username">Username:</label>
@@ -120,7 +125,10 @@
 
     if(isset($_POST["logout"]) && !empty($_POST["logout"]))
     {
-        session_unset();
+        // Remove Session Storage
+        session_unset($_SESSION["loggedin"]);
+        session_unset($_SESSION["username"]);
+        // Refresh Page After Post
         echo "<meta http-equiv='refresh' content='0'>";
     };
 
@@ -136,12 +144,18 @@
         }
         else
         {
+            // Evie, pass1
+            // Greg, pass2
+            // Tim, pass3
+
             $sql_table = "Users";
         
             $query = "SELECT * FROM ".$sql_table." WHERE username = \"".$_POST["username"]."\" AND password = \"".$_POST["password"]."\"";
             $result = mysqli_fetch_array(mysqli_query($conn, $query));
             if($result){
+                //Start session if one doesnt already exist.
                 @session_start();
+                //Set Loggedin & Username
                 @$_SESSION["loggedin"] = true;
                 @$_SESSION["username"] = $result[0];
             };

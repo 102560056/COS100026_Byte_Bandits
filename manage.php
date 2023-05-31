@@ -10,6 +10,7 @@
 <body>
     <?php
         session_start();
+        // Redirect to index if not logged in.
         if (!isset($_SESSION['loggedin'])) {
             header("Location: index.php");
         };
@@ -35,7 +36,7 @@
             </form>
         </section>
         <?php
-            include_once "manage-table.inc";
+            include_once "enhancement.inc";
         ?>
     </main>
 </body>

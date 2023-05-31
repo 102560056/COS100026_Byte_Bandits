@@ -5,7 +5,7 @@ $conn = @mysqli_connect
     $host, $user, $pwd, $sql_db
 );
 
-
+// Will fetch from the database by deafult when loaded
 if(!$conn){
     echo "<p>Database Connection Failiure!</p>";
 }

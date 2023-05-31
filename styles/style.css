@@ -428,6 +428,7 @@ input[type=submit] {
   font-size: 1.5rem;
   text-decoration: underline;
   text-decoration-color: var(--main-color);
+  margin-top: 10vh;
 }
 
 h1 {
@@ -452,7 +453,7 @@ h1 {
 }
 
 .about-main>section:not(:last-child) {
-  padding-bottom: 5vh;
+  padding-bottom: 10vh;
 }
 
 /* Styles for group details */
@@ -963,9 +964,11 @@ This makes sure that every line isn't beginning at the end of the left side of t
   border-width: .3em;
   border-radius: .4em;
   border-color: var(--main-color);
-  margin: 2em;
 }
 
+.enh-main> :not(:last-child) {
+  margin-bottom: 10vh;
+}
 
 .enh-enhance-sect>h3 {
   margin: 1em 2em;
