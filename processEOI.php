@@ -98,62 +98,62 @@ if (isset($_POST["submit"])) {
     ];
         
     if ($job_refrence == "") {
-        $errMsg .= "<p>You must choose a job reference ID.</p>";
+        $errMsg .= "<p class='error-msg'>You must choose a job reference ID.</p>";
     } 
     else if (!in_array($job_refrence, $valid_refs)) {
-        $errMsg .= "<p>You must select a valid Job reference ID.</p>";
+        $errMsg .= "<p class='error-msg'>You must select a valid Job reference ID.</p>";
     }
 
     // Validate first name
     if ($first_name == "") {
-        $errMsg .= "<p>You must enter your first name.</p>";
+        $errMsg .= "<p class='error-msg'>You must enter your first name.</p>";
     }
     else if (strlen($first_name) > 20) {
-        $errMsg .= "<p>First name must be at most 20 characters</p>";
+        $errMsg .= "<p class='error-msg'>First name must be at most 20 characters</p>";
     }
     else if (!preg_match("/^[a-zA-z]*$/", $first_name)) {
-        $errMsg .= "<p>Only alphabet letters allowed in your first name.</p>";
+        $errMsg .= "<p class='error-msg'>Only alphabet letters allowed in your first name.</p>";
     }
 
     // Validate last name
     if ($last_name == "") {
-        $errMsg .= "<p>You must enter your last name.</p>";
+        $errMsg .= "<p class='error-msg'>You must enter your last name.</p>";
     }
     else if (strlen($last_name) > 20) {
-        $errMsg .= "<p>Last name must be at most 20 characters</p>";
+        $errMsg .= "<p class='error-msg'>Last name must be at most 20 characters</p>";
     }
     else if (!preg_match("/^[a-zA-z]*$/", $last_name)) {
-        $errMsg .= "<p>Only alphabet letters allowed in your last name.</p>";
+        $errMsg .= "<p class='error-msg'>Only alphabet letters allowed in your last name.</p>";
     }
 
     // Validate date of birth
     if ($dob == "") {
-        $errMsg .= "<p>You must enter your age.</p>";
+        $errMsg .= "<p class='error-msg'>You must enter your age.</p>";
     }
     else {
         $age = date_diff(date_create($dob), date_create(date("Y-m-d")))->format('%y');
-        if ($age < 15 || $age > 80) $errMsg .= "<p>Age must be a number between 15 and 80.</p>";
+        if ($age < 15 || $age > 80) $errMsg .= "<p class='error-msg'>Age must be a number between 15 and 80.</p>";
     }
 
     // Validate gender
     if ($gender == "") {
-        $errMsg .= "<p>You must select a gender.</p>";
+        $errMsg .= "<p class='error-msg'>You must select a gender.</p>";
     }
 
     // Validate street_address
     if ($street_address == "") {
-        $errMsg .= "<p>You must enter a street address.</p>";
+        $errMsg .= "<p class='error-msg'>You must enter a street address.</p>";
     }
     else if (strlen($street_address) > 40) {
-        $errMsg .= "<p>Address cannot be longer than 40 characters</p>";
+        $errMsg .= "<p class='error-msg'>Address cannot be longer than 40 characters</p>";
     }
 
     // Validate suburb
     if ($suburb == "") {
-        $errMsg .= "<p>You must enter a suburb or town.</p>";
+        $errMsg .= "<p class='error-msg'>You must enter a suburb or town.</p>";
     }
     else if (strlen($suburb) > 40) {
-        $errMsg .= "<p>Address cannot be longer than 40 characters</p>";
+        $errMsg .= "<p class='error-msg'>Address cannot be longer than 40 characters</p>";
     }
 
     // Validate State
@@ -169,12 +169,12 @@ if (isset($_POST["submit"])) {
     ];
 
     if (!in_array($state, $valid_states)) {
-        $errMsg .= "<p>You must select a state.</p>";
+        $errMsg .= "<p class='error-msg'>You must select a state.</p>";
     }
 
     // Validate post_code
     if ($post_code == "") {
-        $errMsg .= "<p>You must enter a postcode.</p>";
+        $errMsg .= "<p class='error-msg'>You must enter a postcode.</p>";
     } else {
         $postcode_regex = '';
         switch ($state) {
@@ -203,34 +203,34 @@ if (isset($_POST["submit"])) {
                 $postcode_regex = '/^2[0-9]{3}$/';
                 break;
             default:
-                $errMsg .= "<p>Invalid state selected.</p>";
+                $errMsg .= "<p class='error-msg'>Invalid state selected.</p>";
                 break;
         }
         if (!($postcode_regex !== '' && preg_match($postcode_regex, $post_code) == 1)) {
-            $errMsg .= "<p>Invalid postcode for selected state.</p>";
+            $errMsg .= "<p class='error-msg'>Invalid postcode for selected state.</p>";
         }
     }
 
     // Validate email
     if ($email == "") {
-        $errMsg .= "<p>You must enter an email address.</p>";
+        $errMsg .= "<p class='error-msg'>You must enter an email address.</p>";
     }
     else if (!filter_var($email, FILTER_VALIDATE_EMAIL)) {
-        $errMsg .= "<p>You must enter a valid email address.</p>";
+        $errMsg .= "<p class='error-msg'>You must enter a valid email address.</p>";
     }
 
     // Validate phone
     if ($phone == "") {
-        $errMsg .= "<p>You must enter a phone number.</p>";
+        $errMsg .= "<p class='error-msg'>You must enter a phone number.</p>";
     }
     else if (!preg_match("/^[\d| ]{8,12}$/", $phone)) {
-        $errMsg .= "<p>You must enter a valid phone number.</p>";
+        $errMsg .= "<p class='error-msg'>You must enter a valid phone number.</p>";
     }
 
     // Validate other skills
     if ($skill_other != "") {
         if ($skills_desc == "") {
-            $errMsg .= "<p>You selected 'other skills' and didn't write anything in the field.</p>";
+            $errMsg .= "<p class='error-msg'>You selected 'other skills' and didn't write anything in the field.</p>";
         }
     }
 
