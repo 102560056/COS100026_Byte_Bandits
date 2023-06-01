@@ -105,6 +105,9 @@
 	<section class="home-video-link-section">
 	  <a class="home-bottom-content-heading" href="https://www.youtube.com/watch?v=_KpM4Q5QtN8">Here's a video to show you our website! (Youtube link)</a> 
 	</section>
+    <section class="home-video-link-section">
+	  <a class="home-bottom-content-heading" href="https://www.youtube.com/watch?v=vjEoEjac8BY">Here's the Assignment Part 2 Video: (Youtube link)</a> 
+	</section>
     </main>
 
     <?php

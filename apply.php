@@ -24,6 +24,30 @@
         $sql_db) or die("<p>Unable to connect to the database server.</p>"
         . "<p>Error code " . mysqli_connect_errno()
         . ": " . mysqli_connect_error() . "</p>");
+
+        $query = "SELECT table_type 
+        FROM information_schema.tables 
+        WHERE table_schema = '$sql_db' 
+        AND table_name = 'Skills'";
+
+        $result = mysqli_query($conn, $query);
+
+        if ($result->num_rows === 0) { // If we don't have a skills table yet, create one
+            echo "No Skills table! Creating one now...\n";
+
+            $query = "CREATE TABLE Skills (
+                skill_name VARCHAR(10) NOT NULL,
+                PRIMARY KEY (skill_name)
+                );";
+
+            $result = mysqli_query($conn, $query);
+            if ($result) echo "Skills table successfully created!"; else echo ("Unable to create Skills table! errnum: " . mysqli_errno($conn) . "error: " . mysqli_error($conn));
+
+            $query = "INSERT INTO Skills (skill_name) VALUES ('PHP'), ('HTML'), ('C#'), ('Javascript'), ('CSS');";
+            $result = mysqli_query($conn, $query);
+            if ($result) echo "Skills table filled with deafult values!"; else echo ("Unable to enter default values! errnum: " . mysqli_errno($conn) . "error: " . mysqli_error($conn));
+        }
+
     ?>
 
     <main class="apply-main">
