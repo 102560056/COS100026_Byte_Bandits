@@ -31,118 +31,48 @@
             <h3>Enhancement1 - Login Page</h3>
             <hr>
             <p>
-                Sam designed the first enhancement of our website, which involves creating a more compact way to access
-                the main header links, through the use of whats traditionally known as a hamburger menu.
-                This hamburger menu will be displayed only when the screen width of the device becomes smaller than a
-                set width. (In our case 900px).
-                It makes use of a media query, and a checkbox with some icons and it uses the state of this checkbox to
-                toggle the display of a drop down menu and a combination of family and sibling selectors.
+                Sam designed the first enhancement of our website, which is a login method to access the manage.php page.
             </p>
-
-            <p class="enh-code-desc">
-                html code description
-            </p>
-
+            
             <p>
-                The HTML component of this enhancement only consists of two sections.
-                The first section simply contains a unordered list of links to each page and the contents for the
-                hamburger menu, which includes a checkbox, and two icons.
-                The current page is tagged with 'main-color' and the elements that are going to be hidden are tagged
-                with 'original-menu'
-                The second sectioned named 'drop-down' is a list of unordered elements that will sit vertically under
-                the original menu.
+                The login function is available from any page, and therefore is written in the 
+                header.inc file, which is included in every page. This code adds a section in the header
+                which will be either a login or logout form depending on whether the user is logged in or not.
+                For logging in, this form will submit using the POST method to provide the entered username and password to 
+                the page through the POST global variable.
             </p>
+            
+            <p class="enh-code-desc"><strong>Code in: header.inc</strong></p>
 
             <figure>
-                <img src="images/img" alt="img">
+                <img src="images/sam-php-enh1.png" alt="an image of PHP code">
             </figure>
 
             <p>
-                The first section of the header makes use of the combination of position:sticky, z-index 1, and top:0.
-                This ensures that the header is kept at the very top of the page and sits on top of any elements that
-                may make use of any alternative positioning.
+                The page can check these values in $_POST when the login form is submitted, comparing them
+                against values stored in a 'Users' table queried in the database. If they match, login variables
+                are set in the SESSION global variable, to allow for the user to navigate pages without having to 
+                log in whenever they navigate to a new page. These session variables are updated when the user submits
+                the logout form as well.
             </p>
 
+            <p class="enh-code-desc"><strong>Code in: header.inc</strong></p>
+
             <figure>
-                <img src="images/img1.png" alt="img">
+                <img src="images/sam-php-enh2.png" alt="an image of PHP code">
             </figure>
 
             <p>
-                When hovering over the original menu items, there is a small animation that enlarges the font and
-                changes their color to the main color of the website, this makes use of the var() selector that allows
-                variable to be set up in :root so long as they begin with '--'.
+                The list of each page in the header has an extra element for the Manage.php page if the user is logged in.
+                The username is also shown using the same method.
             </p>
+
+            <p class="enh-code-desc"><strong>Code in: header.inc</strong></p>
 
             <figure>
-                <img src="images/img2.png" alt="img">
+                <img src="images/sam-php-enh3.png" alt="an image of PHP code">
             </figure>
 
-            <figure>
-                <img src="images/img2.2.png" alt="img">
-            </figure>
-
-            <p>
-                The following styles are for setting up the drop down menus styles, centering the content, definning
-                padding and most importantly, setting the defult display to none.
-                This way the drop down menu isnt shown untill its display is changed.
-            </p>
-
-            <figure>
-                <img src="images/img3.png" alt="img">
-            </figure>
-
-            <p>
-                The following styles hide the checkbox and the close icon and stack the icons in the exact center ontop
-                of one another.
-            </p>
-
-            <figure>
-                <img src="images/img4.png" alt="img">
-            </figure>
-
-            <p>
-                There are two keyframes for the animation on the dropdown menu, this is to ensure that the background
-                takes up the full height of the page, and that the elements within the drop down menu expand but dont
-                extend past the total height of the screen.
-            </p>
-
-            <figure>
-                <img src="images/img5.png" alt="img">
-            </figure>
-
-            <p>
-                Finally there is the two media querys that control what elements should be hidden or displayed at any
-                given time.
-                The first media query contains the logic for when a devices maximum width is less than 900px. In this
-                case we hide the original menu, and if the state of the checkbox is ever 'checked' we hide the menu icon
-                and display the close icon, both of which are sibling elements to the checkbox element.
-                Lastly we use the has: - better known as the family selector. to select the dropdown and set it to
-                animate into existance.
-                The second media query resets the hamburger menu incase the device is ever scaled back up.
-            </p>
-
-            <figure>
-                <img src="images/img6.png" alt="img">
-            </figure>
-
-            <p>
-                It is important to note that the :has() selector isnt currently avalible on firefox, however
-                firefox is the rare exception, and the firefox team have stated that the :has() selector is due to be
-                fully operational on firefox later this year.
-            </p>
-
-            <p><strong>
-                    References to third party sources for this enhancement</strong>
-            </p>
-            <p>
-                <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/:has">Has Selector, Mozilla</a><br>
-                <a href="https://www.w3schools.com/howto/howto_js_mobile_navbar.asp">Hamburger Menu Example,
-                    W3schools</a><br>
-            </p>
-
-            <p>
-	      Link: To view this enhancement, shrink the browser width until the hamburger menu shows.
-            </p>
         </section>
 
         <section class="enh-enhance-sect">
