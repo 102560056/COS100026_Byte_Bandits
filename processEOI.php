@@ -16,10 +16,7 @@ ColorHeader('apply');
 ?>
 <main>
 <?php
- // ******** TODO LIST *********
-// - style/format the error/success messages returned to the user, making them more than just plaintext on the screen
 
-// redirect back to apply page if this wasn't a legit submission
 if (isset($_POST["submit"])) {
     
     function sanitise_input($data) {
@@ -235,7 +232,7 @@ if (isset($_POST["submit"])) {
     }
 
     // Validate that the user doesn't have a job application already for this job
-    $query = "SELECT eoi_id FROM Eois WHERE first_name = '$first_name' AND last_name = '$last_name' AND email_address = '$email';";
+    $query = "SELECT eoi_id FROM Eois WHERE first_name = '$first_name' AND last_name = '$last_name' AND job_ref_id = '$job_refrence';";
     $result = mysqli_query($conn, $query);
 
     if ($result->num_rows > 0) {
