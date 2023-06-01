@@ -21,14 +21,14 @@
         <section id="enh-title">
             <h2>Assignment 2 Enhancements</h2>
             <p class="about-arrow">▼</p>
-            <p>We have extended this website using various html and css techniques learned beyond the lectures and
+            <p>We have extended this website using some PHP and SQL techniques learned beyond the lectures and
                 tutorials in COS10026. Here are some of the features we've added:</p>
         </section>
 
       <!-- Each "enh-enhance-sect" section is a part of the page describing one of the enhancements -->
 
         <section class="enh-enhance-sect">
-            <h3>Enhancement1 - Hamburger Menu</h3>
+            <h3>Enhancement1 - Login Page</h3>
             <hr>
             <p>
                 Sam designed the first enhancement of our website, which involves creating a more compact way to access
@@ -54,7 +54,7 @@
             </p>
 
             <figure>
-                <img src="images/sam-enhancement-html.png" alt="a screenshot of HTML markup">
+                <img src="images/img" alt="img">
             </figure>
 
             <p>
@@ -64,7 +64,7 @@
             </p>
 
             <figure>
-                <img src="images/sam-enhancement-css1.png" alt="a screenshot of CSS code">
+                <img src="images/img1.png" alt="img">
             </figure>
 
             <p>
@@ -74,11 +74,11 @@
             </p>
 
             <figure>
-                <img src="images/sam-enhancement-css2.png" alt="a screenshot of CSS code">
+                <img src="images/img2.png" alt="img">
             </figure>
 
             <figure>
-                <img src="images/sam-enhancement-css2.2.png" alt="a screenshot of CSS code">
+                <img src="images/img2.2.png" alt="img">
             </figure>
 
             <p>
@@ -88,7 +88,7 @@
             </p>
 
             <figure>
-                <img src="images/sam-enhancement-css3.png" alt="a screenshot of CSS code">
+                <img src="images/img3.png" alt="img">
             </figure>
 
             <p>
@@ -97,7 +97,7 @@
             </p>
 
             <figure>
-                <img src="images/sam-enhancement-css4.png" alt="a screenshot of CSS code">
+                <img src="images/img4.png" alt="img">
             </figure>
 
             <p>
@@ -107,7 +107,7 @@
             </p>
 
             <figure>
-                <img src="images/sam-enhancement-css5.png" alt="a screenshot of CSS code">
+                <img src="images/img5.png" alt="img">
             </figure>
 
             <p>
@@ -122,7 +122,7 @@
             </p>
 
             <figure>
-                <img src="images/sam-enhancement-css6.png" alt="a screenshot of CSS code">
+                <img src="images/img6.png" alt="img">
             </figure>
 
             <p>
@@ -146,107 +146,36 @@
         </section>
 
         <section class="enh-enhance-sect">
-            <h3>Enhancement2-flip animation & toggle display</h3>
+            <h3>Enhancement 2 - Database Extension</h3>
             <hr>
             <p>
-                Lexi designed the second enhancement to our website, which includes two features on the About page: the
-                flip card animation in the "Key Values" part and the toggle display of group members' personal
-                information in the "Meet Our Members" area. These features significantly enhance the layout and
-                interactivity of the About page, providing users with an engaging and dynamic element. <br>
-
-                This enhancement goes well beyond the original assignment requirements, as it utilises a range of
-                advanced CSS techniques that were not covered in our classes. These techniques include the use of
-                transition and transform properties, the general sibling combinator, and the:checked pseudo-class.
+                Preston added some extra features relating to the MySQL database. <br>
             </p>
-            <p><strong> 1. the flip card animation</strong></p>
-            <p>This effect is achieved by using transition and transform properties. Firstly, I created a flipper
-                section in html file that contains two sections that belong to front and back classes respectively,
-                which include the content I want to display on the flip card. Secondly, in css file, I adds a transition
-                effect to the flipper class using transition: transform 0.6s, transform style is set to preserve-3d to
-                bring a 3d effect. Thirdly, I set the front and back sections to be absolute position so they are at the
-                same position of the page, also hides the backface of the elements during the 3D transform. Then, I
-                rotated the back section 180 degrees along the y-axis so the front face of the back section faces back
-                now. Finally, hovering over the flipper part rotates it in 3D, revealing the back section's content.</p>
-            <p class="enh-code-desc"><strong>
-                    Screenshot</strong>
+            <p><strong> 1. Extra Tables</strong></p>
+            <p>There are two extra tables in the database: 'Skills' and 'Eoi_Skills'. The skills table holds each skill that can be 
+                checked in apply.php. Eoi_Skills is a junction table between 'Eois' and 'Skills', holding a record for each skill 
+                checked in each EOI. This allows for the database to achieve 1NF normalization, as the list of skills for an EOI
+                is now stored as individual skill elements rather than one multi-value element.
             </p>
 
             <figure>
-                <img src="images/lexifeature1.png" alt="a screenshot of the flip card feature">
+                <img src="images/db-skills-table.png" alt="a screenshot the Skills table">
             </figure>
-
-            <p class="enh-code-desc"><strong>
-                    html code</strong>
-            </p>
 
             <figure>
-                <img src="images/htmlcode1.png" alt="a screenshot of HTML markup">
+                <img src="images/db-junction.png" alt="a screenshot of the Eoi_Skills table">
             </figure>
 
-            <p class="enh-code-desc"><strong>
-                    css code</strong>
+            <p><strong> 2. Connection from junction table to Apply.php</strong></p>
+            <p>The Skills table existing means that it is a list of the possible skills that an applicant could select.
+                Rather than having to change this list in both the database and apply.php, the list of skills in apply.php
+                is generated by querying the Skills table in the database. This means that any update to the skills table 
+                will automatically add a new checkbox to apply.php for that skill.
             </p>
-
+ 
             <figure>
-                <img src="images/csscode1.png" alt="a screenshot of CSS code">
+                <img src="images/apply-skills-gen.png" alt="a screenshot of php code">
             </figure>
-
-
-            <p><strong> 2.For the toggle display</strong></p>
-            <p>Radio button group in html, ~ general sibling combinator, :checked pseudo-class, and # id selector in css
-                helped me to achieve this feature. Firstly, I set the label of each radio input to my team members'
-                names and the name attribute to the same. Thus just one label/input can be selected. The section
-                including one person's details is given a #id of their name. Secondly, display: none hides the radio
-                input button but leaves the label visible. Thirdly, I set the default display styles for all sections
-                containing personal details to none, hiding them if the correlated radio input is not selected. Lastly,
-                I use #lexi_l:checked~#lexi to set when the lexi label is selected, the style of the element that has an
-                id #lexi will be updated to the following style to reveal the personal details of Lexi (display change
-                from none to flex). Same code applies to every group members. </p>
-            <p class="enh-code-desc"><strong>
-                    Screenshot</strong>
-            </p>
-
-            <figure>
-                <img src="images/lexifeature2.png" alt="a screenshot of the toggle display feature">
-            </figure>
-
-            <p class="enh-code-desc"><strong>
-                    html code</strong>
-            </p>
-
-            <figure>
-                <figcaption>*only the personal detail section of Lexi is displayed here as all other members' sections
-                    are following the same pattern</figcaption>
-                <img src="images/htmlcode2.png" alt="a screenshot of HTML markup">
-
-            </figure>
-
-            <p class="enh-code-desc"><strong>
-                    css code</strong>
-            </p>
-
-            <figure>
-                <figcaption>*only the style details for Lexi and Sam's personal information section are displayed here
-                    as all other members' sections are following the same pattern</figcaption>
-                <img src="images/csscode2.png" alt="a screenshot of CSS code">
-
-            </figure>
-
-            <p><strong>
-                    References to third party sources for this enhancement</strong>
-            </p>
-            <p>
-                <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/transition">Transition, MDN
-                    https://developer.mozilla.org/en-US/docs/Web/CSS/transition</a><br>
-                <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/transform">Transform, MDN
-                    https://developer.mozilla.org/en-US/docs/Web/CSS/transform</a><br>
-                <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/backface-visibility">Backface-visibility, MDN
-                    https://developer.mozilla.org/en-US/docs/Web/CSS/backface-visibility</a><br>
-                <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/CSS_Selectors">CSS_Selector, MDN
-                    https://developer.mozilla.org/en-US/docs/Web/CSS/CSS_Selectors</a>
-            </p>
-
-            <p><a href="about.html#enhancement-lexi" class="enh-local-link">Link to the enhancement</a></p>
 
         </section>
 
