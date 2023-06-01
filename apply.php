@@ -153,7 +153,10 @@
                     . ": " . mysqli_error($conn) . "</p>");
 
                     while ($row = mysqli_fetch_assoc($result)) {
-                        echo "<label class=\"apply-skill\"><input type=\"checkbox\" name=\"skill[]\" value=\"" , $row["skill_name"] , "\" id=\"" , $row["skill_name"] , "\">" , $row["skill_name"] , "</label>\n\t\t\t\t";
+                        echo "<label class=\"apply-skill\"><input type=\"checkbox\" name=\"skill[]\" value=\"" , 
+                        $row["skill_name"] , "\" id=\"" , 
+                        $row["skill_name"] , "\">" , 
+                        $row["skill_name"] , "</label>\n\t\t\t\t";
                     }
 
                     mysqli_free_result($result);

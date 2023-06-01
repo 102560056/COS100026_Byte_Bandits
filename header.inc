@@ -34,6 +34,10 @@
                     
                     <li class="original-menu">
                             <a href="enhancements.php"',($pageName == 'enhancements')?$color:'','>Enhancements</a>
+                    </li>
+
+                    <li class="original-menu">
+                            <a href="phpenhancements.php"',($pageName == 'phpenhancements')?$color:'','>PHP Enhancements</a>
                     </li>';
 
                     if(isset($_SESSION["loggedin"]) && $_SESSION["loggedin"] === true){
@@ -92,6 +96,9 @@
                     </li>
                     <li>
                         <a href="enhancements.php">Enhancements</a>
+                    </li>
+                    <li>
+                        <a href="phpenhancements.php">PHP Enhancements</a>
                     </li>
                 </ul>
             </section>
