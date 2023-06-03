@@ -36,7 +36,7 @@
             </form>
         </section>
         <?php
-            include_once "enhancement.inc";
+            include_once "manage-table.inc";
         ?>
     </main>
 </body>

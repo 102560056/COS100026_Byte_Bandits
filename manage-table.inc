@@ -5,16 +5,14 @@ $conn = @mysqli_connect
     $host, $user, $pwd, $sql_db
 );
 
-
+// Will fetch from the database by deafult when loaded
 if(!$conn){
     echo "<p>Database Connection Failiure!</p>";
 }
 else
 {
     // TODO
-    // $_POST['search-string'];
-    // $query = "SELECT Eois.*, GROUP_CONCAT(Eoi_Skills.skill_name) AS skills FROM Eois LEFT JOIN Eoi_Skills ON Eois.eoi_id = Eoi_Skills.eoi_id GROUP BY Eois.eoi_id;";
-    $query = "SELECT Eois.*, GROUP_CONCAT(Eoi_Skills.skill_name) AS skills FROM Eois LEFT JOIN Eoi_Skills ON Eois.eoi_id = Eoi_Skills.eoi_id GROUP BY Eois.eoi_id;";
+    @$query = "SELECT Eois.*, GROUP_CONCAT(Eoi_Skills.skill_name) AS skills, CONCAT(Eois.first_name, ' ', Eois.last_name) AS full_name FROM Eois LEFT JOIN Eoi_Skills ON Eois.eoi_id = Eoi_Skills.eoi_id WHERE CONCAT(Eois.first_name, ' ', Eois.last_name) LIKE '%".$_POST['search-string']."%' OR Eois.job_ref_id LIKE '%".$_POST['search-string']."%' GROUP BY Eois.eoi_id;";
 
     $result = mysqli_query($conn, $query);
 
@@ -51,8 +49,8 @@ else
         echo '<p>',$row['post_code'],'</p>';
         echo '<p>',$row['email_address'],'</p>';
         echo '<p>',$row['phone_num'],'</p>';
-        echo '<p>',$row['other_skills'],'</p>';
         echo '<p>',$row['skills'],'</p>';
+        echo '<p>',$row['other_skills'],'</p>';
 
         echo '<form method="post" class="eoi-status">';
         echo '    <select name="status">';
